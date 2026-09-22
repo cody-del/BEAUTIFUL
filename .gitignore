@@ -1,0 +1,8 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+homepage/.openai/
+homepage/.sites-runtime/
+homepage/research/
+*.tar.gz
