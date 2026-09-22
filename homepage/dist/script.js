@@ -1,35 +1,98 @@
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#navigation');
-menuButton.addEventListener('click', () => {
-  const expanded = menuButton.getAttribute('aria-expanded') !== 'true';
+const navTriggers = [...navigation.querySelectorAll('.nav-trigger')];
+const compactNavigation = matchMedia('(max-width: 1000px)');
+let hoverCloseTimer;
+
+function closeDropdowns() {
+  navTriggers.forEach((trigger) => {
+    trigger.setAttribute('aria-expanded', 'false');
+    document.getElementById(trigger.getAttribute('aria-controls')).hidden = true;
+  });
+}
+function openDropdown(trigger) {
+  clearTimeout(hoverCloseTimer);
+  closeDropdowns();
+  trigger.setAttribute('aria-expanded', 'true');
+  document.getElementById(trigger.getAttribute('aria-controls')).hidden = false;
+}
+function setMenuOpen(expanded) {
+  clearTimeout(hoverCloseTimer);
   menuButton.setAttribute('aria-expanded', String(expanded));
+  menuButton.setAttribute('aria-label', expanded ? 'Close navigation menu' : 'Open navigation menu');
   navigation.classList.toggle('open', expanded);
+  if (!expanded) closeDropdowns();
+}
+menuButton.addEventListener('click', () => {
+  setMenuOpen(menuButton.getAttribute('aria-expanded') !== 'true');
+});
+navTriggers.forEach((trigger) => {
+  trigger.addEventListener('click', (event) => {
+    // A mouse click keeps the panel opened by hover; keyboard and touch toggle it.
+    if (!compactNavigation.matches && event.detail > 0) openDropdown(trigger);
+    else if (trigger.getAttribute('aria-expanded') === 'true') closeDropdowns();
+    else openDropdown(trigger);
+  });
+  trigger.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      openDropdown(trigger);
+      document.getElementById(trigger.getAttribute('aria-controls')).querySelector('a').focus();
+    }
+  });
+  const group = trigger.closest('.nav-group');
+  group.addEventListener('pointerenter', (event) => {
+    if (!compactNavigation.matches && event.pointerType === 'mouse') openDropdown(trigger);
+  });
+  group.addEventListener('pointerleave', (event) => {
+    if (!compactNavigation.matches && event.pointerType === 'mouse') {
+      hoverCloseTimer = setTimeout(() => {
+        if (!group.contains(document.activeElement)) closeDropdowns();
+      }, 180);
+    }
+  });
 });
 navigation.addEventListener('click', (event) => {
-  if (event.target.closest('a')) {
-    menuButton.setAttribute('aria-expanded', 'false');
-    navigation.classList.remove('open');
-  }
+  if (event.target.closest('a')) setMenuOpen(false);
 });
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
-    menuButton.setAttribute('aria-expanded', 'false');
-    navigation.classList.remove('open');
+  if (event.key !== 'Escape') return;
+  const expanded = navTriggers.find((trigger) => trigger.getAttribute('aria-expanded') === 'true');
+  if (expanded) {
+    closeDropdowns();
+    expanded.focus();
+  } else if (menuButton.getAttribute('aria-expanded') === 'true') {
+    setMenuOpen(false);
     menuButton.focus();
   }
 });
-document.querySelector('#play-video').addEventListener('click', (event) => {
-  const player = document.querySelector('#video-player');
-  const frame = document.createElement('iframe');
-  frame.src = 'https://fast.wistia.net/embed/iframe/cfwf2ryb20?autoPlay=true';
-  frame.title = 'Meet David Fear, owner of Beautiful Blinds and Shades';
-  frame.allow = 'autoplay; fullscreen; picture-in-picture';
-  frame.allowFullscreen = true;
-  player.append(frame);
-  player.hidden = false;
-  event.currentTarget.hidden = true;
-  frame.focus();
+document.addEventListener('click', (event) => {
+  if (!event.target.closest('.header')) setMenuOpen(false);
 });
+document.addEventListener('focusin', (event) => {
+  if (!event.target.closest('.header')) setMenuOpen(false);
+  else if (!event.target.closest('.nav-group')) closeDropdowns();
+  else if (!compactNavigation.matches) {
+    const currentGroup = event.target.closest('.nav-group');
+    const otherExpanded = navTriggers.some((trigger) => trigger.getAttribute('aria-expanded') === 'true' && trigger.closest('.nav-group') !== currentGroup);
+    if (otherExpanded) closeDropdowns();
+  }
+});
+compactNavigation.addEventListener('change', () => setMenuOpen(false));
+const videoButton = document.querySelector('#play-video');
+const introductionVideo = document.querySelector('#video-player');
+const videoError = document.querySelector('.video-error');
+videoButton.addEventListener('click', () => {
+  introductionVideo.hidden = false;
+  videoButton.hidden = true;
+  introductionVideo.focus({preventScroll: true});
+  introductionVideo.play().catch(() => {
+    // Native controls remain available if the browser pauses automatic playback.
+    if (introductionVideo.error) videoError.hidden = false;
+  });
+});
+introductionVideo.addEventListener('error', () => { videoError.hidden = false; });
+introductionVideo.addEventListener('playing', () => { videoError.hidden = true; });
 
 // The review build intentionally has no lead-delivery endpoint. Connect a
 // server-side handler for this client's CRM before enabling production delivery.

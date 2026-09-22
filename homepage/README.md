@@ -8,7 +8,7 @@ Source files:
 
 - `dist/index.html`: homepage and metadata
 - `dist/styles.css`: responsive styling
-- `dist/script.js`: mobile menu, click-to-load video, review carousel, and native form validation
+- `dist/script.js`: responsive dropdown navigation, click-to-play video, review carousel, and native form validation
 - `dist/assets/`: original client assets and locally hosted Manrope heading font
 - `SEO_NOTES.md`: ranking baseline, keyword ownership, and launch requirements
 - `research/`: local source evidence and the Semrush baseline, excluded from the hosted artifact
@@ -24,3 +24,9 @@ The consultation card is a native four-field form modeled on the Naples project.
 The Google carousel contains five client-supplied reviews and shows four cards on desktop, with responsive layouts and manual navigation. Long reviews expand in place.
 
 The video thumbnail is an authentic frame from the opening second (00:00.500) of David’s Wistia introduction, media ID `cfwf2ryb20`. The name and role appear below the video as a small black caption. The process-section background and the four product-category images are generated illustrations, not documented client installations.
+
+## Responsive navigation and video playback
+
+The full-width header contains custom Window Treatments and Services dropdowns on desktop. At 1000px and below it switches to a call button and expandable navigation menu. Mobile menu sections have large touch targets, close on selection or Escape, and scroll independently on short screens. Centered mobile content uses shared widths and alignment. Layout checks cover widths from 320px to 1920px.
+
+The introduction uses native HTML video controls with inline mobile playback and `preload="none"`. It streams the original 720px-wide MP4 from the client’s Wistia delivery CDN after a user clicks Play, avoiding the blank third-party iframe. The existing video thumbnail and caption remain in place. A direct video link appears if playback fails.
