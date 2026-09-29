@@ -1,0 +1,23 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"data\":\"Keyword;Position;Url;Timestamp\\ncustom blinds installation cummingsville;5;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-hicksville-indiana;1789366930\\nroman shade installation cummingsville;23;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-hicksville-indiana;1785843768\\ncustom blinds installation thompsonville;28;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-hicksville-indiana;1788921976\\nroman shade installation cummingsville;32;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-hicksville-indiana;1785843768\\n\",\"metadata\":{\"format\":\"csv\",\"pagination\":{\"limit\":30,\"sort\":\"position_asc\"},\"url\":\"https://www.semrush.com/analytics/organic/positions/?db=us\\u0026display_limit=30\\u0026display_sort=position_asc\\u0026export_columns=keyword%2Cposition%2Curl%2Ctimestamp\\u0026q=https%3A%2F%2Fwww.beautifulblindsandshades.com%2Fbeautiful-blinds-shades-service-areas%2Fwindow-treatments-hicksville-indiana\",\"usage\":{\"api_units\":340}}}"
+    }
+  ],
+  "structuredContent": {
+    "data": "Keyword;Position;Url;Timestamp\ncustom blinds installation cummingsville;5;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-hicksville-indiana;1789366930\nroman shade installation cummingsville;23;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-hicksville-indiana;1785843768\ncustom blinds installation thompsonville;28;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-hicksville-indiana;1788921976\nroman shade installation cummingsville;32;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-hicksville-indiana;1785843768\n",
+    "metadata": {
+      "format": "csv",
+      "pagination": {
+        "limit": 30,
+        "sort": "position_asc"
+      },
+      "url": "https://www.semrush.com/analytics/organic/positions/?db=us&display_limit=30&display_sort=position_asc&export_columns=keyword%2Cposition%2Curl%2Ctimestamp&q=https%3A%2F%2Fwww.beautifulblindsandshades.com%2Fbeautiful-blinds-shades-service-areas%2Fwindow-treatments-hicksville-indiana",
+      "usage": {
+        "api_units": 340
+      }
+    }
+  },
+  "isError": false
+}

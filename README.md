@@ -1,8 +1,10 @@
 # Beautiful Blinds & Shades
 
-Homepage rebuild for Beautiful Blinds & Shades in Fort Wayne, Indiana.
+Website rebuild for Beautiful Blinds & Shades in Fort Wayne, Indiana.
 
-The website is plain HTML, CSS, and JavaScript. No build step is required.
+Full-site SEO research and page-writing plan: [September 25 audit](seo/2026-09-25/README.md). Read the relevant page brief before building additional pages.
+
+The website is plain HTML, CSS, and JavaScript. The committed output can be served directly. After editing interior-page templates or shared homepage components, regenerate them with `python3 homepage/build_pages.py`.
 
 ## Preview locally
 

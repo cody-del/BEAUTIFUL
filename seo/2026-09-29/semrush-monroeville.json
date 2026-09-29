@@ -1,0 +1,18 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "McpServerError: {\"code\":\"internal\",\"message\":\"get url_organic: ERROR 50 :: NOTHING FOUND\\nNo data found for this request. Verify your parameters are correct. If parameters are valid, try a different date range or target.\\nnot found\",\"retryable\":false,\"trace_id\":\"27dd6ee164203b2c02ef0e94b5c2c30d\"}"
+    }
+  ],
+  "structuredContent": {
+    "error": "McpServerError: {\"code\":\"internal\",\"message\":\"get url_organic: ERROR 50 :: NOTHING FOUND\\nNo data found for this request. Verify your parameters are correct. If parameters are valid, try a different date range or target.\\nnot found\",\"retryable\":false,\"trace_id\":\"27dd6ee164203b2c02ef0e94b5c2c30d\"}",
+    "error_code": "UNAVAILABLE",
+    "error_data": {
+      "type": "json_rpc_error",
+      "code": -32603,
+      "message": "{\"code\":\"internal\",\"message\":\"get url_organic: ERROR 50 :: NOTHING FOUND\\nNo data found for this request. Verify your parameters are correct. If parameters are valid, try a different date range or target.\\nnot found\",\"retryable\":false,\"trace_id\":\"27dd6ee164203b2c02ef0e94b5c2c30d\"}"
+    }
+  },
+  "isError": true
+}

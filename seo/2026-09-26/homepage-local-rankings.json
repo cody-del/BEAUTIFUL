@@ -1,0 +1,17 @@
+{
+  "retrieved": "2026-09-26",
+  "report": "resource_organic",
+  "database": "us",
+  "data": "Keyword;Position;Previous Position;Search Volume;Url;Timestamp\nblinds fort wayne indiana;3;3;70;https://www.beautifulblindsandshades.com/;1787337945\nwindow treatments fort wayne;5;5;90;https://www.beautifulblindsandshades.com/;1787259820\nfort wayne window treatments;5;5;90;https://www.beautifulblindsandshades.com/;1787686374\nwindow treatments fort wayne indiana;5;5;90;https://www.beautifulblindsandshades.com/;1788634706\nbest blinds fort wayne indiana;7;7;90;https://www.beautifulblindsandshades.com/;1786501003\nwindow blinds fort wayne;9;9;70;https://www.beautifulblindsandshades.com/;1789478912\nbest blinds fort wayne;10;10;110;https://www.beautifulblindsandshades.com/;1786409852\nblinds fort wayne;10;10;140;https://www.beautifulblindsandshades.com/;1786670134\nzieglers fort wayne;13;13;50;https://www.beautifulblindsandshades.com/;1787307412\nbudget blinds fort wayne;35;35;50;https://www.beautifulblindsandshades.com/;1788747473\n",
+  "metadata": {
+    "format": "csv",
+    "pagination": {
+      "limit": 30,
+      "sort": "position_asc"
+    },
+    "url": "https://www.semrush.com/analytics/organic/positions/?db=us&display_limit=30&display_sort=position_asc&export_columns=keyword%2Cposition%2Cprevious_position%2Cvolume%2Curl%2Ctimestamp&q=https%3A%2F%2Fwww.beautifulblindsandshades.com%2F",
+    "usage": {
+      "api_units": 600
+    }
+  }
+}

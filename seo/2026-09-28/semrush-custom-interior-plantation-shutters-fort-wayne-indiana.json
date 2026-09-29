@@ -1,0 +1,18 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "McpServerError: {\"code\":\"internal\",\"message\":\"get subfolder_organic: ERROR 50 :: NOTHING FOUND\\nNo data found for this request. Verify your parameters are correct. If parameters are valid, try a different date range or target.\\nnot found\",\"retryable\":false,\"trace_id\":\"c104c54b93ea5926277303aa0f12a94f\"}"
+    }
+  ],
+  "structuredContent": {
+    "error": "McpServerError: {\"code\":\"internal\",\"message\":\"get subfolder_organic: ERROR 50 :: NOTHING FOUND\\nNo data found for this request. Verify your parameters are correct. If parameters are valid, try a different date range or target.\\nnot found\",\"retryable\":false,\"trace_id\":\"c104c54b93ea5926277303aa0f12a94f\"}",
+    "error_code": "UNAVAILABLE",
+    "error_data": {
+      "type": "json_rpc_error",
+      "code": -32603,
+      "message": "{\"code\":\"internal\",\"message\":\"get subfolder_organic: ERROR 50 :: NOTHING FOUND\\nNo data found for this request. Verify your parameters are correct. If parameters are valid, try a different date range or target.\\nnot found\",\"retryable\":false,\"trace_id\":\"c104c54b93ea5926277303aa0f12a94f\"}"
+    }
+  },
+  "isError": true
+}

@@ -1,0 +1,23 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"data\":\"Keyword;Position;Url;Timestamp\\nbeautiful blinds;44;https://www.beautifulblindsandshades.com/location/beautiful-blinds-and-shades-service-area;1789512030\\nblinds fort wayne indiana;78;https://www.beautifulblindsandshades.com/location/beautiful-blinds-and-shades-service-area;1787337945\\nbest blinds fort wayne;78;https://www.beautifulblindsandshades.com/location/beautiful-blinds-and-shades-service-area;1786409852\\nblinds fort wayne;80;https://www.beautifulblindsandshades.com/location/beautiful-blinds-and-shades-service-area;1786670134\\nwindow blinds fort wayne;82;https://www.beautifulblindsandshades.com/location/beautiful-blinds-and-shades-service-area;1789478912\\nbeautiful blinds and designs;90;https://www.beautifulblindsandshades.com/location/beautiful-blinds-and-shades-service-area;1786600418\\nwindow treatments fort wayne indiana;91;https://www.beautifulblindsandshades.com/location/beautiful-blinds-and-shades-service-area;1788634706\\n\",\"metadata\":{\"format\":\"csv\",\"pagination\":{\"limit\":30,\"sort\":\"position_asc\"},\"url\":\"https://www.semrush.com/analytics/organic/positions/?db=us\\u0026display_limit=30\\u0026display_sort=position_asc\\u0026export_columns=keyword%2Cposition%2Curl%2Ctimestamp\\u0026q=https%3A%2F%2Fwww.beautifulblindsandshades.com%2Flocation%2Fbeautiful-blinds-and-shades-service-area\",\"usage\":{\"api_units\":130}}}"
+    }
+  ],
+  "structuredContent": {
+    "data": "Keyword;Position;Url;Timestamp\nbeautiful blinds;44;https://www.beautifulblindsandshades.com/location/beautiful-blinds-and-shades-service-area;1789512030\nblinds fort wayne indiana;78;https://www.beautifulblindsandshades.com/location/beautiful-blinds-and-shades-service-area;1787337945\nbest blinds fort wayne;78;https://www.beautifulblindsandshades.com/location/beautiful-blinds-and-shades-service-area;1786409852\nblinds fort wayne;80;https://www.beautifulblindsandshades.com/location/beautiful-blinds-and-shades-service-area;1786670134\nwindow blinds fort wayne;82;https://www.beautifulblindsandshades.com/location/beautiful-blinds-and-shades-service-area;1789478912\nbeautiful blinds and designs;90;https://www.beautifulblindsandshades.com/location/beautiful-blinds-and-shades-service-area;1786600418\nwindow treatments fort wayne indiana;91;https://www.beautifulblindsandshades.com/location/beautiful-blinds-and-shades-service-area;1788634706\n",
+    "metadata": {
+      "format": "csv",
+      "pagination": {
+        "limit": 30,
+        "sort": "position_asc"
+      },
+      "url": "https://www.semrush.com/analytics/organic/positions/?db=us&display_limit=30&display_sort=position_asc&export_columns=keyword%2Cposition%2Curl%2Ctimestamp&q=https%3A%2F%2Fwww.beautifulblindsandshades.com%2Flocation%2Fbeautiful-blinds-and-shades-service-area",
+      "usage": {
+        "api_units": 130
+      }
+    }
+  },
+  "isError": false
+}

@@ -1,0 +1,17 @@
+{
+  "crawled_urls": 122,
+  "unique_live_pages": 55,
+  "sitemap_urls": 53,
+  "legacy_404s": 64,
+  "ranking_rows": 501,
+  "unique_keywords": 350,
+  "overlap_keywords": 15,
+  "indexable_candidates": 54,
+  "missing_canonicals": 54,
+  "missing_h1": 4,
+  "multiple_h1": 9,
+  "backlinked_404s": 22,
+  "backlinks_to_404s": 560,
+  "proposed_redirects": 55,
+  "claims_flagged": 111
+}

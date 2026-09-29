@@ -1,0 +1,76 @@
+/* Shared product-page design. Product-specific comparisons remain in category.css.
+   Apply this stylesheet only to blinds, shades, shutters, and outdoor shades. */
+.product-page{--product-rule:#d4e0e8;--product-gap:64px}
+.product-page .section{padding-block:80px}
+.product-page main h2{font-size:clamp(30px,3vw,40px)}
+.product-page .section-heading{max-width:810px;margin-bottom:38px}
+.product-page .section-heading>p{font-size:17px;line-height:1.7}
+.product-page .rooms-heading{gap:var(--product-gap)}
+.product-page :is(.product-card,.category-feature-image,.shutter-detail-photo img){border-radius:8px}
+.product-page .product-card{box-shadow:none;transition:border-color .18s,box-shadow .18s}
+.product-page .product-card:hover{transform:none;border-color:#87abc4;box-shadow:0 5px 18px #1f3d5510}
+.product-page .product-body{padding:24px}
+.product-page .product-body h3{font-size:23px}
+.product-page .product-body p{font-size:16px;line-height:1.7}
+.product-page .selection-help:hover{box-shadow:none}
+
+/* Open guidance columns replace another layer of white cards. */
+.product-page .room-grid{background:none;border:0;border-radius:0;padding:0;gap:30px}
+.product-page .room-grid article{padding:24px 0 0;border:0;border-top:1px solid var(--product-rule)}
+.product-page .room-grid h3{font-size:22px;max-width:none}
+.product-page .blinds-convenience{margin-top:36px;border-radius:8px;padding:32px;gap:32px}
+.product-page .blinds-convenience h3{font-size:26px}
+.product-page .blinds-convenience .button{max-width:300px;justify-self:center}
+.product-page .category-inline-cta{margin-top:32px}
+
+/* Same plain installation treatment as the homepage. */
+.product-page .product-installation{background:#fff;border-block:1px solid #e1e8ed}
+.product-page .installation-layout{gap:var(--product-gap);grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}
+.product-page .installation-copy h2{font-size:clamp(30px,3vw,40px)}
+.product-page .installation-intro{font-size:17px;max-width:460px}
+.product-page .installation-steps li{padding:25px 0 25px 45px;border-color:var(--product-rule)}
+.product-page .installation-steps li:first-child{padding-top:0;border-top:0}
+.product-page .installation-steps li:last-child{padding-bottom:0}
+.product-page .installation-steps li:before{content:counter(installation);top:28px;font-size:16px}
+.product-page .installation-steps li:first-child:before{top:3px}
+.product-page .installation-steps h3{font-size:23px}
+.product-page .installation-steps p{font-size:16px;margin-top:12px}
+
+/* Outdoor systems are explained as rows, distinct from shade fabrics/materials. */
+.outdoor-option-list{border-top:1px solid #c5d8e5}
+.outdoor-option-list article{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:var(--product-gap);padding:28px 0;border-bottom:1px solid #c5d8e5}
+.outdoor-option-list h3{font-size:23px}
+.outdoor-option-list p{color:var(--muted);font-size:16px;max-width:720px}
+.product-page .service-details-layout{gap:var(--product-gap)}
+.product-page .service-weather{padding-bottom:80px}
+.product-page .service-weather .blinds-convenience{margin-top:0}
+
+/* Consistent local coverage and closing consultation sections. */
+.product-page .blinds-city-list{max-width:690px;margin:24px auto 0;border-color:var(--product-rule)}
+.product-page .blinds-city-list summary{font-size:14px;min-height:44px;line-height:1.7;padding:10px}
+.product-page .product-final{background:#204762;text-align:center}
+.product-page .product-final h2{max-width:760px;margin-inline:auto}
+.product-page .product-final p{max-width:620px;margin:23px auto 28px;color:#e1e7ec;font-size:18px}
+.product-page .product-final .actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:500px;margin-inline:auto;gap:14px}
+.product-page .product-final .button{min-width:0;width:100%}
+@media(max-width:1000px){.product-page{--product-gap:38px}}
+@media(max-width:780px){
+ .product-page .section{padding-block:60px}
+ .product-page .section-heading{margin-bottom:30px}
+ .product-page .installation-layout{grid-template-columns:1fr;gap:36px}
+ .product-page .installation-copy h2,.product-page .installation-intro{margin-inline:auto;text-align:center}
+ .product-page .installation-copy h2 br{display:none}
+ .product-page .installation-steps li{padding-left:35px}
+ .product-page .installation-steps h3{font-size:21px}
+ .product-page .room-grid{gap:0}
+ .product-page .room-grid article{padding:24px 0}
+ .product-page .blinds-convenience{padding:28px 24px;gap:24px}
+ .outdoor-option-list article{grid-template-columns:1fr;gap:12px;padding:24px 0}
+ .outdoor-option-list h3{font-size:21px}
+ .product-page .service-weather{padding-bottom:60px}
+ .product-page .product-final p{font-size:17px}
+}
+@media(max-width:540px){
+ .product-page .product-final .actions{grid-template-columns:1fr;max-width:300px;gap:10px}
+ .product-page .product-body{padding:24px}
+}

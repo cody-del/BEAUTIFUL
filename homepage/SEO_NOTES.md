@@ -1,5 +1,7 @@
 # Beautiful Blinds & Shades homepage rebuild
 
+**Full-site research update, September 25, 2026:** Before building additional pages, use [the full SEO audit and migration plan](../seo/2026-09-25/README.md), including its 55 page briefs and 122-URL preservation map. It supersedes the limited September 22 ranking/audit baseline below. No live changes were made by that audit.
+
 Prepared September 22, 2026. This is a design review, not a production replacement. No live pages, URLs, redirects, DNS, or Semrush settings have been changed.
 
 ## Design direction
@@ -33,6 +35,7 @@ The existing Semrush Site Audit is dated July 27, 2026, not today: 60 crawled pa
 - Preserve the root homepage URL and production canonical, normalized to the existing preferred `https://www.beautifulblindsandshades.com/` host.
 - Keep the homepage's primary commercial intent: custom window treatments in Fort Wayne, with blinds, shades, and shutters explicitly named.
 - Use one clear H1 and crawlable HTML for all primary copy, product links, FAQs, and contact information.
+- September 27 user decision: retain the live homepage's exact primary H1, “Beautiful Window Treatments Fort Wayne Indiana,” for the initial migration. Name custom blinds, shades, and shutters in the supporting hero sentence. Do not replace this heading for stylistic reasons; any later change needs a separately justified SEO decision.
 - Preserve exact URLs for linked product, repair, cleaning, outdoor-shade, motorization, and service-area pages. In this separate review site, those links open the current client website.
 - Keep product sections concise and give each product its own destination, avoiding duplicate full product-page content on the homepage.
 - Use a simpler LocalBusiness JSON-LD record based on the original business information. Remove the old mixed Offer/Product catalog and stale image reference from the new homepage. No aggregate-rating or self-serving review rich-result markup is included.

@@ -1,0 +1,23 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"data\":\"Keyword;Position;Url;Timestamp\\nbeautiful blinds and designs;43;https://www.beautifulblindsandshades.com/services/window-treatments;1786600418\\nbest blinds fort wayne indiana;53;https://www.beautifulblindsandshades.com/services/window-treatments;1786501003\\nbest blinds fort wayne;58;https://www.beautifulblindsandshades.com/services/window-treatments;1786409852\\nblinds fort wayne indiana;59;https://www.beautifulblindsandshades.com/services/window-treatments;1787337945\\nblinds fort wayne;60;https://www.beautifulblindsandshades.com/services/window-treatments;1786670134\\nbeautiful blinds;64;https://www.beautifulblindsandshades.com/services/window-treatments;1789512030\\nbest blinds fort wayne;73;https://www.beautifulblindsandshades.com/services/window-treatments;1786409852\\nwindow treatments fort wayne indiana;73;https://www.beautifulblindsandshades.com/services/window-treatments;1788634706\\nwindow blinds fort wayne;79;https://www.beautifulblindsandshades.com/services/window-treatments;1789478912\\nfort wayne window treatments;94;https://www.beautifulblindsandshades.com/services/window-treatments;1787686374\\n\",\"metadata\":{\"format\":\"csv\",\"pagination\":{\"limit\":50,\"sort\":\"position_asc\"},\"url\":\"https://www.semrush.com/analytics/organic/positions/?db=us\\u0026display_limit=50\\u0026display_sort=position_asc\\u0026export_columns=keyword%2Cposition%2Curl%2Ctimestamp\\u0026q=https%3A%2F%2Fwww.beautifulblindsandshades.com%2Fservices%2Fwindow-treatments\",\"usage\":{\"api_units\":100}}}"
+    }
+  ],
+  "structuredContent": {
+    "data": "Keyword;Position;Url;Timestamp\nbeautiful blinds and designs;43;https://www.beautifulblindsandshades.com/services/window-treatments;1786600418\nbest blinds fort wayne indiana;53;https://www.beautifulblindsandshades.com/services/window-treatments;1786501003\nbest blinds fort wayne;58;https://www.beautifulblindsandshades.com/services/window-treatments;1786409852\nblinds fort wayne indiana;59;https://www.beautifulblindsandshades.com/services/window-treatments;1787337945\nblinds fort wayne;60;https://www.beautifulblindsandshades.com/services/window-treatments;1786670134\nbeautiful blinds;64;https://www.beautifulblindsandshades.com/services/window-treatments;1789512030\nbest blinds fort wayne;73;https://www.beautifulblindsandshades.com/services/window-treatments;1786409852\nwindow treatments fort wayne indiana;73;https://www.beautifulblindsandshades.com/services/window-treatments;1788634706\nwindow blinds fort wayne;79;https://www.beautifulblindsandshades.com/services/window-treatments;1789478912\nfort wayne window treatments;94;https://www.beautifulblindsandshades.com/services/window-treatments;1787686374\n",
+    "metadata": {
+      "format": "csv",
+      "pagination": {
+        "limit": 50,
+        "sort": "position_asc"
+      },
+      "url": "https://www.semrush.com/analytics/organic/positions/?db=us&display_limit=50&display_sort=position_asc&export_columns=keyword%2Cposition%2Curl%2Ctimestamp&q=https%3A%2F%2Fwww.beautifulblindsandshades.com%2Fservices%2Fwindow-treatments",
+      "usage": {
+        "api_units": 100
+      }
+    }
+  },
+  "isError": false
+}

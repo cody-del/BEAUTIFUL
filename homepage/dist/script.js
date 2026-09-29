@@ -82,7 +82,7 @@ compactNavigation.addEventListener('change', () => setMenuOpen(false));
 const videoButton = document.querySelector('#play-video');
 const introductionVideo = document.querySelector('#video-player');
 const videoError = document.querySelector('.video-error');
-videoButton.addEventListener('click', () => {
+videoButton?.addEventListener('click', () => {
   introductionVideo.hidden = false;
   videoButton.hidden = true;
   introductionVideo.focus({preventScroll: true});
@@ -91,13 +91,13 @@ videoButton.addEventListener('click', () => {
     if (introductionVideo.error) videoError.hidden = false;
   });
 });
-introductionVideo.addEventListener('error', () => { videoError.hidden = false; });
-introductionVideo.addEventListener('playing', () => { videoError.hidden = true; });
+introductionVideo?.addEventListener('error', () => { videoError.hidden = false; });
+introductionVideo?.addEventListener('playing', () => { videoError.hidden = true; });
 
 // The review build intentionally has no lead-delivery endpoint. Connect a
 // server-side handler for this client's CRM before enabling production delivery.
 const consultationForm = document.querySelector('#consultation-form');
-const consultationFields = [...consultationForm.querySelectorAll('input[required]')];
+const consultationFields = [...(consultationForm?.querySelectorAll('input[required]') || [])];
 const formStatus = document.querySelector('#form-status');
 
 function validateConsultationField(input) {
@@ -127,7 +127,7 @@ consultationFields.forEach((input) => {
   });
 });
 
-consultationForm.addEventListener('submit', (event) => {
+consultationForm?.addEventListener('submit', (event) => {
   event.preventDefault();
   formStatus.hidden = true;
   const valid = consultationFields.map(validateConsultationField).every(Boolean);
@@ -139,12 +139,13 @@ consultationForm.addEventListener('submit', (event) => {
   formStatus.innerHTML = 'This preview does not send requests yet. Your details have not been sent. To book a consultation, call <a href="tel:+12602226467">(260) 222-6467</a>.';
   formStatus.hidden = false;
 });
-consultationForm.querySelector('button[type="submit"]').disabled = false;
+if (consultationForm) consultationForm.querySelector('button[type="submit"]').disabled = false;
 
 // Static review text remains readable without JavaScript. Enhance with compact
 // excerpts and manual navigation; reviews never advance while someone is reading.
 const testimonials = document.querySelector('.testimonials');
 const reviewTrack = document.querySelector('.testimonial-track');
+if (testimonials && reviewTrack) {
 const reviewCards = [...reviewTrack.children];
 const previousReviews = document.querySelector('.testimonial-prev');
 const nextReviews = document.querySelector('.testimonial-next');
@@ -191,3 +192,5 @@ reviewCards.forEach((card) => {
 });
 new ResizeObserver(updateReviewControls).observe(reviewTrack);
 updateReviewControls();
+
+}

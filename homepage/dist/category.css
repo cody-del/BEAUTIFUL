@@ -1,0 +1,181 @@
+/* Category-specific styling. Shared navigation, reviews, and typography live in styles.css. */
+.category-page .section-heading>.eyebrow{font-size:13px;color:#4c6678;margin:0 auto 20px}
+.category-page .category-hero .hero-inner{min-height:675px;padding-top:154px;padding-bottom:54px}
+.category-hero .hero-photo{object-position:center 45%}
+.category-hero:after{background:linear-gradient(180deg,#16252bc4,#1729329c 50%,#14262fe8)}
+.category-breadcrumb{display:flex;position:static;justify-content:center;flex-direction:row;gap:12px;padding:0;margin:0 0 25px;background:none;box-shadow:none;border-radius:0;color:#e6eef1;font-size:12px;font-weight:400}
+.category-breadcrumb a{text-decoration:underline;text-underline-offset:4px}
+.category-breadcrumb a:hover{color:#fff}
+.category-page .category-hero h1{max-width:950px}
+.category-page .hero-description{max-width:740px}
+.blinds-selection{background:#f3f5f7}
+.blinds-selection .product-image{aspect-ratio:1.3}
+.blinds-selection .product-body h3{font-size:23px}
+.blinds-selection .product-body{padding:25px 21px}
+.blinds-materials{background:#fff}
+.material-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:90px;align-items:center}
+.material-intro>p:not(.eyebrow){margin-top:24px;color:var(--muted);font-size:17px}
+.material-intro .button{margin-top:28px}
+.material-intro .material-note{font-size:12px!important;margin-top:12px!important}
+.material-options{display:grid;gap:18px}
+.material-options article{padding:25px;border:1px solid #dee7ed;border-radius:13px;background:#f7f9fa}
+.material-options p{margin-top:11px;font-size:16px;line-height:1.7;color:var(--muted)}
+.blinds-rooms{background:#edf5fb}
+.rooms-heading{display:grid;grid-template-columns:1fr 1.1fr;gap:65px;align-items:center;margin-bottom:36px}
+.rooms-heading h2{max-width:420px}
+.rooms-heading>p{font-size:17px;color:var(--muted);margin:0}
+.room-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:#fff;border:1px solid #d9e5ed;border-radius:12px;padding:32px 0}
+.room-grid article{padding:0 30px}
+.room-grid article+article{border-left:1px solid #d9e5ed}
+.room-grid h3{font-size:22px;max-width:240px}
+.room-grid p{color:var(--muted);margin-top:15px;font-size:16px}
+.room-grid a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.blinds-convenience{display:grid;grid-template-columns:minmax(0,1fr) 265px;gap:45px;align-items:center;margin-top:24px;padding:34px 38px;background:#204762;border-radius:12px;color:#fff}
+.blinds-convenience h3{font-size:26px}
+.blinds-convenience p{margin-top:14px;color:#edf3f7;max-width:730px;font-size:16px}
+.blinds-convenience .controls-note{font-size:13px;color:#d1e2ed;margin-top:12px}
+.blinds-installation{background:#fff}
+.installation-layout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:75px;align-items:start}
+.installation-copy h2{font-size:clamp(30px,3vw,40px);max-width:590px}
+.installation-intro{font-size:17px;color:var(--muted);margin-top:20px}
+.installation-steps{list-style:none;counter-reset:installation;margin:0;padding:0}
+.installation-steps li{counter-increment:installation;position:relative;padding:22px 0 22px 44px;border-top:1px solid #d9e5ed}
+.installation-steps li:before{content:counter(installation,decimal-leading-zero);position:absolute;left:0;top:24px;color:var(--link);font-size:14px;font-weight:700}
+.installation-steps h3{font-size:21px}
+.installation-steps p{font-size:15px;line-height:1.7;color:var(--muted);margin-top:10px}
+.installation-cta{display:flex;align-items:flex-start;flex-direction:column;gap:16px;margin-top:28px}
+.installation-cta .text-link{font-size:14px}
+.category-page .faq .text-link{margin-top:22px}
+.category-page .faq details .text-link{margin-top:0;font-size:inherit;font-weight:400}
+.blinds-local{text-align:center;background:#fff}
+.local-copy{max-width:850px}
+.local-copy>p:not(.eyebrow){color:var(--muted);font-size:18px;margin:25px auto 0;max-width:740px}
+.blinds-city-list{border-top:1px solid var(--line);padding-top:22px;margin:25px auto 0;max-width:690px;font-size:14px;color:var(--muted)}
+.blinds-city-list summary{display:list-item;width:fit-content;margin:auto;cursor:pointer;color:var(--link);font-weight:700;padding:8px}
+.blinds-city-list p{margin:15px 0}
+.blinds-final{text-align:center;background:linear-gradient(110deg,#162a39f5,#162d3cdb),url('/assets/blinds-natural-v2.jpg') center/cover;color:#fff}
+.blinds-final .eyebrow{color:var(--green)}
+.blinds-final p:not(.eyebrow){max-width:620px;margin:23px auto 29px;color:#e1e7ec;font-size:18px}
+.blinds-final .actions .button{min-width:245px}
+.final-hours{display:block;margin-top:23px;color:#dce5e9;font-size:13px}
+@media(max-width:1150px){.material-layout{gap:45px}.room-grid article{padding-inline:23px}.installation-layout{gap:40px}.rooms-heading{gap:40px}.blinds-selection .product-image{aspect-ratio:1.6}}
+@media(max-width:1000px){.category-page .category-hero .hero-inner{padding-top:124px;min-height:630px}}
+@media(max-width:780px){
+  .category-page .category-hero .hero-inner{min-height:0;padding-top:113px;padding-bottom:48px}
+  .category-breadcrumb{margin-bottom:24px}
+  .material-layout{grid-template-columns:1fr;gap:33px}
+  .material-intro{text-align:center;max-width:600px;margin:auto}
+  .material-intro h2 br{display:none}
+  .material-options{max-width:600px;margin:auto}
+  .material-options article{text-align:left}
+  .rooms-heading{grid-template-columns:1fr;gap:20px;text-align:center;max-width:600px;margin:0 auto 30px}
+  .rooms-heading h2{max-width:none}
+  .room-grid{grid-template-columns:1fr;max-width:600px;margin:auto;padding:0 26px;text-align:center}
+  .room-grid article{padding:26px 0}
+  .room-grid article+article{border-left:0;border-top:1px solid #d9e5ed}
+  .room-grid h3{max-width:none}
+  .blinds-convenience{grid-template-columns:1fr;gap:24px;text-align:center;padding:28px;max-width:600px;margin:22px auto 0}
+  .blinds-convenience p{margin-inline:auto}
+  .blinds-convenience .button{justify-self:center;width:100%;max-width:300px}
+  .installation-layout{grid-template-columns:1fr;gap:32px;max-width:600px}
+  .installation-copy{grid-row:1}
+  .installation-copy h2,.installation-intro{text-align:center}
+  .installation-cta{align-items:center;gap:18px;text-align:center}
+  .blinds-local h2 br{display:none}
+  .local-copy>p:not(.eyebrow){font-size:17px}
+}
+@media(max-width:540px){
+  .category-page .category-hero h1{font-size:clamp(34px,8.8vw,44px)}
+  .blinds-selection .product-grid{gap:23px}
+  .material-options article{padding:22px}
+  .material-options h3{font-size:21px}
+  .material-options p{font-size:15px}
+  .blinds-final .actions{display:grid;gap:13px;max-width:350px;margin:auto}
+  .blinds-final .actions .button{width:100%;min-width:0}
+}
+
+/* Shade and shutter categories share the approved category layout. */
+.category-selection{background:#f3f5f7}
+.category-selection .product-image{aspect-ratio:1.4}
+.category-selection .product-body{padding:24px 22px}
+.category-selection .product-body h3{font-size:23px}
+.category-selection .product-body p{font-size:16px}
+.shutter-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}
+.shutter-product-grid .product-image{aspect-ratio:1.75}
+.shutter-product-grid .product-body{padding:28px 30px}
+.selection-help{padding:30px 24px;display:flex;flex-direction:column;justify-content:center;gap:28px;background:#204762;color:#fff;border-color:#204762;box-shadow:none}
+.selection-help h3{font-size:25px}
+.selection-help p{font-size:16px;color:#e3edf4;margin-top:20px}
+.selection-help:hover{transform:none;box-shadow:none}
+.category-selection-note{text-align:center;max-width:770px;margin:28px auto 0;font-size:15px;color:var(--muted)}
+.category-guidance{background:#edf5fb}
+.category-feature-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:65px;align-items:center}
+.category-feature-image{width:100%;height:100%;max-height:620px;min-height:420px;object-fit:cover;border-radius:12px}
+.fit-topics article{margin-top:25px}
+.fit-topics h3{font-size:21px}
+.fit-topics p{margin-top:10px;font-size:16px;color:var(--muted)}
+.fit-topics a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.category-installation{background:#f3f7fa}
+.category-inline-cta{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:30px}
+.category-inline-cta span{font-size:14px;color:var(--muted);max-width:300px}
+.local-area-link{margin-top:22px}
+.category-final{text-align:center;background:#204762;color:#fff}
+.category-final p{max-width:620px;margin:23px auto 28px;color:#e1e7ec;font-size:18px}
+@media(max-width:1000px){.category-feature-layout{gap:35px}.category-selection .product-body{padding:23px 20px}}
+@media(max-width:780px){
+ .category-feature-layout{grid-template-columns:1fr;gap:32px;max-width:600px}
+ .category-feature-image{min-height:0;max-height:360px;aspect-ratio:1.4;order:2}
+ .category-feature-layout>div{text-align:center}
+ .category-inline-cta{flex-direction:column;text-align:center;gap:15px}
+ .selection-help{text-align:center;padding:28px 24px}
+ .category-final p{font-size:17px}
+}
+@media(max-width:540px){
+ .shutter-product-grid{grid-template-columns:1fr;gap:24px}
+ .category-final .actions{flex-direction:column;max-width:300px;margin:auto}
+ .category-final .button{width:100%}
+ .category-inline-cta .button{width:100%;max-width:300px}
+}
+
+/* Product-specific buying guidance with fewer boxed sections. */
+.material-comparison{gap:0;width:100%}
+.material-comparison article{padding:25px 0;border:0;border-bottom:1px solid #d4e0e8;border-radius:0;background:none}
+.material-comparison article:first-child{padding-top:0}
+.material-comparison article:last-child{padding-bottom:0;border-bottom:0}
+.material-comparison .material-consideration{font-size:14px;margin-top:12px}
+.material-consideration strong{color:var(--ink)}
+.light-comparison{width:100%;border-collapse:collapse;text-align:left;font-size:16px;background:#fff}
+.light-comparison th,.light-comparison td{padding:24px 26px;vertical-align:top;border-bottom:1px solid #d4e0e8}
+.light-comparison thead th{padding-block:16px;background:#204762;color:#fff;font-size:14px;font-weight:700}
+.light-comparison tbody th{width:25%;font-family:Manrope,Arial,sans-serif;font-size:20px;font-weight:500;line-height:1.4}
+.light-comparison td{color:var(--muted)}
+.light-comparison td:nth-child(2){width:27%;color:var(--ink)}
+.shutter-details-layout{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:65px;align-items:start}
+.shutter-detail-photo img{width:100%;height:530px;object-fit:cover;border-radius:8px}
+.shutter-detail-photo figcaption{font-size:13px;color:var(--muted);margin-top:13px;line-height:1.6}
+.shutter-details-copy h2{font-size:clamp(30px,3vw,40px);margin-bottom:27px}
+.shutter-detail-list article{padding:20px 0;border-top:1px solid #cadce9}
+.shutter-detail-list h3{font-size:21px}
+.shutter-detail-list p{color:var(--muted);margin-top:10px;font-size:16px}
+.shutter-fitting-layout h2{max-width:660px}
+.shutter-fitting-layout .fit-topics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:32px}
+.shutter-fitting-layout .fit-topics article{margin:0;padding-top:22px;border-top:1px solid #d4e0e8}
+@media(max-width:1000px){.shutter-details-layout{gap:35px}.shutter-detail-photo img{height:580px}.light-comparison th,.light-comparison td{padding:20px}}
+@media(max-width:780px){
+ .material-comparison article{padding:24px 0}
+ .shutter-details-layout{grid-template-columns:1fr;max-width:600px;margin:auto;gap:30px}
+ .shutter-detail-photo img{height:auto;aspect-ratio:1.5;object-fit:cover}
+ .shutter-details-copy h2{text-align:center}
+ .shutter-details-copy h2 br{display:none}
+ .shutter-fitting-layout{max-width:600px}
+ .shutter-fitting-layout h2{text-align:center}
+ .shutter-fitting-layout .fit-topics{grid-template-columns:1fr;gap:25px}
+ .light-comparison thead{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%)}
+ .light-comparison,.light-comparison tbody,.light-comparison tr,.light-comparison th,.light-comparison td{display:block;width:100%}
+ .light-comparison{background:none}
+ .light-comparison tr{padding:23px 0;border-top:1px solid #c5d8e5}
+ .light-comparison th,.light-comparison td{padding:0;border:0}
+ .light-comparison tbody th,.light-comparison td:nth-child(2){width:100%}
+ .light-comparison td{margin-top:16px}
+ .light-comparison td:before{content:attr(data-label);display:block;margin-bottom:4px;font-size:12px;font-weight:700;color:var(--link)}
+}
