@@ -88,3 +88,22 @@ The city directory now links to four local city pages; the other 13 remain on th
 ## Window treatment service
 
 `/services/window-treatments/` is built from `pages/window-treatments.html`, with the original metadata archived in `pages/window-treatments-source.json`. It uses the service hero plus the shared product installation/final-action styles. The shared Services menu and homepage process link now lead to the local route. Run `python3 homepage/check_window_treatment_service.py` after the shared build, alongside the existing migration checks. The preview now contains 40 pages. See `../seo/2026-09-29/WINDOW-TREATMENT-SERVICE-NOTES.md` for SEO evidence, editorial changes, and unconfirmed business details.
+
+## Legacy redirects
+
+`dist/_redirects` holds 55 permanent redirects for the old Wix URLs. These are the "Proposed 301" rows of `../seo/2026-09-25/url-preservation-and-redirect-plan.csv`.
+
+They were validated one by one on October 1, 2026:
+
+- every old URL returned 404 on the live site;
+- every destination returned 200;
+- each maps to the same city, product, page type or article topic.
+
+Run `python3 homepage/check_redirects.py` alongside the other migration checks. It fails if:
+
+- the file drifts from the plan;
+- a rule points at a route the plan does not preserve;
+- a rule chains through another rule;
+- a built page would shadow a rule.
+
+It also lists the destinations that are not built yet. Those rules reach a 404 in the preview until their pages land.

@@ -1,0 +1,62 @@
+# Legacy Wix URLs -> current routes (permanent).
+# From seo/2026-09-25/url-preservation-and-redirect-plan.csv, "Proposed 301" rows.
+# Validated one by one on 2026-10-01: each old URL returned 404 on the live site,
+# each destination returned 200, and each maps to the same city, product, page
+# type or article topic. homepage/check_redirects.py keeps this file in step with
+# the plan.
+
+/about                                                                                                   /about-beautiful-blinds-and-shades  301
+/blinds                                                                                                  /products/blinds  301
+/blinds/mini-blinds                                                                                      /custom-blinds-fort-wayne-indiana/custom-mini-blinds-in-fort-wayne-indiana  301
+/blinds/panel-track-blinds                                                                               /custom-blinds-fort-wayne-indiana/custom-panel-track-blinds-fort-wayne-indiana  301
+/blinds/venetian-blinds                                                                                  /custom-blinds-fort-wayne-indiana/custom-venetian-blinds-in-fort-wayne-indiana  301
+/blinds/vertical-blinds                                                                                  /custom-blinds-fort-wayne-indiana/custom-vertical-blinds-fort-wayne-indiana  301
+/contact-us                                                                                              /contact  301
+/interior-shutters                                                                                       /products/plantation-shutters  301
+/interior-shutters/composite-plantation-shutters                                                         /custom-interior-plantation-shutters-fort-wayne-indiana/custom-composite-plantation-shutters-in-fort-wayne-indiana  301
+/interior-shutters/wood-plantation-shutters                                                              /custom-interior-plantation-shutters-fort-wayne-indiana/custom-wood-plantation-shutters-in-fort-wayne-indiana  301
+/outdoor-shades/outdoor-shades                                                                           /services/outdoor-shades  301
+/post/5-ways-custom-blinds-and-shades-can-transform-your-fort-wayne-home-this-fall                       /blog-post/5-ways-custom-blinds-and-shades-can-transform-your-fort-wayne-home  301
+/post/beat-the-heat-boost-your-home-s-appeal-why-fort-wayne-homes-need-outdoor-shades                    /blog-post/outdoor-patio-shades-guild-fort-wayne  301
+/post/best-window-treatments-for-fort-wayne-s-harsh-winters-why-cellular-shades-are-your-answer          /blog-post/cellular-shades-fort-wayne-energy-savings  301
+/post/the-fort-wayne-homeowner-s-guide-to-motorized-blinds-smart-home-window-treatments-in-allen-county  /blog-post/motorized-blinds-and-shades-in-fort-wayne  301
+/post/transform-your-space-how-window-coverings-can-enhance-your-home-s-energy-efficiency                /blog-post/save-energy-window-treatments-fort-wayne  301
+/post/transform-your-space-with-the-best-window-treatments-in-fort-wayne-in                              /blog-post/fort-wayne-window-treatments-guide  301
+/service-area                                                                                            /location/beautiful-blinds-and-shades-service-area  301
+/service-area/angola-indiana                                                                             /beautiful-blinds-shades-service-areas/window-treatments-angola-indiana  301
+/service-area/auburn-indiana                                                                             /beautiful-blinds-shades-service-areas/window-treatments-auburn-indiana  301
+/service-area/bluffton-indiana                                                                           /beautiful-blinds-shades-service-areas/window-treatments-bluffton-indiana  301
+/service-area/columbia-city-indiana                                                                      /beautiful-blinds-shades-service-areas/window-treatment-columbia-city-indiana  301
+/service-area/fort-wayne                                                                                 /beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana  301
+/service-area/fort-wayne-indiana                                                                         /beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana  301
+/service-area/grabill-indiana                                                                            /beautiful-blinds-shades-service-areas/window-treatments-grabill-indiana  301
+/service-area/harlan-indiana                                                                             /beautiful-blinds-shades-service-areas/custom-window-treatments-harlan-indiana  301
+/service-area/hicksville-indiana                                                                         /beautiful-blinds-shades-service-areas/window-treatments-hicksville-indiana  301
+/service-area/hoagland-indian                                                                            /beautiful-blinds-shades-service-areas/window-treatments-hoagland-indiana  301
+/service-area/hoagland-indiana                                                                           /beautiful-blinds-shades-service-areas/window-treatments-hoagland-indiana  301
+/service-area/kendallville-indian                                                                        /beautiful-blinds-shades-service-areas/window-treatments-in-kendallville-indiana  301
+/service-area/leo-cedarville                                                                             /beautiful-blinds-shades-service-areas/window-treatments-leo-cedarville-indiana  301
+/service-area/leo-cedarville-indiana                                                                     /beautiful-blinds-shades-service-areas/window-treatments-leo-cedarville-indiana  301
+/service-area/monroeville-indian                                                                         /beautiful-blinds-shades-service-areas/window-treatments-monroeville-indiana  301
+/service-area/monroeville-indiana                                                                        /beautiful-blinds-shades-service-areas/window-treatments-monroeville-indiana  301
+/service-area/new-haven                                                                                  /beautiful-blinds-shades-service-areas/window-treatments-new-haven-indiana  301
+/service-area/syracuse-indiana                                                                           /beautiful-blinds-shades-service-areas/window-treatments-syracuse-indiana  301
+/service-area/warsaw                                                                                     /beautiful-blinds-shades-service-areas/window-treatments-warsaw-indiana  301
+/service-area/woodburn-indiana                                                                           /beautiful-blinds-shades-service-areas/window-treatments-woodburn-indiana  301
+/shades/cellular-shades                                                                                  /custom-shades-fort-wayne-indiana/cellular-shades-fort-wayne-indiana  301
+/shades/cellular-shadesmake                                                                              /custom-shades-fort-wayne-indiana/cellular-shades-fort-wayne-indiana  301
+/service-area/huntertown-indian                                                                          /beautiful-blinds-shades-service-areas/custom-window-treatments-in-huntertown-indiana  301
+/service-area/huntertown-indiana                                                                         /beautiful-blinds-shades-service-areas/custom-window-treatments-in-huntertown-indiana  301
+/service-area/kendallville-indiana                                                                       /beautiful-blinds-shades-service-areas/window-treatments-in-kendallville-indiana  301
+/service-area/new-haven-indiana                                                                          /beautiful-blinds-shades-service-areas/window-treatments-new-haven-indiana  301
+/service-area/warsaw-indiana                                                                             /beautiful-blinds-shades-service-areas/window-treatments-warsaw-indiana  301
+/services/blind-&-shade-cleaning                                                                         /services/blind-and-shade-cleaning  301
+/services/blind-&-shade-repair                                                                           /services/blind-shade-repair  301
+/shades                                                                                                  /products/shades  301
+/shades/layered-shades                                                                                   /custom-shades-fort-wayne-indiana/layered-shades-fort-wayne-indiana  301
+/shades/natural-shades                                                                                   /custom-shades-fort-wayne-indiana/natural-shades-fort-wayne-indiana  301
+/shades/pleated-shades                                                                                   /custom-shades-fort-wayne-indiana/pleated-shades-fort-wayne-indiana  301
+/shades/roller-shades                                                                                    /custom-shades-fort-wayne-indiana/custom-roller-shades-fort-wayne-indiana  301
+/shades/roman-shades                                                                                     /custom-shades-fort-wayne-indiana/roman-shades-fort-wayne-indiana  301
+/shades/solar-shades                                                                                     /custom-shades-fort-wayne-indiana/solar-shades-fort-wayne-indiana  301
+/window-treatment-blog                                                                                   /blogs  301
