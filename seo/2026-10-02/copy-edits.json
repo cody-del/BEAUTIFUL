@@ -1,0 +1,362 @@
+[
+  {
+    "file": "homepage/dist/index.html",
+    "before": "How long does installation take?",
+    "after": "How long does ordering and installation take?",
+    "reason": "Make the question match the answer about the full order process."
+  },
+  {
+    "file": "homepage/dist/index.html",
+    "before": "Many custom orders take about two to three weeks, with some specialty or motorized treatments taking longer. We'll confirm the current lead time for your selections during your consultation and schedule installation when your order is ready.",
+    "after": "Timing depends on the treatments you choose and the manufacturer’s current schedule. We’ll discuss the expected timing before you order and arrange installation when your treatments arrive.",
+    "reason": "Remove an unverified numeric lead time and align with the product-page answers."
+  },
+  {
+    "file": "homepage/dist/index.html",
+    "before": "A fresh start for your windows.",
+    "after": "Cleaning for the treatments you have.",
+    "reason": "Make the shared cleaning-service link describe the service."
+  },
+  {
+    "file": "homepage/pages/shades.html",
+    "before": "Explore roman shades",
+    "after": "Explore Roman shades",
+    "reason": "Keep the product name capitalized consistently."
+  },
+  {
+    "file": "homepage/build_pages.py",
+    "before": "Roller shades, cellular shades, roman shades & more.",
+    "after": "Roller shades, cellular shades, Roman shades & more.",
+    "reason": "Correct product capitalization in the shades meta description."
+  },
+  {
+    "file": "homepage/pages/plantation-shutters.html",
+    "before": "Wood and composite shutters differ in finish and moisture suitability. Both need a frame and panel layout planned for the window.",
+    "after": "Wood and composite shutters differ in finish and how they handle moisture. We help you compare both, then plan the frame and panels around your window.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/plantation-shutters.html",
+    "before": "Actual samples help you check a white or stain against your existing trim.",
+    "after": "See white, painted, and stained finishes beside your existing trim.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/window-treatments.html",
+    "before": "Samples at your windows. Measurements for the right fit. Professional installation when your order arrives. David helps you bring the choices together, right in your own home.",
+    "after": "David brings window treatment samples to your Fort Wayne home, helps you choose the materials and controls, and handles measuring and installation.",
+    "reason": "Replace a string of fragments with a clear description of the service."
+  },
+  {
+    "file": "homepage/pages/window-treatments.html",
+    "before": "Compare fabric, opacity, texture, and controls.",
+    "after": "Compare fabric textures, light control, and how each shade operates.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/blind-shade-repair.html",
+    "before": "The symptom is a useful place to start. The brand, model, age, and condition determine which repair options are available.",
+    "after": "Start with what happens when you try to use the blind or shade. Its brand, model, age, and condition help us work out which repairs are possible.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/blind-shade-repair.html",
+    "before": "After the agreed repair, the treatment’s operation is checked.",
+    "after": "After the repair, we check that the blind or shade works properly.",
+    "reason": "Use active voice and name the customer’s treatment."
+  },
+  {
+    "file": "homepage/pages/blind-and-shade-cleaning.html",
+    "before": "Give your window treatments<br>some attention",
+    "after": "Ask about cleaning<br>your blinds and shades",
+    "reason": "Make the final call to action specific to the service."
+  },
+  {
+    "file": "homepage/pages/service-area.html",
+    "before": " enquiries need their own assessment, so please mention those when you get in touch.",
+    "after": " are separate services. Let us know which you need so we can discuss the work and a quote.",
+    "reason": "Use familiar US wording and clarify the next step."
+  },
+  {
+    "file": "homepage/subproducts/editorial.py",
+    "before": "A quiet texture can sit behind drapery, while a patterned fabric can stand on its own.",
+    "after": "A subtle texture can work alongside curtains, while a patterned fabric can stand on its own.",
+    "reason": "Explain the product in familiar language."
+  },
+  {
+    "file": "homepage/subproducts/editorial.py",
+    "before": "Fabric opacity is only one part of the result: light may still enter beside the shade, above the roll, or around the bottom.",
+    "after": "The fabric is only part of the result: light may still enter beside the shade, above the roll, or around the bottom.",
+    "reason": "Explain the product in familiar language."
+  },
+  {
+    "file": "homepage/subproducts/editorial.py",
+    "before": "Roller fabrics offer different opacity and privacy choices.",
+    "after": "Roller fabrics offer different levels of light control and privacy.",
+    "reason": "Explain the product in familiar language."
+  },
+  {
+    "file": "homepage/subproducts/editorial.py",
+    "before": "Compare their construction and opacity side by side.",
+    "after": "Compare how they are made and how much light each fabric lets through.",
+    "reason": "Explain the product in familiar language."
+  },
+  {
+    "file": "homepage/subproducts/editorial.py",
+    "before": "Their construction can help insulate the window, but a bill reduction cannot be promised for an individual home. Window condition, climate, fitting, shade selection, and usage all affect the result.",
+    "after": "Cellular shades can help insulate a window. Any energy savings depend on the shade, its fit, your windows, the weather, and how you use it.",
+    "reason": "Preserve the qualification without sounding like an internal claims instruction."
+  },
+  {
+    "file": "homepage/subproducts/editorial.py",
+    "before": "Lining changes the shade’s opacity and the way the fabric hangs.",
+    "after": "Lining changes how much light passes through the shade and how the fabric hangs.",
+    "reason": "Explain the product in familiar language."
+  },
+  {
+    "file": "homepage/subproducts/editorial.py",
+    "before": "Ask to see the current constructions and how they stack; not every fabric is available in every style.",
+    "after": "See how each style folds when raised and which fabrics are available.",
+    "reason": "Explain the product in familiar language."
+  },
+  {
+    "file": "homepage/subproducts/editorial.py",
+    "before": "Its stack depends on the construction and dimensions.",
+    "after": "The amount of folded fabric depends on the style and size.",
+    "reason": "Explain the product in familiar language."
+  },
+  {
+    "file": "homepage/subproducts/editorial.py",
+    "before": "Woven texture with privacy chosen separately.",
+    "after": "Woven shades bring natural texture to the room, with liner options for added privacy.",
+    "reason": "Explain the product in familiar language."
+  },
+  {
+    "file": "homepage/subproducts/editorial.py",
+    "before": "Compare the transparency of the sheer bands and the opacity of the solid ones.",
+    "after": "Compare how much light passes through the sheer and solid bands.",
+    "reason": "Explain the product in familiar language."
+  },
+  {
+    "file": "homepage/subproducts/editorial.py",
+    "before": "The names are commonly used for the same alternating-band style. We keep them together here so you can compare fabric and control options in one place.",
+    "after": "No. Zebra shades and layered shades are two names for the same style, with alternating sheer and solid fabric bands. Compare fabrics and controls to find the light and privacy you want.",
+    "reason": "Remove website-organization commentary and answer the customer’s question directly."
+  },
+  {
+    "file": "homepage/subproducts/editorial.py",
+    "before": "Compare pleated shade fabrics, opacity, and available controls with samples brought to your home.",
+    "after": "Compare pleated shade fabrics, light control, and operating options with samples brought to your home.",
+    "reason": "Explain the product in familiar language."
+  },
+  {
+    "file": "homepage/subproducts/editorial.py",
+    "before": "('Fabric and opacity',",
+    "after": "('Fabric and light control',",
+    "reason": "Explain the product in familiar language."
+  },
+  {
+    "file": "homepage/subproducts/editorial.py",
+    "before": "Ask about the specific construction and whether visible cord holes or edge gaps will affect your expectations.",
+    "after": "Check whether light can enter through cord holes or around the edges, especially for a bedroom.",
+    "reason": "Explain the product in familiar language."
+  },
+  {
+    "file": "homepage/subproducts/editorial.py",
+    "before": "We can compare construction, opacity, and controls during the consultation.",
+    "after": "We can compare how they are made, how much light they let through, and how they operate during your consultation.",
+    "reason": "Explain the product in familiar language."
+  },
+  {
+    "file": "homepage/subproducts/editorial.py",
+    "before": "Are pleated shades always the cheapest option?",
+    "after": "How do pleated shades compare in price?",
+    "reason": "Use a natural buying question without an unsupported cheapest-price premise."
+  },
+  {
+    "file": "homepage/subproducts/editorial.py",
+    "before": "Are wood shutters completely blackout?",
+    "after": "Will wood shutters make the room completely dark?",
+    "reason": "Use a question a homeowner would ask."
+  },
+  {
+    "file": "homepage/subproducts/editorial.py",
+    "before": "Handle projection, nearby furniture, and access to the door all affect the installation.",
+    "after": "Protruding handles, nearby furniture, and access to the door all affect the installation.",
+    "reason": "Explain the product in familiar language."
+  },
+  {
+    "file": "homepage/subproducts/editorial.py",
+    "before": "We measure the opening and plan the stack around your door access.",
+    "after": "We measure the opening and check where the vanes gather so you can still use the door.",
+    "reason": "Explain the product in familiar language."
+  },
+  {
+    "file": "homepage/pages/fort-wayne.html",
+    "before": "A replacement blind in an older home needs a different conversation from a whole-home order before move-in.",
+    "after": "You may need one replacement blind or coverings for every window before move-in.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/fort-wayne.html",
+    "before": "We can discuss different treatments within one home without making every window look unrelated.",
+    "after": "We can help you choose different treatments for each room while keeping the colors and finishes coordinated.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/fort-wayne.html",
+    "before": "From older trim to large contemporary openings, we check the installation details in the room. These are planning considerations, not a one-size-fits-all recommendation.",
+    "after": "From older trim to large contemporary openings, we check the frame, handles, and available space before recommending how to mount the treatment.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/fort-wayne.html",
+    "before": "Compare fabric opacity, cell construction, and mounting options",
+    "after": "Compare light-filtering and room-darkening fabrics, cell construction, and mounting options",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/huntertown.html",
+    "before": "Compare single- and double-cell designs, opacity, and operating options.",
+    "after": "Compare single- and double-cell designs, light-filtering and room-darkening fabrics, and controls.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/huntertown.html",
+    "before": "A daytime outward view through solar mesh is not a promise of privacy after dark.",
+    "after": "Solar mesh may let people see into a lit room after dark, so we discuss nighttime privacy separately.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/auburn.html",
+    "before": "Compare single- and double-cell constructions, fabric opacity, and fit.",
+    "after": "Compare single- and double-cell construction, how much light the fabric blocks, and the fit.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/grabill.html",
+    "before": "For a room that feels cold or receives strong sun, compare fabric opacity, single- and double-cell designs, and the fit around the opening.",
+    "after": "For a room that feels cold or receives strong sun, compare light-filtering and room-darkening fabrics, single- and double-cell designs, and the fit around the opening.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/grabill.html",
+    "before": "Vertical blinds follow the movement of a sliding door and draw to the side for access.",
+    "after": "Vertical blinds draw to the side so you can use the sliding door.",
+    "reason": "Avoid suggesting the blind is attached to or follows the door."
+  },
+  {
+    "file": "homepage/pages/hicksville.html",
+    "before": "Compare fabric opacity and how much glass stays clear when raised.",
+    "after": "Compare how much light the fabric lets through and how much glass stays clear when the shade is raised.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/hicksville.html",
+    "before": "Compare constructions, fabric opacity, and mounting options.",
+    "after": "Compare cell construction, light-filtering and room-darkening fabrics, and mounting options.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/hicksville.html",
+    "before": "check the raised stack height.",
+    "after": "check how much glass the folded fabric covers when raised.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/hicksville.html",
+    "before": "Rough photos or a description can help explain the project before the visit.",
+    "after": "A few photos or a description can help explain the project before the visit.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/hoagland.html",
+    "before": "For several windows in one room or a high opening, a compatible motorized system lets you adjust several shades together.",
+    "after": "A compatible motorized system lets you adjust several shades together or reach a high window with a remote.",
+    "reason": "Remove repetition and distinguish grouped and high-window use."
+  },
+  {
+    "file": "homepage/pages/kendallville.html",
+    "before": "Compare single- and double-cell styles, opacity, and operating options for rooms where comfort matters.",
+    "after": "Compare single- and double-cell styles, light-filtering and room-darkening fabrics, and controls for rooms where comfort matters.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/leo-cedarville.html",
+    "before": "Look at construction, opacity, and fit; energy savings depend on the windows, installation, and how the coverings are used.",
+    "after": "Compare the cell construction, light control, and fit. Energy savings depend on the windows, installation, and how you use the shades.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/leo-cedarville.html",
+    "before": "Schedules and grouped operation depend on the system you choose.",
+    "after": "The system you choose determines whether you can set schedules or move several shades together.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/monroeville.html",
+    "before": "Handle the fabrics, compare opacity, and see how each style sits at the window.",
+    "after": "Feel the fabrics, compare how much light they let through, and see how each style sits at the window.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/monroeville.html",
+    "before": "Compare single- and double-cell designs along with fabric opacity and fit.",
+    "after": "Compare single- and double-cell designs along with light-filtering and room-darkening fabrics and the fit.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/new-haven.html",
+    "before": "Cellular, solar, roller, and Roman shades each work differently, so compare them around the room’s purpose.",
+    "after": "Cellular, solar, roller, and Roman shades handle light differently. Compare them for the way you use each room.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/new-haven.html",
+    "before": "Compare their construction and opacity for bedrooms or rooms where comfort is a concern.",
+    "after": "Compare their cell construction and light control for bedrooms or rooms where comfort is a concern.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/new-haven.html",
+    "before": "Compare the lining, pattern, and raised stack at your window, especially when you want to keep as much glass visible as possible.",
+    "after": "Compare the lining and pattern, then check how much glass the folded fabric covers when raised.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/syracuse.html",
+    "before": "We look at the view, the sunlight, and the room after dark before choosing fabric and controls.",
+    "after": "Tell us when sunlight or privacy is a concern. We compare fabrics against your view and discuss coverage for the evening.",
+    "reason": "Avoid implying the consultation includes a visit after dark."
+  },
+  {
+    "file": "homepage/pages/warsaw.html",
+    "before": "Compare cell sizes and layers, opacity, and the space the shade occupies when raised.",
+    "after": "Compare cell sizes and layers, light-filtering and room-darkening fabrics, and the space the shade occupies when raised.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/warsaw.html",
+    "before": "Measure the recess and check uneven openings before selecting hardware.",
+    "after": "We measure the recess and check for uneven openings before selecting hardware.",
+    "reason": "Clarify that the installer handles measuring."
+  },
+  {
+    "file": "homepage/pages/warsaw.html",
+    "before": "Decide which windows should coordinate and which need a different opacity.",
+    "after": "Decide which windows should coordinate and which need more light blocking or privacy.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/pages/woodburn.html",
+    "before": "Cellular, Roman, roller, and solar shades give you different ways to handle fabric, light, and privacy at the window.",
+    "after": "Compare cellular, Roman, roller, and solar shades for the fabric finish, light control, and privacy you want.",
+    "reason": "Use direct, customer-facing language."
+  },
+  {
+    "file": "homepage/build_subproducts.py",
+    "before": "Roman and Venetian product names lowercased in generated descriptions, links, care headings, questions headings, and final headings.",
+    "after": "Keep Roman and Venetian capitalized within sentences.",
+    "reason": "Consistent product capitalization; no title or H1 changes."
+  }
+]

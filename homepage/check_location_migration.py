@@ -6,6 +6,17 @@ import re
 from build_locations import BASELINE, CITIES, LIVE, ROUTES, HUB
 
 DIST = Path(__file__).resolve().parent / 'dist'
+NEW_CITY_TOPICS = {
+    'columbia-city': ['cellular', 'solar', 'roman', 'shutters', 'motorized', 'woodwork'],
+    'bluffton': ['cellular', 'solar', 'roman', 'shutters', 'motorized', 'blackout'],
+    'grabill': ['wood', 'faux wood', 'cellular', 'roller', 'vertical', 'motorized'],
+    'woodburn': ['faux wood', 'cellular', 'roman', 'solar', 'shutters'],
+    'harlan': ['double-cell', 'wood', 'solar', 'motorized', 'roman'],
+    'hoagland': ['blackout', 'cellular', 'wood', 'faux wood', 'solar', 'roller', 'motorized', 'outbuilding'],
+    'angola': ['cellular', 'solar', 'roller', 'roman', 'shutters', 'motorized', 'seasonal'],
+    'kendallville': ['cellular', 'solar', 'roller', 'roman', 'shutters', 'motorization'],
+    'syracuse': ['cellular', 'solar', 'roller', 'roman', 'shutters', 'motorization', 'seasonal'],
+}
 
 def plain(value):
     return ' '.join(unescape(re.sub('<[^>]+>', ' ', value)).split())
@@ -25,6 +36,28 @@ for key, source in BASELINE.items():
     if key != 'service-area':
         assert '<iframe' not in main
         assert f'href="{HUB}"' in main
+        if key in NEW_CITY_TOPICS:
+            text = plain(main).lower()
+            for topic in NEW_CITY_TOPICS[key] + ['measur', 'installation']:
+                assert topic in text, (key, 'missing useful source topic', topic)
+            assert 'href="tel:+12602226467"' in main
+            for phrase in ['published contact hours', 'mid-america science park', 'bluffton university', 'southeast of fort wayne along route 24', 'southwestern allen county', 'savings often equal or exceed', 'we\'ve installed countless']:
+                assert phrase not in text, (key, 'unsuitable source copy returned', phrase)
+            if key == 'columbia-city':
+                assert 'href="/blog-post/plantation-shutters-for-columbia-city-homes"' in main
+            if key == 'bluffton':
+                assert 'href="/blog-post/blackout-window-treatments-bluffton-homes"' in main
+        if key in {'fort-wayne', 'huntertown', 'leo-cedarville', 'new-haven'}:
+            for topic in ['cellular', 'solar', 'motorized', 'shutters', 'measur', 'installation']:
+                assert topic in plain(main).lower(), (key, 'missing source topic', topic)
+            if key != 'leo-cedarville':
+                assert 'Roman shades' in main
+            assert 'twice the insulating power' not in main
+            assert not re.search(r'The original (?:Huntertown|New Haven|Fort Wayne|Leo-Cedarville) page', main), 'Editorial notes leaked into customer copy'
+            if key == 'huntertown':
+                assert 'href="/blog-post/best-window-blinds-new-construction-homes-huntertown-indiana"' in main
+            if key == 'leo-cedarville':
+                assert 'href="/blog-post/energy-efficient-blinds-leo-cedarville-indiana-homes"' in main
         if key == 'monroeville':
             assert 'Woodburn' not in plain(main), 'Copied Woodburn content returned'
         if key == 'warsaw':

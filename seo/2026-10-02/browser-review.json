@@ -1,0 +1,31 @@
+{
+  "desktop": {
+    "route": "/custom-shades-fort-wayne-indiana/layered-shades-fort-wayne-indiana/#questions",
+    "width": 1280,
+    "faq_expands_with_revised_copy": true,
+    "horizontal_overflow": false
+  },
+  "mobile": [
+    {
+      "route": "/services/window-treatments/",
+      "width": 390,
+      "horizontal_overflow": false
+    },
+    {
+      "route": "/beautiful-blinds-shades-service-areas/window-treatments-new-haven-indiana/",
+      "width": 390,
+      "horizontal_overflow": false
+    },
+    {
+      "route": "/",
+      "width": 390,
+      "horizontal_overflow": false
+    }
+  ],
+  "mobile_navigation_opens": true,
+  "homepage_revised_timing_answer_verified": true,
+  "contact_empty_field_messages_verified": true,
+  "form_delivery_tested": false,
+  "form_delivery_note": "No delivery endpoint is configured; no lead was submitted.",
+  "temporary_viewport_reset": true
+}

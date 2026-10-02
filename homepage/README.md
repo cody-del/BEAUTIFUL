@@ -89,6 +89,20 @@ The city directory now links to four local city pages; the other 13 remain on th
 
 `/services/window-treatments/` is built from `pages/window-treatments.html`, with the original metadata archived in `pages/window-treatments-source.json`. It uses the service hero plus the shared product installation/final-action styles. The shared Services menu and homepage process link now lead to the local route. Run `python3 homepage/check_window_treatment_service.py` after the shared build, alongside the existing migration checks. The preview now contains 40 pages. See `../seo/2026-09-29/WINDOW-TREATMENT-SERVICE-NOTES.md` for SEO evidence, editorial changes, and unconfirmed business details.
 
+## Fort Wayne and Allen County city batch
+
+That batch brought the local review build to 44 pages. `pages/fort-wayne.html`, `pages/huntertown.html`, `pages/leo-cedarville.html`, and `pages/new-haven.html` reuse the city layout and retain original metadata and H1s. See `../seo/2026-09-29/ALLEN-COUNTY-CITY-BUILD-NOTES.md` for source comparisons and dated Semrush evidence.
+
+## All 17 city pages built locally, October 1
+
+The latest review build contains 53 pages. Columbia City, Bluffton, Grabill, Woodburn, Harlan, Hoagland, Angola, Kendallville, and Syracuse are now built from their corresponding `pages/*.html` templates. All 17 city directory links lead to local pages. Original URLs, titles, descriptions, H1s, and production canonicals are retained for this batch. See `../seo/2026-10-01/CITY-BUILD-NOTES.md` for fresh source verification, Semrush limitations, content comparisons, and QA.
+
+About and `/contact-ghl` remain unresolved, alongside form delivery and the production launch checklist. Run the shared build and migration checks before publishing. Keep preview noindex protections in place.
+
+## Reviewed 53-page release, October 2
+
+The current review build includes all 17 city pages and the full-site copy cleanup. All 53 titles, H1s, and canonical URLs are preserved from the start of the copy pass, and all 12 imported article texts remain exact. See `../seo/2026-10-02/COPY-REVIEW.md` for the review, change record, validation, and remaining claims to verify. Netlify publishes `homepage/dist` from GitHub `main`; this release updates the review site, with noindex and the existing non-delivery form behavior retained.
+
 ## Legacy redirects
 
 `dist/_redirects` holds 55 permanent redirects for the old Wix URLs. These are the "Proposed 301" rows of `../seo/2026-09-25/url-preservation-and-redirect-plan.csv`.

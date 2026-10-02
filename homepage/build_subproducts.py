@@ -9,6 +9,13 @@ ROOT = Path(__file__).resolve().parent
 LIVE = 'https://www.beautifulblindsandshades.com'
 BASELINE = json.loads((ROOT/'subproducts/source-baseline.json').read_text())
 GROUPS = {'blinds':'Blinds', 'shades':'Shades', 'plantation-shutters':'Plantation shutters'}
+
+
+def sentence_name(name):
+    """Keep Roman and Venetian capitalized within a sentence."""
+    return name if name.startswith(('Roman ', 'Venetian ')) else name.lower()
+
+
 PAGES = {}
 for key, content in CONTENT.items():
     source = next(p for p in BASELINE if (('/custom-'+key+'-' in p['url']) if key in ('mini','panel-track','venetian','vertical','roller','wood','composite') else ('/'+key+'-' in p['url'])))
@@ -19,7 +26,7 @@ for key, content in CONTENT.items():
         page['h1'] = page['h1'].replace('FOrt','Fort')
     if content['group'] == 'shades':
         # The live descriptions reused "sheer shades" for unrelated products.
-        page['description'] = f"Custom {content['name'].lower()} in Fort Wayne, Indiana. Compare fabrics, light control, and fitting options. Free in-home consultation with Beautiful Blinds & Shades."
+        page['description'] = f"Custom {sentence_name(content['name'])} in Fort Wayne, Indiana. Compare fabrics, light control, and fitting options. Free in-home consultation with Beautiful Blinds & Shades."
     PAGES[key] = page
 ROUTES = {p['path'] for p in PAGES.values()}
 
@@ -57,7 +64,7 @@ def render(page, home, shared_paths):
     cards=''
     for related in page['related']:
         other=PAGES[related]
-        cards+=f'<a class="detail-related-item" href="{other["path"]}"><img src="/assets/{other["image"]}" alt="{a(other["alt"])}" width="600" height="400" loading="lazy"><span><strong>{a(other["name"])}</strong><span class="text-link">Explore {a(other["name"].lower())}</span></span></a>'
+        cards+=f'<a class="detail-related-item" href="{other["path"]}"><img src="/assets/{other["image"]}" alt="{a(other["alt"])}" width="600" height="400" loading="lazy"><span><strong>{a(other["name"])}</strong><span class="text-link">Explore {a(sentence_name(other["name"]))}</span></span></a>'
     guide=''
     if page['guide']:
         posts=json.loads((ROOT/'blogs/content.json').read_text())
@@ -85,10 +92,10 @@ def render(page, home, shared_paths):
 <div class="installation-copy"><p class="eyebrow">Measured and installed for you</p><h2 id="fitting-title">{a(page['name'])} installation in Fort Wayne</h2><p class="installation-intro">{a(page['fitting'])}</p><div class="installation-cta"><a class="button" href="/contact">Get a Free Consultation</a></div></div>
 <div class="detail-practical"><h3>Before you choose</h3><p>{a(page['limits'])}</p><h3>From samples to installation</h3><p>David brings samples to your home and measures the opening. Once you have chosen the material and controls, we confirm the quote and expected timing. We return to install the treatment, check its operation, and show you how to use it.</p><a class="text-link" href="/products/{group}">Compare all {GROUPS[group].lower()}</a></div>
 </div></section>
-<section class="section detail-care" id="care" aria-labelledby="care-title"><div class="container detail-intro"><h2 id="care-title">Caring for your {a(page['name'].lower())}</h2><div><p>{a(page['care'])}</p><div class="detail-care-links">{care_links}</div></div></div></section>
-<section class="section faq detail-faq" id="questions" aria-labelledby="questions-title"><div class="container faq-grid"><div><h2 id="questions-title">Questions about {a(page['name'].lower())}</h2><p>Talk through your windows, the room, and the options before ordering.</p><a class="text-link" href="tel:+12602226467">Call David at (260) 222-6467</a></div><div>{faq}</div></div></section>
+<section class="section detail-care" id="care" aria-labelledby="care-title"><div class="container detail-intro"><h2 id="care-title">Caring for your {a(sentence_name(page['name']))}</h2><div><p>{a(page['care'])}</p><div class="detail-care-links">{care_links}</div></div></div></section>
+<section class="section faq detail-faq" id="questions" aria-labelledby="questions-title"><div class="container faq-grid"><div><h2 id="questions-title">Questions about {a(sentence_name(page['name']))}</h2><p>Talk through your windows, the room, and the options before ordering.</p><a class="text-link" href="tel:+12602226467">Call David at (260) 222-6467</a></div><div>{faq}</div></div></section>
 <section class="section detail-related" aria-labelledby="related-title"><div class="container"><div class="detail-related-heading"><h2 id="related-title">Also worth comparing</h2><a class="text-link" href="/products/{group}">View all {GROUPS[group].lower()}</a></div><div class="detail-related-grid">{cards}</div>{guide}</div></section>
-<section class="section category-final product-final" aria-labelledby="ready-title"><div class="container"><h2 id="ready-title">See {a(page['name'].lower())} in your home</h2><p>Book a free in-home consultation to compare samples and have your windows measured.</p><div class="actions"><a class="button" href="/contact">Get a Free Consultation</a><a class="button button-outline" href="tel:+12602226467">Call (260) 222-6467</a></div><span class="final-hours">Monday to Friday · 9 am to 5 pm</span></div></section>
+<section class="section category-final product-final" aria-labelledby="ready-title"><div class="container"><h2 id="ready-title">See {a(sentence_name(page['name']))} in your home</h2><p>Book a free in-home consultation to compare samples and have your windows measured.</p><div class="actions"><a class="button" href="/contact">Get a Free Consultation</a><a class="button button-outline" href="tel:+12602226467">Call (260) 222-6467</a></div><span class="final-hours">Monday to Friday · 9 am to 5 pm</span></div></section>
 '''
     return localize('<!doctype html>\n<html lang="en">\n'+head+'\n<body class="category-page product-page subproduct-page '+key+'-detail-page">\n<a class="skip" href="#main">Skip to content</a>\n'+header+'<main id="main">'+content+'</main>\n'+footer)
 

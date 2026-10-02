@@ -40,7 +40,7 @@ CATEGORIES = {
         'name': 'Custom Blinds', 'topic': 'Custom window blinds', 'image': 'blinds-natural-v2.jpg'},
     'shades': {
         'title': 'Custom Shades Fort Wayne | Window Shades | Beautiful Blinds & Shades',
-        'description': 'Custom window shades for Fort Wayne homes. Roller shades, cellular shades, roman shades & more. Free consultation. Professional installation. Call today!',
+        'description': 'Custom window shades for Fort Wayne homes. Roller shades, cellular shades, Roman shades & more. Free consultation. Professional installation. Call today!',
         'name': 'Custom Shades', 'topic': 'Custom window shades', 'image': 'roller-shades-fort-wayne-indiana.jpg'},
     'plantation-shutters': {
         'title': 'Plantation Shutters Fort Wayne | Custom Shutters | Beautiful Blinds',
