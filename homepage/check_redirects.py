@@ -11,7 +11,9 @@ def path(url):
     return urlsplit(url).path.rstrip('/') or '/'
 
 def built(route):
-    return (DIST / route.strip('/') / 'index.html').exists()
+    # Pages are <route>.html, served at /route; older builds used <route>/index.html.
+    route = route.strip('/')
+    return (DIST / (route + '.html')).exists() or (DIST / route / 'index.html').exists()
 
 rows = list(csv.DictReader(PLAN.open()))
 planned = {path(r['source_url']): path(r['proposed_target']) for r in rows if r['action'] == 'Proposed 301'}
