@@ -4,6 +4,7 @@ from html import escape
 import json
 import re
 from subproducts.editorial import CONTENT
+from routes import page_file
 
 ROOT = Path(__file__).resolve().parent
 LIVE = 'https://www.beautifulblindsandshades.com'
@@ -102,4 +103,4 @@ def render(page, home, shared_paths):
 
 def outputs(home, shared_paths):
     for page in PAGES.values():
-        yield ROOT/'dist'/page['path'].strip('/')/'index.html', render(page,home,shared_paths)
+        yield page_file(page['path']), render(page,home,shared_paths)

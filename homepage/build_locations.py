@@ -3,6 +3,7 @@ from pathlib import Path
 from html import escape
 import json
 import re
+from routes import page_file
 
 ROOT=Path(__file__).resolve().parent
 LIVE='https://www.beautifulblindsandshades.com'
@@ -80,4 +81,4 @@ def outputs(home,shared_paths):
         footer=shared_paths(home[home.index('  <footer class="footer">'):])
         content=(ROOT/'pages'/(key+'.html')).read_text().replace('{{city_groups}}',city_groups())
         rendered='<!doctype html>\n<html lang="en">\n'+head+'\n<body class="category-page product-page location-page '+key+'-page">\n<a class="skip" href="#main">Skip to content</a>\n'+header+'<main id="main">\n'+content+'\n</main>\n'+footer
-        yield ROOT/'dist'/path.strip('/')/'index.html',localize(rendered)
+        yield page_file(path),localize(rendered)

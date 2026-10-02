@@ -179,3 +179,8 @@
  .light-comparison td{margin-top:16px}
  .light-comparison td:before{content:attr(data-label);display:block;margin-bottom:4px;font-size:12px;font-weight:700;color:var(--link)}
 }
+.not-found{padding:96px 0 104px}
+.not-found h1{color:#fff;font-size:clamp(34px,4vw,52px)}
+.not-found-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:720px;margin:0 auto 32px;padding:0;list-style:none}
+.not-found-links a{display:inline-block;padding:8px 16px;border:1px solid #ffffff59;border-radius:999px;color:#fff;font-size:15px;text-decoration:none}
+.not-found-links a:hover,.not-found-links a:focus-visible{background:#fff;color:#204762}

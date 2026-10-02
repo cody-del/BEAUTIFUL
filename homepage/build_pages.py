@@ -9,6 +9,7 @@ import argparse
 from html import escape
 import json
 import re
+from routes import DIST as _DIST, page_file, pages, route_of
 
 ROOT = Path(__file__).resolve().parent
 DIST = ROOT / 'dist'
@@ -30,7 +31,7 @@ def shared_paths(html):
 
 def localize_service_links(html):
     # Only anchors change; production canonicals and schema keep their host.
-    return re.sub(r'(<a\b[^>]*?\s)href="https://www\.beautifulblindsandshades\.com(/services/window-treatments/?(?:[?#][^"]*)?)"', r'\1href="\2"', html)
+    return re.sub(r'(<a\b[^>]*?\s)href="https://www\.beautifulblindsandshades\.com(/(?:services/window-treatments|about-beautiful-blinds-and-shades)/?(?:[?#][^"]*)?)"', r'\1href="\2"', html)
 
 
 CATEGORIES = {
@@ -135,6 +136,65 @@ def render_contact():
     return '<!doctype html>\n<html lang="en">\n' + head + '\n<body class="contact-page">\n<a class="skip" href="#main">Skip to content</a>\n' + header + '<main id="main">\n' + content + '\n</main>\n' + footer
 
 
+
+ABOUT = {
+    'title': 'About Beautiful Blinds & Shades | Fort Wayne Window Treatments',
+    'description': 'Family-owned window treatment experts serving Fort Wayne & Allen County. Custom blinds, shades & shutters with local installation. Free consultation today!',
+    'h1': 'About Beautiful Blinds & Shades', 'route': '/about-beautiful-blinds-and-shades'}
+
+
+def render_about():
+    url = LIVE + ABOUT['route']
+    head = between('<head>', '</head>') + '</head>'
+    head = re.sub(r'<title>.*?</title>', '<title>' + escape(ABOUT['title']) + '</title>', head)
+    head = re.sub(r'<meta name="description"[^>]+>', '<meta name="description" content="' + escape(ABOUT['description'], quote=True) + '">', head)
+    head = head.replace('rel="canonical" href="' + LIVE + '/"', 'rel="canonical" href="' + url + '"')
+    head = head.replace('href="assets/', 'href="/assets/').replace('/assets/shades-natural-v2.jpg', '/assets/video-owner-frame-v2.jpg')
+    head = re.sub(r'href="styles.css[^\"]*"', 'href="/styles.css?v=20260928-cleanup"', head)
+    head = re.sub(r'src="script.js[^\"]*"', 'src="/script.js?v=20260926-contact"', head)
+    schema = {'@context': 'https://schema.org', '@graph': [
+        {'@type': 'AboutPage', '@id': url + '#page', 'url': url, 'name': ABOUT['h1'],
+         'about': {'@id': LIVE + '/#business'}, 'breadcrumb': {'@id': url + '#breadcrumb'}},
+        {'@type': 'BreadcrumbList', '@id': url + '#breadcrumb', 'itemListElement': [
+            {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': LIVE + '/'},
+            {'@type': 'ListItem', 'position': 2, 'name': 'About', 'item': url}]}]}
+    head = head.replace('</head>', '<link rel="stylesheet" href="/category.css?v=20260928-cleanup">\n<link rel="stylesheet" href="/product.css?v=20260928-products">\n<link rel="stylesheet" href="/service.css?v=20260929-treatment-service">\n<script type="application/ld+json">' + json.dumps(schema) + '</script>\n</head>')
+    header = shared_paths(between('  <header class="header">', '  <main'))
+    reviews = between('    <section class="testimonials"', '    <section class="section intro"')
+    footer = shared_paths(HOME[HOME.index('  <footer class="footer">'):])
+    content = (ROOT / 'pages' / 'about.html').read_text().replace('{{reviews}}', reviews)
+    return '<!doctype html>\n<html lang="en">\n' + head + '\n<body class="category-page product-page about-page">\n  <a class="skip" href="#main">Skip to content</a>\n' + header + '<main id="main">\n' + content + '\n</main>\n' + footer
+
+
+def render_not_found():
+    head = between('<head>', '</head>') + '</head>'
+    head = re.sub(r'<title>.*?</title>', '<title>Page not found | Beautiful Blinds &amp; Shades</title>', head)
+    # Keep the error page out of search even after launch removes the preview noindex.
+    head = re.sub(r'\s*<meta name="(?:description|robots)"[^>]+>', '', head)
+    head = head.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n  <meta name="robots" content="noindex">', 1)
+    head = re.sub(r'\s*<link rel="(?:canonical|preload)"[^>]+>', '', head)
+    head = re.sub(r'<script type="application/ld\+json">.*?</script>\n?', '', head, flags=re.S)
+    head = re.sub(r'<link rel="stylesheet" href="/blog.css[^>]*>\s*|<script src="/guides.js[^>]*></script>\s*', '', head)
+    head = head.replace('href="assets/', 'href="/assets/').replace('href="styles.css', 'href="/styles.css').replace('src="script.js', 'src="/script.js')
+    head = head.replace('</head>', '<link rel="stylesheet" href="/category.css?v=20260928-cleanup">\n</head>')
+    header = shared_paths(between('  <header class="header">', '  <main'))
+    footer = shared_paths(HOME[HOME.index('  <footer class="footer">'):])
+    content = (ROOT / 'pages' / '404.html').read_text()
+    return '<!doctype html>\n<html lang="en">\n' + head + '\n<body class="category-page not-found-page">\n<a class="skip" href="#main">Skip to content</a>\n' + header + '<main id="main">\n' + content + '\n</main>\n' + footer
+
+
+def render_sitemap():
+    # Each page's own canonical is its sitemap URL; it must match the route Netlify serves it at.
+    urls = []
+    for file in pages():
+        canonical = re.search(r'<link rel="canonical" href="([^"]+)"', file.read_text())[1]
+        if canonical.removeprefix(LIVE) != route_of(file):
+            raise SystemExit(f'{file.relative_to(_DIST)} is served at {route_of(file)} but its canonical is {canonical}')
+        urls.append(canonical)
+    urls.sort(key=lambda u: (u != LIVE + '/', u))
+    return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{escape(u)}</loc></url>\n' for u in urls) + '</urlset>\n'
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--check', action='store_true')
@@ -148,7 +208,7 @@ if __name__ == '__main__':
     if not args.check:
         HOME = updated_home
         (DIST / 'index.html').write_text(HOME)
-    for output, rendered in [(DIST / 'products' / slug / 'index.html', render_category(slug)) for slug in CATEGORIES] + [(DIST / 'services' / slug / 'index.html', render_category(slug, service=True)) for slug in SERVICES] + [(DIST / 'contact' / 'index.html', render_contact())] + list(blog_outputs(HOME)) + list(subproduct_outputs(HOME, shared_paths)) + list(location_outputs(HOME, shared_paths)):
+    for output, rendered in [(page_file('/products/' + slug), render_category(slug)) for slug in CATEGORIES] + [(page_file('/services/' + slug), render_category(slug, service=True)) for slug in SERVICES] + [(page_file('/contact'), render_contact()), (page_file(ABOUT['route']), render_about())] + list(blog_outputs(HOME)) + list(subproduct_outputs(HOME, shared_paths)) + list(location_outputs(HOME, shared_paths)) + [(DIST / '404.html', render_not_found())]:
         rendered = localize_service_links(localize_locations(localize(rendered)))
         if args.check:
             if not output.exists() or output.read_text() != rendered:
@@ -158,3 +218,11 @@ if __name__ == '__main__':
             output.parent.mkdir(parents=True, exist_ok=True)
             output.write_text(rendered)
             print('Built', output)
+    sitemap = render_sitemap()
+    if args.check:
+        if not (DIST / 'sitemap.xml').exists() or (DIST / 'sitemap.xml').read_text() != sitemap:
+            raise SystemExit('sitemap.xml is stale. Run python3 homepage/build_pages.py')
+        print('Sitemap is current:', sitemap.count('<url>'), 'URLs')
+    else:
+        (DIST / 'sitemap.xml').write_text(sitemap)
+        print('Built', DIST / 'sitemap.xml', sitemap.count('<url>'), 'URLs')
