@@ -112,3 +112,22 @@ About and `/contact-ghl` remain unresolved, alongside form delivery and the prod
 ## Reviewed 53-page release, October 2
 
 The current review build includes all 17 city pages and the full-site copy cleanup. All 53 titles, H1s, and canonical URLs are preserved from the start of the copy pass, and all 12 imported article texts remain exact. See `../seo/2026-10-02/COPY-REVIEW.md` for the review, change record, validation, and remaining claims to verify. Netlify publishes `homepage/dist` from GitHub `main`; this release updates the review site, with noindex and the existing non-delivery form behavior retained.
+
+## Legacy redirects
+
+`dist/_redirects` holds 55 permanent redirects for the old Wix URLs. These are the "Proposed 301" rows of `../seo/2026-09-25/url-preservation-and-redirect-plan.csv`.
+
+They were validated one by one on October 1, 2026:
+
+- every old URL returned 404 on the live site;
+- every destination returned 200;
+- each maps to the same city, product, page type or article topic.
+
+Run `python3 homepage/check_redirects.py` alongside the other migration checks. It fails if:
+
+- the file drifts from the plan;
+- a rule points at a route the plan does not preserve;
+- a rule chains through another rule;
+- a built page would shadow a rule.
+
+It also lists the destinations that are not built yet. Those rules reach a 404 in the preview until their pages land.
