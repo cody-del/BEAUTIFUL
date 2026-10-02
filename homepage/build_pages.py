@@ -31,7 +31,7 @@ def shared_paths(html):
 
 def localize_service_links(html):
     # Only anchors change; production canonicals and schema keep their host.
-    return re.sub(r'(<a\b[^>]*?\s)href="https://www\.beautifulblindsandshades\.com(/services/window-treatments/?(?:[?#][^"]*)?)"', r'\1href="\2"', html)
+    return re.sub(r'(<a\b[^>]*?\s)href="https://www\.beautifulblindsandshades\.com(/(?:services/window-treatments|about-beautiful-blinds-and-shades)/?(?:[?#][^"]*)?)"', r'\1href="\2"', html)
 
 
 CATEGORIES = {
@@ -137,6 +137,35 @@ def render_contact():
 
 
 
+ABOUT = {
+    'title': 'About Beautiful Blinds & Shades | Fort Wayne Window Treatments',
+    'description': 'Family-owned window treatment experts serving Fort Wayne & Allen County. Custom blinds, shades & shutters with local installation. Free consultation today!',
+    'h1': 'About Beautiful Blinds & Shades', 'route': '/about-beautiful-blinds-and-shades'}
+
+
+def render_about():
+    url = LIVE + ABOUT['route']
+    head = between('<head>', '</head>') + '</head>'
+    head = re.sub(r'<title>.*?</title>', '<title>' + escape(ABOUT['title']) + '</title>', head)
+    head = re.sub(r'<meta name="description"[^>]+>', '<meta name="description" content="' + escape(ABOUT['description'], quote=True) + '">', head)
+    head = head.replace('rel="canonical" href="' + LIVE + '/"', 'rel="canonical" href="' + url + '"')
+    head = head.replace('href="assets/', 'href="/assets/').replace('/assets/shades-natural-v2.jpg', '/assets/video-owner-frame-v2.jpg')
+    head = re.sub(r'href="styles.css[^\"]*"', 'href="/styles.css?v=20260928-cleanup"', head)
+    head = re.sub(r'src="script.js[^\"]*"', 'src="/script.js?v=20260926-contact"', head)
+    schema = {'@context': 'https://schema.org', '@graph': [
+        {'@type': 'AboutPage', '@id': url + '#page', 'url': url, 'name': ABOUT['h1'],
+         'about': {'@id': LIVE + '/#business'}, 'breadcrumb': {'@id': url + '#breadcrumb'}},
+        {'@type': 'BreadcrumbList', '@id': url + '#breadcrumb', 'itemListElement': [
+            {'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': LIVE + '/'},
+            {'@type': 'ListItem', 'position': 2, 'name': 'About', 'item': url}]}]}
+    head = head.replace('</head>', '<link rel="stylesheet" href="/category.css?v=20260928-cleanup">\n<link rel="stylesheet" href="/product.css?v=20260928-products">\n<link rel="stylesheet" href="/service.css?v=20260929-treatment-service">\n<script type="application/ld+json">' + json.dumps(schema) + '</script>\n</head>')
+    header = shared_paths(between('  <header class="header">', '  <main'))
+    reviews = between('    <section class="testimonials"', '    <section class="section intro"')
+    footer = shared_paths(HOME[HOME.index('  <footer class="footer">'):])
+    content = (ROOT / 'pages' / 'about.html').read_text().replace('{{reviews}}', reviews)
+    return '<!doctype html>\n<html lang="en">\n' + head + '\n<body class="category-page product-page about-page">\n  <a class="skip" href="#main">Skip to content</a>\n' + header + '<main id="main">\n' + content + '\n</main>\n' + footer
+
+
 def render_not_found():
     head = between('<head>', '</head>') + '</head>'
     head = re.sub(r'<title>.*?</title>', '<title>Page not found | Beautiful Blinds &amp; Shades</title>', head)
@@ -179,7 +208,7 @@ if __name__ == '__main__':
     if not args.check:
         HOME = updated_home
         (DIST / 'index.html').write_text(HOME)
-    for output, rendered in [(page_file('/products/' + slug), render_category(slug)) for slug in CATEGORIES] + [(page_file('/services/' + slug), render_category(slug, service=True)) for slug in SERVICES] + [(page_file('/contact'), render_contact())] + list(blog_outputs(HOME)) + list(subproduct_outputs(HOME, shared_paths)) + list(location_outputs(HOME, shared_paths)) + [(DIST / '404.html', render_not_found())]:
+    for output, rendered in [(page_file('/products/' + slug), render_category(slug)) for slug in CATEGORIES] + [(page_file('/services/' + slug), render_category(slug, service=True)) for slug in SERVICES] + [(page_file('/contact'), render_contact()), (page_file(ABOUT['route']), render_about())] + list(blog_outputs(HOME)) + list(subproduct_outputs(HOME, shared_paths)) + list(location_outputs(HOME, shared_paths)) + [(DIST / '404.html', render_not_found())]:
         rendered = localize_service_links(localize_locations(localize(rendered)))
         if args.check:
             if not output.exists() or output.read_text() != rendered:

@@ -54,3 +54,8 @@
  .service-hero .category-breadcrumb{font-size:11px;gap:8px}
  .service-hero-image{aspect-ratio:1.45}
 }
+.about-hero-image{object-position:50% 18%}
+.about-david-copy p{font-size:18px;line-height:1.7}
+.about-david-copy p+p{margin-top:20px}
+.service-details-intro>p a{color:var(--link);text-decoration:underline;text-underline-offset:3px}
+.about-david{background:#fff}

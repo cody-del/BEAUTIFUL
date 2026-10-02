@@ -21,6 +21,10 @@ Every page except the homepage is written as `<route>.html`, for example `dist/p
 
 `build_pages.py` also writes `dist/404.html`, which Netlify serves with a 404 status for missing URLs, and `dist/sitemap.xml`, built from each page's canonical. The build stops if a canonical doesn't match the URL its page is served at. At launch, keep the 404 page's `noindex` and add `Sitemap: https://www.beautifulblindsandshades.com/sitemap.xml` to the production `robots.txt`.
 
+## About page
+
+`/about-beautiful-blinds-and-shades` is built from `pages/about.html` by `render_about()` in `build_pages.py`. It keeps the live title, description and H1, and David's biography word for word, split into paragraphs where the original ran sentences together. The live page's other copy is not carried over: its "Why choose" cards are template filler, and its counts ("hundreds", "thousands") and process promises are unverified. The inherited meta description says "family-owned"; confirm that with David. Run `python3 homepage/check_about_page.py` after the shared build.
+
 ## Service-area map
 
 `dist/service-area-map.html` and `dist/service-area-map.js` render a lazy-loaded Leaflet map with OpenStreetMap tiles and visible attribution. The geographic polygon is an approximate trace of the client-supplied September 22 screenshot, not an administrative boundary. Its solid 3.5px brand-blue (#67b2e8) stroke has a white casing for contrast. Fit-to-boundary behavior preserves the full outline on desktop and mobile; scrolling the page does not zoom the map. The Google business listing remains linked below. Leaflet 1.9.4 is pinned with integrity hashes. Provider references: https://leafletjs.com/examples/quick-start/ and https://operations.osmfoundation.org/policies/tiles/.
