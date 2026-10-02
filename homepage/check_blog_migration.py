@@ -46,6 +46,8 @@ for p in POSTS:
     print('Exact article text and title:',p['slug'])
 
 for file in pages()+[DIST/'404.html']:
+    # Netlify serves 404.html at any missing URL, so resolve its links from a nested one.
+    base='/a/b/missing' if file.name=='404.html' else route_of(file)
     raw=file.read_text();doc=Page(raw);ids=[a['id'] for _,a in doc.tags if 'id' in a]
     assert len(ids)==len(set(ids)),(file,'duplicate IDs')
     assert sum(t=='h1' for t,a in doc.tags)==1,(file,'H1 count')
@@ -58,6 +60,6 @@ for file in pages()+[DIST/'404.html']:
         u=urlsplit(a[key])
         if u.scheme or u.netloc:continue
         # Resolve the way a browser does from the page's clean URL.
-        if u.path:assert serves(urljoin(route_of(file),unquote(u.path))),(file,a[key],'missing local target')
+        if u.path:assert serves(urljoin(base,unquote(u.path))),(file,a[key],'missing local target')
         if not u.path and u.fragment:assert u.fragment in ids,(file,a[key],'missing section')
 print('All',len(pages()),'pages and the 404 page: headings, IDs, schema, noindex, links, and assets passed.')
