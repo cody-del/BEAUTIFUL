@@ -9,6 +9,7 @@ from html import escape, unescape
 from html.parser import HTMLParser
 from build_subproducts import ROUTES
 from build_locations import ROUTES as LOCATION_ROUTES
+from routes import page_file
 import json
 import re
 
@@ -148,7 +149,7 @@ def blog_outputs(home):
     listing = '''<section class="blog-index-intro"><div class="container"><nav class="blog-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Guides</span></nav><h1>Window treatment guides</h1><p>Ideas, product comparisons, and local advice from Beautiful Blinds &amp; Shades. Find a starting point for your windows.</p></div></section><section class="section guide-library" aria-label="All window treatment guides"><div class="container"><div class="guide-library-heading"><p>All 12 guides</p><a class="text-link" href="/#products">Explore our window treatments</a></div><div class="guide-grid">'''
     listing += '\n'.join(card(p, heading=2) for p in POSTS) + '</div></div></section>'
     graph = {'@context':'https://schema.org','@type':'CollectionPage','@id':LIVE+'/blogs#page','url':LIVE+'/blogs','name':'Window treatment guides','mainEntity':{'@type':'ItemList','itemListElement':[{'@type':'ListItem','position':i+1,'url':p['url'],'name':p['title']} for i,p in enumerate(POSTS)]}}
-    yield ROOT/'dist/blogs/index.html', shell(home,INDEX['title'],INDEX['description'],'/blogs',listing,graph)
+    yield page_file('/blogs'), shell(home,INDEX['title'],INDEX['description'],'/blogs',listing,graph)
     for p in POSTS:
         body, headings = article_body(p)
         topic, product, product_label = TOPICS[p['slug']]
@@ -164,4 +165,4 @@ def blog_outputs(home):
         related.sort(key=lambda q: 0 if TOPICS[q['slug']][1]==product else 1)
         article += '<section class="section related-guides" aria-labelledby="related-title"><div class="container"><div class="guides-heading"><h2 id="related-title">More guides for your home</h2><a class="text-link" href="/blogs">View all guides</a></div><div class="guide-grid">'+''.join(card(q) for q in related[:3])+'</div></div></section>'
         schema = {'@context':'https://schema.org','@graph':[{'@type':'BlogPosting','@id':p['url']+'#article','mainEntityOfPage':p['url'],'url':p['url'],'headline':p['title'],'description':description,'image':LIVE+image,'author':{'@type':'Organization','name':'Beautiful Blinds & Shades','url':LIVE+'/'},'publisher':{'@id':LIVE+'/#business'},'inLanguage':'en-US'}, {'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Home','item':LIVE+'/'},{'@type':'ListItem','position':2,'name':'Guides','item':LIVE+'/blogs'},{'@type':'ListItem','position':3,'name':p['title'],'item':p['url']}]}]}
-        yield ROOT/'dist/blog-post'/p['slug']/'index.html',shell(home,title,description,'/blog-post/'+p['slug'],article,schema,image)
+        yield page_file('/blog-post/'+p['slug']),shell(home,title,description,'/blog-post/'+p['slug'],article,schema,image)

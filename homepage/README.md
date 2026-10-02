@@ -2,7 +2,7 @@
 
 Static HTML/CSS/JavaScript website review. The visual reference is Naples Shutter's Bahama & Colonial page, using Beautiful Blinds & Shades branding.
 
-Serve `dist/` locally with `python3 -m http.server 4317 --bind 127.0.0.1 --directory dist` from this folder. The homepage intentionally includes a noindex directive and a canonical to the client's existing domain. Complete the URL inventory and launch checklist before replacing the live website.
+Serve `dist/` locally with `python3 serve.py` from this folder, then open http://127.0.0.1:4317/. It serves clean URLs the way Netlify does; `python3 -m http.server` can't, because pages are `.html` files. The homepage intentionally includes a noindex directive and a canonical to the client's existing domain. Complete the URL inventory and launch checklist before replacing the live website.
 
 Source files:
 
@@ -14,6 +14,12 @@ Source files:
 - `research/`: local source evidence and the Semrush baseline, excluded from the hosted artifact
 
 The consultation card is a native four-field form modeled on the Naples project. It validates names, phone, and email locally, but this review build does not transmit or store contact details. Valid submissions show an explicit preview notice, never a success confirmation. Before launch, connect a server-side endpoint to Beautiful Blinds & Shades’ own CRM, add server validation and abuse protection, confirm the appropriate privacy policy, and verify delivery and the existing follow-up workflow. Never reuse another client’s credentials or expose a private CRM key in browser JavaScript. The former embedded form ID was zJjnT8CYHC8I93TcxC76. No live test leads have been sent.
+
+## Page files and URLs
+
+Every page except the homepage is written as `<route>.html`, for example `dist/products/blinds.html` for `/products/blinds`. Netlify serves that file at `/products/blinds` with a 200 and 301s `/products/blinds/` to it. A `products/blinds/index.html` file would do the opposite and add a trailing slash to every URL, while the live site, the canonicals and the internal links have none. `routes.py` holds this mapping for the build and check scripts.
+
+`build_pages.py` also writes `dist/404.html`, which Netlify serves with a 404 status for missing URLs, and `dist/sitemap.xml`, built from each page's canonical. The build stops if a canonical doesn't match the URL its page is served at. At launch, keep the 404 page's `noindex` and add `Sitemap: https://www.beautifulblindsandshades.com/sitemap.xml` to the production `robots.txt`.
 
 ## Service-area map
 
@@ -54,7 +60,7 @@ See `../seo/2026-09-27/CATEGORY-BUILD-NOTES.md` for preserved metadata, fresh Se
 
 ## Blog library and exact article migration
 
-`/blogs/` and all 12 original `/blog-post/` URLs are rebuilt. The homepage's guide carousel includes every original title and link near the bottom. Articles retain their exact source text; `blogs/content.json` stores the imported HTML and fingerprints. Edit layouts in `build_blogs.py` and `dist/blog.css`; carousel controls live in `dist/guides.js`. Run `python3 homepage/build_pages.py` to refresh all pages and the homepage carousel, then `python3 homepage/check_blog_migration.py` to verify article preservation and local routes. Do not rewrite imported article text as part of styling changes. See `../seo/2026-09-27/BLOG-BUILD-NOTES.md` for the narrowly scoped SEO corrections and remaining content review items.
+`/blogs` and all 12 original `/blog-post/` URLs are rebuilt. The homepage's guide carousel includes every original title and link near the bottom. Articles retain their exact source text; `blogs/content.json` stores the imported HTML and fingerprints. Edit layouts in `build_blogs.py` and `dist/blog.css`; carousel controls live in `dist/guides.js`. Run `python3 homepage/build_pages.py` to refresh all pages and the homepage carousel, then `python3 homepage/check_blog_migration.py` to verify article preservation and local routes. Do not rewrite imported article text as part of styling changes. See `../seo/2026-09-27/BLOG-BUILD-NOTES.md` for the narrowly scoped SEO corrections and remaining content review items.
 
 ## Shared buttons
 
@@ -87,7 +93,7 @@ The city directory now links to four local city pages; the other 13 remain on th
 
 ## Window treatment service
 
-`/services/window-treatments/` is built from `pages/window-treatments.html`, with the original metadata archived in `pages/window-treatments-source.json`. It uses the service hero plus the shared product installation/final-action styles. The shared Services menu and homepage process link now lead to the local route. Run `python3 homepage/check_window_treatment_service.py` after the shared build, alongside the existing migration checks. The preview now contains 40 pages. See `../seo/2026-09-29/WINDOW-TREATMENT-SERVICE-NOTES.md` for SEO evidence, editorial changes, and unconfirmed business details.
+`/services/window-treatments` is built from `pages/window-treatments.html`, with the original metadata archived in `pages/window-treatments-source.json`. It uses the service hero plus the shared product installation/final-action styles. The shared Services menu and homepage process link now lead to the local route. Run `python3 homepage/check_window_treatment_service.py` after the shared build, alongside the existing migration checks. The preview now contains 40 pages. See `../seo/2026-09-29/WINDOW-TREATMENT-SERVICE-NOTES.md` for SEO evidence, editorial changes, and unconfirmed business details.
 
 ## Fort Wayne and Allen County city batch
 

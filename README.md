@@ -9,7 +9,7 @@ The website is plain HTML, CSS, and JavaScript. The committed output can be serv
 ## Preview locally
 
 ```sh
-python3 -m http.server 4317 --bind 127.0.0.1 --directory homepage/dist
+python3 homepage/serve.py
 ```
 
 Open http://127.0.0.1:4317/.

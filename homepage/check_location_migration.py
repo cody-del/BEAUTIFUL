@@ -1,11 +1,10 @@
 """Check preserved location metadata and complete city discovery."""
-from pathlib import Path
 from html import unescape
 from urllib.parse import urlsplit
 import re
+from routes import page_file, pages
 from build_locations import BASELINE, CITIES, LIVE, ROUTES, HUB
 
-DIST = Path(__file__).resolve().parent / 'dist'
 NEW_CITY_TOPICS = {
     'columbia-city': ['cellular', 'solar', 'roman', 'shutters', 'motorized', 'woodwork'],
     'bluffton': ['cellular', 'solar', 'roman', 'shutters', 'motorized', 'blackout'],
@@ -22,7 +21,7 @@ def plain(value):
     return ' '.join(unescape(re.sub('<[^>]+>', ' ', value)).split())
 
 for key, source in BASELINE.items():
-    raw = (DIST / source['url'].removeprefix(LIVE).strip('/') / 'index.html').read_text()
+    raw = page_file(source['url'].removeprefix(LIVE)).read_text()
     expected_title = source['title'].replace('Indiana', 'Ohio') if key == 'hicksville' else source['title']
     assert unescape(re.search(r'<title>(.*?)</title>', raw)[1]) == expected_title
     assert unescape(re.search(r'<meta name="description" content="([^"]*)"', raw)[1]) == source['description']
@@ -73,7 +72,7 @@ for key, source in BASELINE.items():
         assert len(actual) == 17 and sorted(actual) == sorted(expected_paths)
     print('Preserved location metadata and content boundaries:', key)
 
-for file in DIST.rglob('index.html'):
+for file in pages():
     for href in re.findall(r'<a\b[^>]*\shref="([^"]+)"', file.read_text()):
         u = urlsplit(unescape(href))
         assert not (u.netloc == urlsplit(LIVE).netloc and u.path.rstrip('/') in ROUTES), (file, href)

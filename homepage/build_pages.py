@@ -9,6 +9,7 @@ import argparse
 from html import escape
 import json
 import re
+from routes import DIST as _DIST, page_file, pages, route_of
 
 ROOT = Path(__file__).resolve().parent
 DIST = ROOT / 'dist'
@@ -135,6 +136,36 @@ def render_contact():
     return '<!doctype html>\n<html lang="en">\n' + head + '\n<body class="contact-page">\n<a class="skip" href="#main">Skip to content</a>\n' + header + '<main id="main">\n' + content + '\n</main>\n' + footer
 
 
+
+def render_not_found():
+    head = between('<head>', '</head>') + '</head>'
+    head = re.sub(r'<title>.*?</title>', '<title>Page not found | Beautiful Blinds &amp; Shades</title>', head)
+    # Keep the error page out of search even after launch removes the preview noindex.
+    head = re.sub(r'\s*<meta name="(?:description|robots)"[^>]+>', '', head)
+    head = head.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n  <meta name="robots" content="noindex">', 1)
+    head = re.sub(r'\s*<link rel="(?:canonical|preload)"[^>]+>', '', head)
+    head = re.sub(r'<script type="application/ld\+json">.*?</script>\n?', '', head, flags=re.S)
+    head = re.sub(r'<link rel="stylesheet" href="/blog.css[^>]*>\s*|<script src="/guides.js[^>]*></script>\s*', '', head)
+    head = head.replace('href="assets/', 'href="/assets/').replace('href="styles.css', 'href="/styles.css').replace('src="script.js', 'src="/script.js')
+    head = head.replace('</head>', '<link rel="stylesheet" href="/category.css?v=20260928-cleanup">\n</head>')
+    header = shared_paths(between('  <header class="header">', '  <main'))
+    footer = shared_paths(HOME[HOME.index('  <footer class="footer">'):])
+    content = (ROOT / 'pages' / '404.html').read_text()
+    return '<!doctype html>\n<html lang="en">\n' + head + '\n<body class="category-page not-found-page">\n<a class="skip" href="#main">Skip to content</a>\n' + header + '<main id="main">\n' + content + '\n</main>\n' + footer
+
+
+def render_sitemap():
+    # Each page's own canonical is its sitemap URL; it must match the route Netlify serves it at.
+    urls = []
+    for file in pages():
+        canonical = re.search(r'<link rel="canonical" href="([^"]+)"', file.read_text())[1]
+        if canonical.removeprefix(LIVE) != route_of(file):
+            raise SystemExit(f'{file.relative_to(_DIST)} is served at {route_of(file)} but its canonical is {canonical}')
+        urls.append(canonical)
+    urls.sort(key=lambda u: (u != LIVE + '/', u))
+    return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(f'  <url><loc>{escape(u)}</loc></url>\n' for u in urls) + '</urlset>\n'
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--check', action='store_true')
@@ -148,7 +179,7 @@ if __name__ == '__main__':
     if not args.check:
         HOME = updated_home
         (DIST / 'index.html').write_text(HOME)
-    for output, rendered in [(DIST / 'products' / slug / 'index.html', render_category(slug)) for slug in CATEGORIES] + [(DIST / 'services' / slug / 'index.html', render_category(slug, service=True)) for slug in SERVICES] + [(DIST / 'contact' / 'index.html', render_contact())] + list(blog_outputs(HOME)) + list(subproduct_outputs(HOME, shared_paths)) + list(location_outputs(HOME, shared_paths)):
+    for output, rendered in [(page_file('/products/' + slug), render_category(slug)) for slug in CATEGORIES] + [(page_file('/services/' + slug), render_category(slug, service=True)) for slug in SERVICES] + [(page_file('/contact'), render_contact())] + list(blog_outputs(HOME)) + list(subproduct_outputs(HOME, shared_paths)) + list(location_outputs(HOME, shared_paths)) + [(DIST / '404.html', render_not_found())]:
         rendered = localize_service_links(localize_locations(localize(rendered)))
         if args.check:
             if not output.exists() or output.read_text() != rendered:
@@ -158,3 +189,11 @@ if __name__ == '__main__':
             output.parent.mkdir(parents=True, exist_ok=True)
             output.write_text(rendered)
             print('Built', output)
+    sitemap = render_sitemap()
+    if args.check:
+        if not (DIST / 'sitemap.xml').exists() or (DIST / 'sitemap.xml').read_text() != sitemap:
+            raise SystemExit('sitemap.xml is stale. Run python3 homepage/build_pages.py')
+        print('Sitemap is current:', sitemap.count('<url>'), 'URLs')
+    else:
+        (DIST / 'sitemap.xml').write_text(sitemap)
+        print('Built', DIST / 'sitemap.xml', sitemap.count('<url>'), 'URLs')
