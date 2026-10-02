@@ -1,0 +1,28 @@
+{
+  "retrieved_at": "2026-10-01",
+  "report": "resource_organic",
+  "database": "us",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"data\":\"Keyword;Position;Url;Timestamp\\ncustom window treatments in lanesville in;8;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-syracuse-indiana;1786787832\\n\",\"metadata\":{\"format\":\"csv\",\"pagination\":{\"limit\":50,\"sort\":\"position_asc\"},\"url\":\"https://www.semrush.com/analytics/organic/positions/?db=us\\u0026display_limit=50\\u0026display_sort=position_asc\\u0026export_columns=keyword%2Cposition%2Curl%2Ctimestamp\\u0026q=https%3A%2F%2Fwww.beautifulblindsandshades.com%2Fbeautiful-blinds-shades-service-areas%2Fwindow-treatments-syracuse-indiana\",\"usage\":{\"api_units\":10}}}"
+      }
+    ],
+    "structuredContent": {
+      "data": "Keyword;Position;Url;Timestamp\ncustom window treatments in lanesville in;8;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-syracuse-indiana;1786787832\n",
+      "metadata": {
+        "format": "csv",
+        "pagination": {
+          "limit": 50,
+          "sort": "position_asc"
+        },
+        "url": "https://www.semrush.com/analytics/organic/positions/?db=us&display_limit=50&display_sort=position_asc&export_columns=keyword%2Cposition%2Curl%2Ctimestamp&q=https%3A%2F%2Fwww.beautifulblindsandshades.com%2Fbeautiful-blinds-shades-service-areas%2Fwindow-treatments-syracuse-indiana",
+        "usage": {
+          "api_units": 10
+        }
+      }
+    },
+    "isError": false
+  }
+}

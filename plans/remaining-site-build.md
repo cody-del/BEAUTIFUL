@@ -2,13 +2,15 @@
 
 Prepared September 28, 2026. This is a work plan, not a deployment authorization or a claim of improved rankings.
 
+**Current review release, October 2:** 53 pages are built, including all 17 city pages. The full-site copy pass and migration checks are complete for this review release. The user authorized publishing it to GitHub main and the existing Netlify review site. About and `/contact-ghl` remain unresolved from the original 55-page inventory. Form delivery, factual verification of inherited blog claims and review ratings, and the production migration remain open. Preview noindex stays enabled. See [final city batch notes](../seo/2026-10-01/CITY-BUILD-NOTES.md) and [full-site copy review](../seo/2026-10-02/COPY-REVIEW.md).
+
 ## Starting point
 
 34 routes are built locally: homepage, Contact, four product/service categories, two care services, 13 product-detail pages, the blog index, and 12 original articles. The September 25 inventory contains 55 discovered live pages, leaving 21 original routes to resolve. The separate migration map covers 122 checked URLs, including legacy paths; completing the 55-page inventory alone does not resolve every old URL.
 
 The remaining work is 17 city pages, a service-area overview, About, the window-treatment service page, and the `/contact-ghl` integration route. The last item may need preservation or a redirect rather than a new indexable page.
 
-The production site stays in place while the rebuild is reviewed. The local preview remains excluded from search. Current forms validate locally but do not send leads. Recent local work has not been deployed.
+The production site stays in place while the rebuild is reviewed. The local preview remains excluded from search. Current forms validate locally but do not send leads. Publishing the Netlify review build is separate from switching the client’s production domain.
 
 ## September 29 implementation progress
 
@@ -18,7 +20,9 @@ The user approved moving on from the Auburn pilot. The next three city drafts ma
 
 The user then prioritized the window treatment service page. `/services/window-treatments` is now built with its original title/description and original leading heading promoted to H1. The site now has 40 built routes and 15 original inventory routes still unbuilt. Its content centers on consultation, measuring, ordering, installation, and aftercare; see [service page notes](../seo/2026-09-29/WINDOW-TREATMENT-SERVICE-NOTES.md).
 
-Next city batch remains Fort Wayne, Huntertown, Leo-Cedarville, and New Haven. Existing unresolved client facts and form delivery do not prevent independent page work.
+The previous 40-page build was committed to GitHub main (d16875c) and verified on Netlify on September 29 with preview noindex intact. Fort Wayne, Huntertown, Leo-Cedarville, and New Haven are now built locally, bringing the review build to 44 pages and leaving 11 original routes to resolve. This new batch is not deployed. Original URLs, title tags, descriptions, and H1s are preserved. See [Allen County batch notes](../seo/2026-09-29/ALLEN-COUNTY-CITY-BUILD-NOTES.md).
+
+On October 1, Columbia City, Bluffton, Grabill, Woodburn, Harlan, Hoagland, Angola, Kendallville, and Syracuse were built locally. All 17 city routes now have templates in the approved layout. Existing unresolved client facts and form delivery did not prevent this independent page work; they remain launch items.
 
 See [first location batch notes](../seo/2026-09-29/LOCATION-BUILD-NOTES.md) and [city correction notes](../seo/2026-09-29/CITY-CORRECTIONS-BUILD-NOTES.md).
 

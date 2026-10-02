@@ -1,0 +1,23 @@
+{
+  "retrieved_at": "2026-10-01",
+  "report": "resource_organic",
+  "database": "us",
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "McpServerError: {\"code\":\"internal\",\"message\":\"get url_organic: ERROR 50 :: NOTHING FOUND\\nNo data found for this request. Verify your parameters are correct. If parameters are valid, try a different date range or target.\\nnot found\",\"retryable\":false,\"trace_id\":\"75d5947c0529046a0803ae0426972cdd\"}"
+      }
+    ],
+    "structuredContent": {
+      "error": "McpServerError: {\"code\":\"internal\",\"message\":\"get url_organic: ERROR 50 :: NOTHING FOUND\\nNo data found for this request. Verify your parameters are correct. If parameters are valid, try a different date range or target.\\nnot found\",\"retryable\":false,\"trace_id\":\"75d5947c0529046a0803ae0426972cdd\"}",
+      "error_code": "UNAVAILABLE",
+      "error_data": {
+        "type": "json_rpc_error",
+        "code": -32603,
+        "message": "{\"code\":\"internal\",\"message\":\"get url_organic: ERROR 50 :: NOTHING FOUND\\nNo data found for this request. Verify your parameters are correct. If parameters are valid, try a different date range or target.\\nnot found\",\"retryable\":false,\"trace_id\":\"75d5947c0529046a0803ae0426972cdd\"}"
+      }
+    },
+    "isError": true
+  }
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "city": "columbia-city",
+    "before": "Choose around your windows and woodwork",
+    "after": "Window treatments that complement your woodwork"
+  },
+  {
+    "city": "columbia-city",
+    "before": "Bring these details into the conversation before we measure and order.",
+    "after": "Tell us about the details you want to keep and any work planned for the room."
+  },
+  {
+    "city": "columbia-city",
+    "before": "during the in-home process.",
+    "after": "during your home visit."
+  },
+  {
+    "city": "bluffton",
+    "before": "before it goes into the order.",
+    "after": "before you order."
+  },
+  {
+    "city": "bluffton",
+    "before": "Compare fabric opacity, side coverage, and controls within easy reach of the bed.",
+    "after": "Compare how much light each fabric blocks, how well it covers the window edges, and whether you can reach the controls from bed."
+  },
+  {
+    "city": "grabill",
+    "before": "We check size and operating weight before recommending a blind for a wide opening.",
+    "after": "For a wide opening, we check the size and how easy the blind will be to lift."
+  },
+  {
+    "city": "grabill",
+    "before": "David can confirm the visit arrangements and help you prepare for measuring and sample selection.",
+    "after": "David can help schedule your visit and answer any questions before we bring samples and measure your windows."
+  },
+  {
+    "city": "woodburn",
+    "before": "For larger windows, we compare operating weight and size limits as well as price.",
+    "after": "For larger windows, we compare price, available sizes, and how easy the blind is to raise."
+  },
+  {
+    "city": "woodburn",
+    "before": "See samples at home and compare a quote for the materials and controls you choose.",
+    "after": "See samples at home and get a quote for the materials and controls you choose."
+  },
+  {
+    "city": "harlan",
+    "before": "We check the raised stack and side gaps as part of planning the mounting.",
+    "after": "We check how much glass the folded fabric covers when raised and where light could enter around the sides."
+  },
+  {
+    "city": "harlan",
+    "before": "Are visits outside normal call hours possible?",
+    "after": "Can I arrange an evening or weekend visit?"
+  },
+  {
+    "city": "hoagland",
+    "before": "Cellular and roller shades offer a choice of opacity.",
+    "after": "Cellular and roller shades come in fabrics that filter daylight or darken the room."
+  },
+  {
+    "city": "hoagland",
+    "before": "a compatible motorized system can offer grouped operation.",
+    "after": "a compatible motorized system lets you adjust several shades together."
+  },
+  {
+    "city": "hoagland",
+    "before": "a conditioned living room",
+    "after": "a heated and cooled living room"
+  },
+  {
+    "city": "angola",
+    "before": "Keep the view useful throughout the day",
+    "after": "Enjoy the view with less glare"
+  },
+  {
+    "city": "angola",
+    "before": "We check the mounting fit and raised stack.",
+    "after": "We check how the shade fits and how much of the window it covers when raised."
+  },
+  {
+    "city": "kendallville",
+    "before": "Compare the finish with your trim and the control with your reach.",
+    "after": "Compare finishes beside your trim and choose controls you can reach comfortably."
+  },
+  {
+    "city": "kendallville",
+    "before": "with the final order measurements taken once the relevant work is ready.",
+    "after": "and we will take final measurements once the windows and trim are ready."
+  },
+  {
+    "city": "syracuse",
+    "before": "We also look at the space the raised fabric stack occupies.",
+    "after": "We also check how much of the window the folded fabric covers when raised."
+  },
+  {
+    "city": "syracuse",
+    "before": "whether the space is conditioned year-round.",
+    "after": "whether you heat and cool the room year-round."
+  }
+]

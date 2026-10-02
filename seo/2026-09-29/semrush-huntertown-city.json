@@ -1,0 +1,23 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"data\":\"Keyword;Position;Url;Timestamp\\nviewpoint window works;25;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/custom-window-treatments-in-huntertown-indiana;1785797292\\n\",\"metadata\":{\"format\":\"csv\",\"pagination\":{\"limit\":50,\"sort\":\"position_asc\"},\"url\":\"https://www.semrush.com/analytics/organic/positions/?db=us\\u0026display_limit=50\\u0026display_sort=position_asc\\u0026export_columns=keyword%2Cposition%2Curl%2Ctimestamp\\u0026q=https%3A%2F%2Fwww.beautifulblindsandshades.com%2Fbeautiful-blinds-shades-service-areas%2Fcustom-window-treatments-in-huntertown-indiana\",\"usage\":{\"api_units\":-870}}}"
+    }
+  ],
+  "structuredContent": {
+    "data": "Keyword;Position;Url;Timestamp\nviewpoint window works;25;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/custom-window-treatments-in-huntertown-indiana;1785797292\n",
+    "metadata": {
+      "format": "csv",
+      "pagination": {
+        "limit": 50,
+        "sort": "position_asc"
+      },
+      "url": "https://www.semrush.com/analytics/organic/positions/?db=us&display_limit=50&display_sort=position_asc&export_columns=keyword%2Cposition%2Curl%2Ctimestamp&q=https%3A%2F%2Fwww.beautifulblindsandshades.com%2Fbeautiful-blinds-shades-service-areas%2Fcustom-window-treatments-in-huntertown-indiana",
+      "usage": {
+        "api_units": -870
+      }
+    }
+  },
+  "isError": false
+}

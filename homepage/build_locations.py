@@ -15,6 +15,19 @@ CITY_PAGES={
     'monroeville': {'name':'Monroeville, Indiana','image':'blinds-venetian-original.jpg'},
     'warsaw': {'name':'Warsaw, Indiana','image':'roller-shades-fort-wayne-indiana.jpg'},
     'hicksville': {'name':'Hicksville, Ohio','image':'roman-shades-fort-wayne-indiana.jpg'},
+    'fort-wayne': {'name':'Fort Wayne, Indiana','image':'blinds-venetian-original.jpg'},
+    'huntertown': {'name':'Huntertown, Indiana','image':'roller-shades-fort-wayne-indiana.jpg'},
+    'leo-cedarville': {'name':'Leo-Cedarville, Indiana','image':'cellular-shades-fort-wayne-indiana.jpg'},
+    'new-haven': {'name':'New Haven, Indiana','image':'roman-shades-fort-wayne-indiana.jpg'},
+    'columbia-city': {'name':'Columbia City, Indiana','image':'wood-plantation-shutters-fort-wayne-indiana.jpg'},
+    'bluffton': {'name':'Bluffton, Indiana','image':'cellular-shades-fort-wayne-indiana.jpg'},
+    'grabill': {'name':'Grabill, Indiana','image':'blinds-venetian-original.jpg'},
+    'woodburn': {'name':'Woodburn, Indiana','image':'roman-shades-fort-wayne-indiana.jpg'},
+    'harlan': {'name':'Harlan, Indiana','image':'cellular-shades-fort-wayne-indiana.jpg'},
+    'hoagland': {'name':'Hoagland, Indiana','image':'blinds-venetian-original.jpg'},
+    'angola': {'name':'Angola, Indiana','image':'roller-shades-fort-wayne-indiana.jpg'},
+    'kendallville': {'name':'Kendallville, Indiana','image':'roman-shades-fort-wayne-indiana.jpg'},
+    'syracuse': {'name':'Syracuse, Indiana','image':'roller-shades-fort-wayne-indiana.jpg'},
 }
 # The source body and directory identify Ohio. Keep the legacy Indiana URL;
 # this factual correction is a preview draft pending service-coverage confirmation.

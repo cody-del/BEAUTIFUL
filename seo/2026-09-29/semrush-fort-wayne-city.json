@@ -1,0 +1,23 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"data\":\"Keyword;Position;Url;Timestamp\\nroller shades installers parker lane;18;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1786356179\\ncustom blinds medical district;30;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1787018820\\nbest blinds fort wayne indiana;38;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1786501003\\nbest blinds fort wayne;43;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1786409852\\ncustom window treatments sweetwater;52;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1788842358\\nblinds fort wayne indiana;76;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1787337945\\nblinds fort wayne;78;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1786670134\\nwindow treatments fort wayne indiana;82;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1788634706\\nwindow blinds fort wayne;85;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1789478912\\nfort wayne window treatments;87;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1787686374\\nwindow treatments fort wayne;97;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1787259820\\n\",\"metadata\":{\"format\":\"csv\",\"pagination\":{\"limit\":50,\"sort\":\"position_asc\"},\"url\":\"https://www.semrush.com/analytics/organic/positions/?db=us\\u0026display_limit=50\\u0026display_sort=position_asc\\u0026export_columns=keyword%2Cposition%2Curl%2Ctimestamp\\u0026q=https%3A%2F%2Fwww.beautifulblindsandshades.com%2Fbeautiful-blinds-shades-service-areas%2Fblinds-and-shades-fort-wayne-indiana\",\"usage\":{\"api_units\":1110}}}"
+    }
+  ],
+  "structuredContent": {
+    "data": "Keyword;Position;Url;Timestamp\nroller shades installers parker lane;18;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1786356179\ncustom blinds medical district;30;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1787018820\nbest blinds fort wayne indiana;38;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1786501003\nbest blinds fort wayne;43;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1786409852\ncustom window treatments sweetwater;52;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1788842358\nblinds fort wayne indiana;76;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1787337945\nblinds fort wayne;78;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1786670134\nwindow treatments fort wayne indiana;82;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1788634706\nwindow blinds fort wayne;85;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1789478912\nfort wayne window treatments;87;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1787686374\nwindow treatments fort wayne;97;https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana;1787259820\n",
+    "metadata": {
+      "format": "csv",
+      "pagination": {
+        "limit": 50,
+        "sort": "position_asc"
+      },
+      "url": "https://www.semrush.com/analytics/organic/positions/?db=us&display_limit=50&display_sort=position_asc&export_columns=keyword%2Cposition%2Curl%2Ctimestamp&q=https%3A%2F%2Fwww.beautifulblindsandshades.com%2Fbeautiful-blinds-shades-service-areas%2Fblinds-and-shades-fort-wayne-indiana",
+      "usage": {
+        "api_units": 1110
+      }
+    }
+  },
+  "isError": false
+}
