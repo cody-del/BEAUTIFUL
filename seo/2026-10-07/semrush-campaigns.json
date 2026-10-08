@@ -1,0 +1,16 @@
+{
+  "data": {
+    "project_id": "30275556",
+    "targets": null,
+    "limits": {
+      "targets": 10
+    }
+  },
+  "metadata": {
+    "format": "json",
+    "url": "https://www.semrush.com/position-tracking/?project_id=30275556",
+    "usage": {
+      "api_units": 100
+    }
+  }
+}

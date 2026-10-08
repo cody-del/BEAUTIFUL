@@ -1,0 +1,568 @@
+{
+  "date": "2026-10-07",
+  "base_commit": "28a9a05b5e7000f2ed0088c81f8a641dfc0583db",
+  "html_files": 56,
+  "seo_unchanged": true,
+  "rows": [
+    {
+      "file": "homepage/dist/index.html",
+      "seo": {
+        "title": "Custom Blinds, Shades & Shutters Fort Wayne | Free Quotes",
+        "h1": "Beautiful Window Treatments Fort Wayne Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/"
+      },
+      "seo_unchanged": true,
+      "main_words": 1321
+    },
+    {
+      "file": "homepage/dist/contact.html",
+      "seo": {
+        "title": "Contact Us | Beautiful Blinds & Shades | Fort Wayne IN",
+        "h1": "Contact us for a free in-home consultation",
+        "canonical": "https://www.beautifulblindsandshades.com/contact"
+      },
+      "seo_unchanged": true,
+      "main_words": 293
+    },
+    {
+      "file": "homepage/dist/404.html",
+      "seo": {
+        "title": "Page not found | Beautiful Blinds & Shades",
+        "h1": "We couldn\u2019t find that page",
+        "canonical": null
+      },
+      "seo_unchanged": true,
+      "main_words": 56
+    },
+    {
+      "file": "homepage/dist/service-area-map.html",
+      "seo": {
+        "title": "Beautiful Blinds & Shades service area",
+        "h1": "",
+        "canonical": null
+      },
+      "seo_unchanged": true,
+      "main_words": 0
+    },
+    {
+      "file": "homepage/dist/about-beautiful-blinds-and-shades.html",
+      "seo": {
+        "title": "About Beautiful Blinds & Shades | Fort Wayne Window Treatments",
+        "h1": "About Beautiful Blinds & Shades",
+        "canonical": "https://www.beautifulblindsandshades.com/about-beautiful-blinds-and-shades"
+      },
+      "seo_unchanged": true,
+      "main_words": 658
+    },
+    {
+      "file": "homepage/dist/blogs.html",
+      "seo": {
+        "title": "Blinds & Shades Blog | Tips & Ideas | Fort Wayne, IN",
+        "h1": "Window treatment guides",
+        "canonical": "https://www.beautifulblindsandshades.com/blogs"
+      },
+      "seo_unchanged": true,
+      "main_words": 227
+    },
+    {
+      "file": "homepage/dist/products/blinds.html",
+      "seo": {
+        "title": "Custom Blinds Fort Wayne | Window Blinds | Beautiful Blinds & Shades",
+        "h1": "Custom Blinds in Fort Wayne, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/products/blinds"
+      },
+      "seo_unchanged": true,
+      "main_words": 1288
+    },
+    {
+      "file": "homepage/dist/products/plantation-shutters.html",
+      "seo": {
+        "title": "Plantation Shutters Fort Wayne | Custom Shutters | Beautiful Blinds",
+        "h1": "Custom Plantation Shutters in Fort Wayne, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/products/plantation-shutters"
+      },
+      "seo_unchanged": true,
+      "main_words": 1157
+    },
+    {
+      "file": "homepage/dist/products/shades.html",
+      "seo": {
+        "title": "Custom Shades Fort Wayne | Window Shades | Beautiful Blinds & Shades",
+        "h1": "Custom Shades in Fort Wayne, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/products/shades"
+      },
+      "seo_unchanged": true,
+      "main_words": 1309
+    },
+    {
+      "file": "homepage/dist/blog-post/blackout-window-treatments-bluffton-homes.html",
+      "seo": {
+        "title": "Blackout Window Treatments for Bluffton Homes: Complete Light Control for Wells County Living",
+        "h1": "Blackout Window Treatments for Bluffton Homes: Complete Light Control for Wells County Living",
+        "canonical": "https://www.beautifulblindsandshades.com/blog-post/blackout-window-treatments-bluffton-homes"
+      },
+      "seo_unchanged": true,
+      "main_words": 1478
+    },
+    {
+      "file": "homepage/dist/blog-post/cellular-shades-fort-wayne-energy-savings.html",
+      "seo": {
+        "title": "Cellular Shades Fort Wayne IN | Energy Efficient Honeycomb Shades",
+        "h1": "Cellular Shades Fort Wayne IN | Energy Efficient Honeycomb Shades",
+        "canonical": "https://www.beautifulblindsandshades.com/blog-post/cellular-shades-fort-wayne-energy-savings"
+      },
+      "seo_unchanged": true,
+      "main_words": 2278
+    },
+    {
+      "file": "homepage/dist/blog-post/plantation-shutters-for-columbia-city-homes.html",
+      "seo": {
+        "title": "Plantation Shutters for Columbia City Homes",
+        "h1": "Plantation Shutters for Columbia City Homes",
+        "canonical": "https://www.beautifulblindsandshades.com/blog-post/plantation-shutters-for-columbia-city-homes"
+      },
+      "seo_unchanged": true,
+      "main_words": 2522
+    },
+    {
+      "file": "homepage/dist/blog-post/fort-wayne-window-treatments-guide.html",
+      "seo": {
+        "title": "The Complete Guide to Window Treatments in Fort Wayne, IN",
+        "h1": "The Complete Guide to Window Treatments in Fort Wayne, IN",
+        "canonical": "https://www.beautifulblindsandshades.com/blog-post/fort-wayne-window-treatments-guide"
+      },
+      "seo_unchanged": true,
+      "main_words": 1625
+    },
+    {
+      "file": "homepage/dist/blog-post/outdoor-patio-shades-guild-fort-wayne.html",
+      "seo": {
+        "title": "Why Fort Wayne Homes Need Outdoor Shades: Beat the Heat and Boost Your Home's Appeal",
+        "h1": "Why Fort Wayne Homes Need Outdoor Shades: Beat the Heat and Boost Your Home's Appeal",
+        "canonical": "https://www.beautifulblindsandshades.com/blog-post/outdoor-patio-shades-guild-fort-wayne"
+      },
+      "seo_unchanged": true,
+      "main_words": 1684
+    },
+    {
+      "file": "homepage/dist/blog-post/motorized-zebra-shades-fort-wayne-light-control.html",
+      "seo": {
+        "title": "Motorized Zebra Shades: The Perfect Light Control Solution for Fort Wayne Homes",
+        "h1": "Motorized Zebra Shades: The Perfect Light Control Solution for Fort Wayne Homes",
+        "canonical": "https://www.beautifulblindsandshades.com/blog-post/motorized-zebra-shades-fort-wayne-light-control"
+      },
+      "seo_unchanged": true,
+      "main_words": 2315
+    },
+    {
+      "file": "homepage/dist/blog-post/energy-efficient-blinds-leo-cedarville-indiana-homes.html",
+      "seo": {
+        "title": "Energy-Efficient Blinds for Leo-Cedarville, Indiana Homes",
+        "h1": "Energy-Efficient Blinds for Leo-Cedarville, Indiana Homes",
+        "canonical": "https://www.beautifulblindsandshades.com/blog-post/energy-efficient-blinds-leo-cedarville-indiana-homes"
+      },
+      "seo_unchanged": true,
+      "main_words": 988
+    },
+    {
+      "file": "homepage/dist/blog-post/motorized-blinds-and-shades-in-fort-wayne.html",
+      "seo": {
+        "title": "Motorized Blinds and Shades in Fort Wayne: A Guide for Indiana Homeowners",
+        "h1": "Motorized Blinds and Shades in Fort Wayne: A Guide for Indiana Homeowners",
+        "canonical": "https://www.beautifulblindsandshades.com/blog-post/motorized-blinds-and-shades-in-fort-wayne"
+      },
+      "seo_unchanged": true,
+      "main_words": 2404
+    },
+    {
+      "file": "homepage/dist/blog-post/5-ways-custom-blinds-and-shades-can-transform-your-fort-wayne-home.html",
+      "seo": {
+        "title": "5 Ways Custom Blinds and Shades Can Transform Your Fort Wayne Home This Fall",
+        "h1": "5 Ways Custom Blinds and Shades Can Transform Your Fort Wayne Home This Fall",
+        "canonical": "https://www.beautifulblindsandshades.com/blog-post/5-ways-custom-blinds-and-shades-can-transform-your-fort-wayne-home"
+      },
+      "seo_unchanged": true,
+      "main_words": 1042
+    },
+    {
+      "file": "homepage/dist/blog-post/custom-roller-shades-fort-wayne-open-concept-homes.html",
+      "seo": {
+        "title": "Custom Roller Shades for Fort Wayne Open-Concept Homes",
+        "h1": "Custom Roller Shades for Fort Wayne Open-Concept Homes",
+        "canonical": "https://www.beautifulblindsandshades.com/blog-post/custom-roller-shades-fort-wayne-open-concept-homes"
+      },
+      "seo_unchanged": true,
+      "main_words": 1648
+    },
+    {
+      "file": "homepage/dist/blog-post/save-energy-window-treatments-fort-wayne.html",
+      "seo": {
+        "title": "How Window Treatments Can Enhance Your Home's Energy Efficiency in Fort Wayne",
+        "h1": "How Window Treatments Can Enhance Your Home's Energy Efficiency in Fort Wayne",
+        "canonical": "https://www.beautifulblindsandshades.com/blog-post/save-energy-window-treatments-fort-wayne"
+      },
+      "seo_unchanged": true,
+      "main_words": 1293
+    },
+    {
+      "file": "homepage/dist/blog-post/best-window-blinds-new-construction-homes-huntertown-indiana.html",
+      "seo": {
+        "title": "Best Window Blinds for New Construction Homes in Huntertown, Indiana",
+        "h1": "Best Window Blinds for New Construction Homes in Huntertown, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/blog-post/best-window-blinds-new-construction-homes-huntertown-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 829
+    },
+    {
+      "file": "homepage/dist/location/beautiful-blinds-and-shades-service-area.html",
+      "seo": {
+        "title": "Service Areas | Fort Wayne & Allen County | Beautiful Blinds & Shades",
+        "h1": "Serving Fort Wayne & Northeast Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/location/beautiful-blinds-and-shades-service-area"
+      },
+      "seo_unchanged": true,
+      "main_words": 480
+    },
+    {
+      "file": "homepage/dist/beautiful-blinds-shades-service-areas/window-treatments-syracuse-indiana.html",
+      "seo": {
+        "title": "Custom Window Treatments In Syracuse, Indiana",
+        "h1": "Custom Window Treatments In Syracuse, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-syracuse-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 1108
+    },
+    {
+      "file": "homepage/dist/beautiful-blinds-shades-service-areas/window-treatments-woodburn-indiana.html",
+      "seo": {
+        "title": "Custom Window Treatments In Woodburn, Indiana",
+        "h1": "Custom Window Treatments In Woodburn, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-woodburn-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 1107
+    },
+    {
+      "file": "homepage/dist/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana.html",
+      "seo": {
+        "title": "Custom Window Treatments Fort Wayne, Indiana",
+        "h1": "Custom Window Treatments Fort Wayne, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 1069
+    },
+    {
+      "file": "homepage/dist/beautiful-blinds-shades-service-areas/window-treatments-grabill-indiana.html",
+      "seo": {
+        "title": "Custom Window Treatments In Grabill, Indiana",
+        "h1": "Custom Window Treatments In Grabill, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-grabill-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 1119
+    },
+    {
+      "file": "homepage/dist/beautiful-blinds-shades-service-areas/custom-window-treatments-in-huntertown-indiana.html",
+      "seo": {
+        "title": "Custom Window Treatments In Huntertown, Indiana",
+        "h1": "Custom Window Treatments In Huntertown, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/custom-window-treatments-in-huntertown-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 1041
+    },
+    {
+      "file": "homepage/dist/beautiful-blinds-shades-service-areas/window-treatments-leo-cedarville-indiana.html",
+      "seo": {
+        "title": "Custom Window Treatments In Leo-Cedarville, Indiana",
+        "h1": "Custom Window Treatments In Leo-Cedarville, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-leo-cedarville-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 1076
+    },
+    {
+      "file": "homepage/dist/beautiful-blinds-shades-service-areas/window-treatments-warsaw-indiana.html",
+      "seo": {
+        "title": "Custom Window Treatments in Warsaw, Indiana",
+        "h1": "Custom Window Treatments in Warsaw, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-warsaw-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 991
+    },
+    {
+      "file": "homepage/dist/beautiful-blinds-shades-service-areas/window-treatments-new-haven-indiana.html",
+      "seo": {
+        "title": "Custom Window Treatments In New Haven, Indiana",
+        "h1": "Custom Window Treatments In New Haven, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-new-haven-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 1055
+    },
+    {
+      "file": "homepage/dist/beautiful-blinds-shades-service-areas/window-treatments-bluffton-indiana.html",
+      "seo": {
+        "title": "Custom Window Treatments In Bluffton, Indiana",
+        "h1": "Custom Window Treatments In Bluffton, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-bluffton-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 1082
+    },
+    {
+      "file": "homepage/dist/beautiful-blinds-shades-service-areas/window-treatments-hoagland-indiana.html",
+      "seo": {
+        "title": "Custom Window Treatments In Hoagland, Indiana",
+        "h1": "Custom Window Treatments In Hoagland, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-hoagland-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 1121
+    },
+    {
+      "file": "homepage/dist/beautiful-blinds-shades-service-areas/window-treatments-in-kendallville-indiana.html",
+      "seo": {
+        "title": "Custom Window Treatments In Kendallville, Indiana",
+        "h1": "Custom Window Treatments In Kendallville, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-in-kendallville-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 1110
+    },
+    {
+      "file": "homepage/dist/beautiful-blinds-shades-service-areas/window-treatments-hicksville-indiana.html",
+      "seo": {
+        "title": "Custom Window Treatments in Hicksville, Ohio",
+        "h1": "Custom Window Treatments in Hicksville, Ohio",
+        "canonical": "https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-hicksville-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 921
+    },
+    {
+      "file": "homepage/dist/beautiful-blinds-shades-service-areas/window-treatment-columbia-city-indiana.html",
+      "seo": {
+        "title": "Custom Window Treatments In Columbia City, Indiana",
+        "h1": "Custom Window Treatments In Columbia City, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatment-columbia-city-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 1141
+    },
+    {
+      "file": "homepage/dist/beautiful-blinds-shades-service-areas/custom-window-treatments-harlan-indiana.html",
+      "seo": {
+        "title": "Custom Window Treatments Harlan, Indiana",
+        "h1": "Custom Window Treatments Harlan, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/custom-window-treatments-harlan-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 1100
+    },
+    {
+      "file": "homepage/dist/beautiful-blinds-shades-service-areas/window-treatments-monroeville-indiana.html",
+      "seo": {
+        "title": "Custom Window Treatments In Monroeville, Indiana",
+        "h1": "Custom Window Treatments In Monroeville, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-monroeville-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 931
+    },
+    {
+      "file": "homepage/dist/beautiful-blinds-shades-service-areas/window-treatments-auburn-indiana.html",
+      "seo": {
+        "title": "Custom Window Treatments In Auburn, Indiana",
+        "h1": "Custom Window Treatments In Auburn, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-auburn-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 1007
+    },
+    {
+      "file": "homepage/dist/beautiful-blinds-shades-service-areas/window-treatments-angola-indiana.html",
+      "seo": {
+        "title": "Custom Window Treatments In Angola, Indiana",
+        "h1": "Custom Window Treatments In Angola, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/beautiful-blinds-shades-service-areas/window-treatments-angola-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 1116
+    },
+    {
+      "file": "homepage/dist/custom-shades-fort-wayne-indiana/roman-shades-fort-wayne-indiana.html",
+      "seo": {
+        "title": "Roman Shades | Beautiful Blinds and Shades Fort Wayne",
+        "h1": "Custom Roman Shades Fort Wayne Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/custom-shades-fort-wayne-indiana/roman-shades-fort-wayne-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 603
+    },
+    {
+      "file": "homepage/dist/custom-shades-fort-wayne-indiana/custom-roller-shades-fort-wayne-indiana.html",
+      "seo": {
+        "title": "Roller Shades | Beautiful Blinds and Shades Fort Wayne",
+        "h1": "Custom Roller Shades Fort Wayne Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/custom-shades-fort-wayne-indiana/custom-roller-shades-fort-wayne-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 638
+    },
+    {
+      "file": "homepage/dist/custom-shades-fort-wayne-indiana/natural-shades-fort-wayne-indiana.html",
+      "seo": {
+        "title": "Natural Shades | Beautiful Blinds and Shades Fort Wayne",
+        "h1": "Custom Natural Shades Fort Wayne Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/custom-shades-fort-wayne-indiana/natural-shades-fort-wayne-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 611
+    },
+    {
+      "file": "homepage/dist/custom-shades-fort-wayne-indiana/pleated-shades-fort-wayne-indiana.html",
+      "seo": {
+        "title": "Pleated Shades | Beautiful Blinds and Shades Fort Wayne",
+        "h1": "Custom Pleated Shades Fort Wayne Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/custom-shades-fort-wayne-indiana/pleated-shades-fort-wayne-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 599
+    },
+    {
+      "file": "homepage/dist/custom-shades-fort-wayne-indiana/cellular-shades-fort-wayne-indiana.html",
+      "seo": {
+        "title": "Cellular Shades | Beautiful Blinds and Shades Fort Wayne",
+        "h1": "Custom Cellular Shades Fort Wayne Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/custom-shades-fort-wayne-indiana/cellular-shades-fort-wayne-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 628
+    },
+    {
+      "file": "homepage/dist/custom-shades-fort-wayne-indiana/layered-shades-fort-wayne-indiana.html",
+      "seo": {
+        "title": "Layered Shades | Beautiful Blinds and Shades Fort Wayne",
+        "h1": "Custom Layered Shades Fort Wayne Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/custom-shades-fort-wayne-indiana/layered-shades-fort-wayne-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 622
+    },
+    {
+      "file": "homepage/dist/custom-shades-fort-wayne-indiana/solar-shades-fort-wayne-indiana.html",
+      "seo": {
+        "title": "Solar Shades | Beautiful Blinds and Shades Fort Wayne",
+        "h1": "Custom Solar Shades Fort Wayne Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/custom-shades-fort-wayne-indiana/solar-shades-fort-wayne-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 613
+    },
+    {
+      "file": "homepage/dist/custom-interior-plantation-shutters-fort-wayne-indiana/custom-wood-plantation-shutters-in-fort-wayne-indiana.html",
+      "seo": {
+        "title": "Wood Plantation Shutters | Beautiful Blinds & Shades Fort Wayne",
+        "h1": "Custom Wood Plantation Shutters In Fort Wayne, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/custom-interior-plantation-shutters-fort-wayne-indiana/custom-wood-plantation-shutters-in-fort-wayne-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 618
+    },
+    {
+      "file": "homepage/dist/custom-interior-plantation-shutters-fort-wayne-indiana/custom-composite-plantation-shutters-in-fort-wayne-indiana.html",
+      "seo": {
+        "title": "Composite Plantation Shutters | Beautiful Blinds & Shades Fort Wayne",
+        "h1": "Custom Composite Plantation Shutters In Fort Wayne, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/custom-interior-plantation-shutters-fort-wayne-indiana/custom-composite-plantation-shutters-in-fort-wayne-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 599
+    },
+    {
+      "file": "homepage/dist/custom-blinds-fort-wayne-indiana/custom-mini-blinds-in-fort-wayne-indiana.html",
+      "seo": {
+        "title": "Mini Blinds | Beautiful Blinds & Shades Fort Wayne",
+        "h1": "Custom Mini Blinds Fort Wayne, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/custom-blinds-fort-wayne-indiana/custom-mini-blinds-in-fort-wayne-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 617
+    },
+    {
+      "file": "homepage/dist/custom-blinds-fort-wayne-indiana/custom-venetian-blinds-in-fort-wayne-indiana.html",
+      "seo": {
+        "title": "Venetian Blinds | Beautiful Blinds & Shades Fort Wayne",
+        "h1": "Custom Venetian Blinds In Fort Wayne Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/custom-blinds-fort-wayne-indiana/custom-venetian-blinds-in-fort-wayne-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 624
+    },
+    {
+      "file": "homepage/dist/custom-blinds-fort-wayne-indiana/custom-vertical-blinds-fort-wayne-indiana.html",
+      "seo": {
+        "title": "Vertical Blinds | Beautiful Blinds & Shades Fort Wayne",
+        "h1": "Custom Vertical Blinds Fort Wayne, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/custom-blinds-fort-wayne-indiana/custom-vertical-blinds-fort-wayne-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 613
+    },
+    {
+      "file": "homepage/dist/custom-blinds-fort-wayne-indiana/custom-panel-track-blinds-fort-wayne-indiana.html",
+      "seo": {
+        "title": "Panel Track Blinds | Beautiful Blinds & Shades Fort Wayne",
+        "h1": "Custom Panel Track Blinds Fort Wayne, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/custom-blinds-fort-wayne-indiana/custom-panel-track-blinds-fort-wayne-indiana"
+      },
+      "seo_unchanged": true,
+      "main_words": 617
+    },
+    {
+      "file": "homepage/dist/services/blind-shade-repair.html",
+      "seo": {
+        "title": "Blind Repair Fort Wayne | Shade Repair Service | Beautiful Blinds",
+        "h1": "Blind & Shade Repairin Fort Wayne, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/services/blind-shade-repair"
+      },
+      "seo_unchanged": true,
+      "main_words": 1379
+    },
+    {
+      "file": "homepage/dist/services/outdoor-shades.html",
+      "seo": {
+        "title": "Outdoor Shades Fort Wayne | Patio & Deck Shades | Beautiful Blinds",
+        "h1": "Custom Outdoor Shades in Fort Wayne, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/services/outdoor-shades"
+      },
+      "seo_unchanged": true,
+      "main_words": 1238
+    },
+    {
+      "file": "homepage/dist/services/blind-and-shade-cleaning.html",
+      "seo": {
+        "title": "Professional Blind Cleaning Fort Wayne | Beautiful Blinds & Shades",
+        "h1": "Blind & Shade Cleaningin Fort Wayne, Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/services/blind-and-shade-cleaning"
+      },
+      "seo_unchanged": true,
+      "main_words": 1277
+    },
+    {
+      "file": "homepage/dist/services/window-treatments.html",
+      "seo": {
+        "title": "Window Treatments Fort Wayne | Custom Blinds & Shades | Beautiful Blinds",
+        "h1": "Custom Window Treatments Fort Wayne Indiana",
+        "canonical": "https://www.beautifulblindsandshades.com/services/window-treatments"
+      },
+      "seo_unchanged": true,
+      "main_words": 1083
+    }
+  ]
+}

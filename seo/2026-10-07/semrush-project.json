@@ -1,0 +1,27 @@
+{
+  "retrieved": "2026-10-07",
+  "project": {
+    "project_id": 30275556,
+    "project_name": "www.beautifulblindsandshades.com",
+    "url": "www.beautifulblindsandshades.com",
+    "domain_unicode": "www.beautifulblindsandshades.com",
+    "tools": [
+      {
+        "tool": "siteaudit"
+      },
+      {
+        "tool": "tracking"
+      },
+      {
+        "tool": "gat"
+      },
+      {
+        "tool": "backlinkAudit"
+      }
+    ],
+    "owner_id": 29077339,
+    "permission": [
+      "OWNER"
+    ]
+  }
+}

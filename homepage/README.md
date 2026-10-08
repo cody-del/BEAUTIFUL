@@ -27,7 +27,7 @@ Every page except the homepage is written as `<route>.html`, for example `dist/p
 
 ## Service-area map
 
-`dist/service-area-map.html` and `dist/service-area-map.js` render a lazy-loaded Leaflet map with OpenStreetMap tiles and visible attribution. The geographic polygon is an approximate trace of the client-supplied September 22 screenshot, not an administrative boundary. Its solid 3.5px brand-blue (#67b2e8) stroke has a white casing for contrast. Fit-to-boundary behavior preserves the full outline on desktop and mobile; scrolling the page does not zoom the map. The Google business listing remains linked below. Leaflet 1.9.4 is pinned with integrity hashes. Provider references: https://leafletjs.com/examples/quick-start/ and https://operations.osmfoundation.org/policies/tiles/.
+`dist/service-area-map.html` and `dist/service-area-map.js` render a lazy-loaded Leaflet map with OpenStreetMap tiles and visible attribution. The geographic polygon is an approximate trace of the client-supplied September 22 screenshot, not an administrative boundary. Its solid 3.5px brand-blue (#67b2e8) stroke has a white casing for contrast. Fit-to-boundary behavior preserves the full outline on desktop and mobile; scrolling the page does not zoom the map. The map has no extra link bar beneath it. Google reviews remain linked in the footer and consultation form. Leaflet 1.9.4 is pinned with integrity hashes. Provider references: https://leafletjs.com/examples/quick-start/ and https://operations.osmfoundation.org/policies/tiles/.
 
 ## Review and media updates
 

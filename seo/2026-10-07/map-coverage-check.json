@@ -1,0 +1,7 @@
+{
+  "note": "Approximate polygon vs saved Census place centers. Not an address-eligibility determination.",
+  "coordinate_source": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2025_Gazetteer/2025_Gaz_place_national.zip",
+  "outside": [
+    "Hicksville"
+  ]
+}
