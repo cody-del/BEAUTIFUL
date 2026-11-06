@@ -40,4 +40,13 @@ The homepage and Contact consultation forms post to `/api/consultation` (`netlif
 
 Netlify environment variables (never committed): `GHL_PRIVATE_TOKEN` (a BBS private integration with contacts write access, secret) and `GHL_LOCATION_ID`. Functions read them at deploy time, so redeploy after changing them. `node --test tests/*.test.mjs` runs the tests; Netlify runs them as the build command.
 
+### Cloudflare Turnstile
+
+`homepage/dist/script.js` adds an invisible Cloudflare Turnstile human check to both consultation forms (home and Contact); visitors only see a checkbox if Cloudflare wants one. `netlify/lib/turnstile.mjs` checks the token in the function before anything reaches GoHighLevel, refuses the lead with a 403 when the token is missing or refused, and never passes the token on. If Cloudflare can't be reached (3-second timeout, HTTP error or a non-JSON answer), the lead goes through rather than being lost. A token older than 270 seconds (Cloudflare honours them for 300) is refreshed before sending.
+
+- Widget: "Beautiful Blinds and Shades lead forms" in the gbp@shadestrategy.com Cloudflare account (Managed mode; also covers the go. landing page).
+- Site key: `0x4AAAAAAF2px4kB-syt0wNp` (public, in `script.js`), used only on `www.beautifulblindsandshades.com` and `beautifulblindsandshades.com`. Every other host, including `beautifulblindshadescom.netlify.app` before launch, deploy previews and localhost, uses Cloudflare's always-pass test key `1x00000000000000000000AA` and needs no secret.
+- Secret: the Netlify variable `TURNSTILE_SECRET_KEY` on `beautifulblindshadescom` (Production context, Functions scope, marked secret). Without it the check is off. Functions read it at deploy time, so redeploy after setting it. Until the real domain is attached, the netlify.app production URL sends the test key's token, which the real secret refuses: set the secret only when the site moves to beautifulblindsandshades.com.
+- The privacy policy's cookie paragraph mentions Turnstile. That sentence is ours, not the live site's: keep it if `fetch_legal_pages.py` is rerun.
+
 The text-message consent links to `/privacy-policy` and `/terms-of-service`, copied from the live site by `python3 homepage/fetch_legal_pages.py` into `homepage/pages/legal/`. Rerun it, then `python3 homepage/build_pages.py`, whenever the live wording changes.
