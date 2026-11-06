@@ -28,7 +28,8 @@ for key, source in BASELINE.items():
     assert unescape(re.search(r'<meta name="description" content="([^"]*)"', raw)[1]) == live_meta(route, 'description', source['description'])
     assert f'rel="canonical" href="{source["url"]}"' in raw
     headings = re.findall(r'<h1\b[^>]*>(.*?)</h1>', raw, re.S)
-    expected = 'Serving Fort Wayne & Northeast Indiana' if key == 'service-area' else expected_title
+    # The H1 matches the page title, which is the live site's current one (live-metadata.json).
+    expected = 'Serving Fort Wayne & Northeast Indiana' if key == 'service-area' else live_meta(route, 'title', expected_title)
     assert len(headings) == 1 and plain(headings[0]) == expected
     main = raw.split('<main id="main">')[1].split('</main>')[0]
     assert not re.search(r'<video\b|hero-badges|Buy 2 Get 1|—', main, re.I)
