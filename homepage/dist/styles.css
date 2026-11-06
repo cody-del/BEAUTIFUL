@@ -357,3 +357,32 @@ html{scroll-padding-top:118px}
 .home-process-steps p{margin-top:12px;color:var(--muted);max-width:540px}
 @media(max-width:1000px){.home-process-layout{gap:45px}}
 @media(max-width:780px){.home-process-layout{grid-template-columns:1fr;gap:38px;max-width:600px}.home-process-intro{text-align:center}.home-process-intro>p,.home-process-intro .text-link{margin-inline:auto}.home-process-intro h2 br{display:none}.home-process-steps li{padding-left:35px}.home-process-steps h3{font-size:21px}}
+/* Lead form: spam trap, optional text-message consent, policy line and thank-you card (2026-11-06) */
+.form-honeypot{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.sms-consent{margin:22px 0 0;padding:14px 16px;border:1px solid #d9e1e6;border-radius:10px;background:#f5f7f8}
+.sms-consent legend{padding:0 6px;font-size:13px;font-weight:700;color:var(--ink)}
+.sms-consent-option{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;font-size:12px;line-height:1.6;color:var(--muted);cursor:pointer}
+.sms-consent-option input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--link)}
+.sms-consent-option input:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.sms-consent-option strong{color:var(--ink)}
+.consultation-form .form-legal{margin:10px 0 0;max-width:none;color:var(--muted);font-size:12px;line-height:1.6;text-align:center}
+.consultation-form .form-legal a{text-decoration:underline}
+.consultation-success{position:relative;min-width:0;background:#fff;color:var(--ink);padding:38px;border:1px solid #e1e8ec;box-shadow:0 24px 64px #071b2330;border-radius:18px;text-align:center}
+.consultation-success:focus{outline:none}
+.consultation-success .success-mark{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--green);color:#273720;font-size:26px;font-weight:700}
+.consultation-success h3{font-size:26px;margin:18px 0 0;text-wrap:balance}
+.consultation-success p{margin:12px auto 0;max-width:none;color:var(--muted);font-size:15px;line-height:1.65}
+.consultation-success a{display:inline-block;margin-top:18px;font-weight:700;text-decoration:underline}
+.footer-legal a{margin-right:18px}.footer-legal a:last-child{margin-right:0}.footer-legal a:hover{text-decoration:underline}
+@media(max-width:780px){.footer-legal{margin:8px 0}}
+@media(max-width:540px){.consultation-success{padding:28px 22px}}
+/* Privacy Policy and Terms of Service, copied from the live site (fetch_legal_pages.py) */
+.legal-page{background:#fff}.legal-policy{padding-top:170px}
+.legal-policy-body{max-width:760px}
+.legal-policy-body h1{font-size:44px;line-height:1.15;margin:6px 0 10px}
+.legal-policy-body>p:first-child{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0}
+.legal-policy-body h2{font-size:24px;line-height:1.3;margin:36px 0 12px}
+.legal-policy-body p,.legal-policy-body li{font-size:16px;line-height:1.75;color:#34414b;max-width:none}
+.legal-policy-body p{margin:0 0 14px}
+.legal-policy-body a{text-decoration:underline;color:var(--link)}
+@media(max-width:780px){.legal-policy{padding-top:130px}.legal-policy-body h1{font-size:34px}}

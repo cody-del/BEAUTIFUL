@@ -22,4 +22,12 @@ The `beautifulblindshadescom` Netlify project deploys from this repository's `ma
 
 Preview URL: https://beautifulblindshadescom.netlify.app/
 
-This is a design review build. Search indexing is disabled, and the consultation form validates locally but does not send leads. Connect and verify the client's lead-delivery endpoint and complete the SEO launch checklist before production deployment.
+This is a design review build with search indexing disabled. Complete the SEO launch checklist before production deployment.
+
+## Lead form
+
+The homepage and Contact consultation forms post to `/api/consultation` (`netlify/functions/consultation.mjs`, logic in `netlify/lib/consultation.mjs`). It upserts the contact into Beautiful Blinds & Shades' GoHighLevel, then adds the tag `website lead` (the trigger of GHL's "Form Submission bbs" workflow; `google_landing_page` is for the go. landing page only), plus `sms-transactional-opt-in` when the optional, unticked text-message box was ticked, then a note with the page, treatment, project text and a dated text-message choice. The browser shows the thank-you card and sends one GA4 `generate_lead` only after the lead is confirmed and tagged. GA4 (G-TBE6JC5ZYG) loads on www.beautifulblindsandshades.com only.
+
+Netlify environment variables (never committed): `GHL_PRIVATE_TOKEN` (a BBS private integration with contacts write access, secret) and `GHL_LOCATION_ID`. Functions read them at deploy time, so redeploy after changing them. `node --test tests/*.test.mjs` runs the tests; Netlify runs them as the build command.
+
+The text-message consent links to `/privacy-policy` and `/terms-of-service`, copied from the live site by `python3 homepage/fetch_legal_pages.py` into `homepage/pages/legal/`. Rerun it, then `python3 homepage/build_pages.py`, whenever the live wording changes.

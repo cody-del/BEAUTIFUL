@@ -13,7 +13,7 @@ Source files:
 - `SEO_NOTES.md`: ranking baseline, keyword ownership, and launch requirements
 - `research/`: local source evidence and the Semrush baseline, excluded from the hosted artifact
 
-The consultation card is a native four-field form modeled on the Naples project. It validates names, phone, and email locally, but this review build does not transmit or store contact details. Valid submissions show an explicit preview notice, never a success confirmation. Before launch, connect a server-side endpoint to Beautiful Blinds & Shades’ own CRM, add server validation and abuse protection, confirm the appropriate privacy policy, and verify delivery and the existing follow-up workflow. Never reuse another client’s credentials or expose a private CRM key in browser JavaScript. The former embedded form ID was zJjnT8CYHC8I93TcxC76. No live test leads have been sent.
+The consultation card is a native four-field form modeled on the Naples project, with a hidden spam-trap field and an optional, unticked text-message consent box. `script.js` posts it to `/api/consultation`, which sends the lead to Beautiful Blinds & Shades' GoHighLevel tagged `website lead`; see the root README's Lead form section. The success card appears only after GHL confirms the lead. The former embedded form ID was zJjnT8CYHC8I93TcxC76.
 
 ## Page files and URLs
 
@@ -50,7 +50,7 @@ See `../seo/2026-09-26/BLINDS-BUILD-NOTES.md` for the Semrush baseline, content 
 
 ## Contact page
 
-The Contact preview is at `/contact/`, with the existing `/contact` canonical. Edit `pages/contact.html` and `dist/contact.css`, then run the shared generator above. The homepage and blinds consultation buttons now point to `/contact`; buttons on the Contact page jump to its form. The form reuses the four required contact fields and adds optional treatment and project-detail fields. Both homepage and Contact forms do not send details. The persistent preview label was removed at the user’s request; submitting still truthfully explains that nothing was sent.
+The Contact preview is at `/contact/`, with the existing `/contact` canonical. Edit `pages/contact.html` and `dist/contact.css`, then run the shared generator above. The homepage and blinds consultation buttons now point to `/contact`; buttons on the Contact page jump to its form. The form reuses the four required contact fields and adds optional treatment and project-detail fields. Both homepage and Contact forms send to `/api/consultation`. The persistent preview label was removed at the user’s request; submitting still truthfully explains that nothing was sent.
 
 See `../seo/2026-09-26/CONTACT-BUILD-NOTES.md` for preserved metadata, Semrush limitations, and validation.
 
@@ -70,7 +70,7 @@ See `../seo/2026-09-27/CATEGORY-BUILD-NOTES.md` for preserved metadata, fresh Se
 
 Action buttons use `.button` in `dist/styles.css`: 48px minimum height, 14px bold text, 8px corners, and brand green. `.small` is the 44px navigation variant; `.button-outline` uses blue on light sections and white on dark sections. Page styles should change placement or width only. Mobile standalone actions are capped at 300px; forms and product cards fill their containers. Review and guide arrows share 44px circular controls.
 
-The persistent preview notice has been removed from the consultation forms. Lead delivery is still unconnected; the submission handler retains its truthful unsent status.
+The persistent preview notice has been removed from the consultation forms. Lead delivery goes to GHL through `/api/consultation`.
 
 ## Product page design
 
