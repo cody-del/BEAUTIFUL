@@ -52,7 +52,9 @@ for file in pages()+[DIST/'404.html']:
     assert len(ids)==len(set(ids)),(file,'duplicate IDs')
     assert sum(t=='h1' for t,a in doc.tags)==1,(file,'H1 count')
     assert '{{' not in raw,(file,'unresolved template')
-    assert any(t=='meta' and a.get('name')=='robots' and 'noindex' in a.get('content','') for t,a in doc.tags),(file,'preview indexable')
+    # Indexable in the committed HTML; netlify/edge-functions/search-block.js noindexes every host but the real domain.
+    robots=[a.get('content','') for t,a in doc.tags if t=='meta' and a.get('name')=='robots']
+    assert robots==(['noindex'] if file.name=='404.html' else []),(file,'robots meta',robots)
     for schema in re.findall(r'<script type="application/ld\+json">(.*?)</script>',raw,re.S):json.loads(schema)
     for tag,a in doc.tags:
         key='href' if tag in ('a','link') else 'src' if tag in ('img','iframe','script') else None

@@ -42,8 +42,8 @@ The existing Semrush Site Audit is dated July 27, 2026, not today: 60 crawled pa
 - Reuse the real client review excerpts and dated 5.0 / 36 review snapshot from the site's connected review widget. These are static snapshots and should be refreshed before launch. Do not invent reviews or review counts.
 - Load the original Wistia introduction after the visitor clicks play. Primary content is available without the player.
 - Use the original LeadConnector consultation form, with a direct contact-page fallback. No lead was submitted during testing.
-- Keep analytics off this review copy to avoid polluting production measurement. The existing production GA4 ID is recorded in the original HTML and must be restored/tested for launch.
-- Protect the review copy with `noindex, nofollow`. This must be removed only from the intended production homepage at release.
+- GA4 (G-TBE6JC5ZYG) and GTM (GTM-KHJ3F2F5) load only on www.beautifulblindsandshades.com, so the review copy sends nothing (2026-11-06).
+- The review copy is protected by `netlify/edge-functions/search-block.js`: noindex and a disallow-all robots.txt on every host but www.beautifulblindsandshades.com (2026-11-06).
 
 ## Keyword overlap decisions
 

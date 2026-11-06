@@ -2,7 +2,7 @@
 
 Static HTML/CSS/JavaScript website review. The visual reference is Naples Shutter's Bahama & Colonial page, using Beautiful Blinds & Shades branding.
 
-Serve `dist/` locally with `python3 serve.py` from this folder, then open http://127.0.0.1:4317/. It serves clean URLs the way Netlify does; `python3 -m http.server` can't, because pages are `.html` files. The homepage intentionally includes a noindex directive and a canonical to the client's existing domain. Complete the URL inventory and launch checklist before replacing the live website.
+Serve `dist/` locally with `python3 serve.py` from this folder, then open http://127.0.0.1:4317/. It serves clean URLs the way Netlify does; `python3 -m http.server` can't, because pages are `.html` files. Search engines are kept off every host but the real domain by `netlify/edge-functions/search-block.js` (see the root README); the pages themselves carry no noindex.
 
 Source files:
 
@@ -46,7 +46,7 @@ Design/content decisions confirmed September 26: omit the buy-two-get-one offer 
 
 The first category preview is available at `/products/blinds/`. Edit its content in `pages/blinds.html` and its styles in `dist/category.css`, then run `python3 homepage/build_pages.py` from the repository root. The generator reuses the current homepage header, reviews, and footer. Hero review badges remain exclusive to the homepage; shared elements are reused to keep them consistent. Run `python3 homepage/build_pages.py --check` before publishing to detect stale generated output. Netlify still publishes the committed `homepage/dist` directory without a build step.
 
-See `../seo/2026-09-26/BLINDS-BUILD-NOTES.md` for the Semrush baseline, content decisions, validation, and migration requirements. Keep the preview noindex protections until the production migration is ready.
+See `../seo/2026-09-26/BLINDS-BUILD-NOTES.md` for the Semrush baseline, content decisions, validation, and migration requirements. The netlify.app and preview hosts stay noindexed by the edge function.
 
 ## Contact page
 
