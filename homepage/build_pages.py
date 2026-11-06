@@ -6,7 +6,7 @@ No client-side rendering or third-party Python packages are required.
 """
 from pathlib import Path
 import argparse
-from html import escape
+from html import escape, unescape
 import json
 import re
 from routes import DIST as _DIST, page_file, pages, route_of
@@ -212,6 +212,79 @@ def render_not_found():
     return '<!doctype html>\n<html lang="en">\n' + head + '\n<body class="category-page not-found-page">\n<a class="skip" href="#main">Skip to content</a>\n' + header + '<main id="main">\n' + content + '\n</main>\n' + footer
 
 
+LIVE_METADATA = json.loads((ROOT / 'live-metadata.json').read_text())
+
+
+def apply_live_metadata(route, html):
+    """Use the live site's current title and description (fetch_live_metadata.py).
+
+    The live site's 2026-10-24 SEO pass postdates this rebuild's page drafts;
+    launching with the older wording would undo it.
+    """
+    meta = LIVE_METADATA.get(route, {})
+    if 'title' in meta:
+        html = re.sub(r'<title>.*?</title>', lambda m: '<title>' + escape(meta['title'], quote=False) + '</title>', html, count=1)
+        html = re.sub(r'<meta property="og:title" content="[^"]*">', lambda m: '<meta property="og:title" content="' + escape(meta['title'], quote=True) + '">', html, count=1)
+    if 'description' in meta:
+        html = re.sub(r'<meta name="description" content="[^"]*">', lambda m: '<meta name="description" content="' + escape(meta['description'], quote=True) + '">', html, count=1)
+        html = re.sub(r'<meta property="og:description" content="[^"]*">', lambda m: '<meta property="og:description" content="' + escape(meta['description'], quote=True) + '">', html, count=1)
+    return html
+
+
+def _places():
+    from build_locations import BASELINE, CITY_PAGES
+    def city(label):
+        town, state = label.split(', ')
+        return {'@type': 'City', 'name': town, 'containedInPlace': {'@type': 'State', 'name': state}}
+    towns = {BASELINE[key]['url'].removeprefix(LIVE): city(page['name']) for key, page in CITY_PAGES.items()}
+    area = [{'@type': 'AdministrativeArea', 'name': 'Allen County', 'containedInPlace': {'@type': 'State', 'name': 'Indiana'}}] + [city(page['name']) for page in CITY_PAGES.values()]
+    return towns, area
+
+
+TOWN_BY_ROUTE, SERVICE_AREA = _places()
+# Pages that describe a service the business sells, and the serviceType used
+# when the live page names none.
+SERVICE_PAGES = {
+    '/products/blinds': 'Custom Blinds',
+    '/custom-blinds-fort-wayne-indiana/': 'Custom Blinds',
+    '/products/shades': 'Custom Shades',
+    '/custom-shades-fort-wayne-indiana/': 'Custom Shades',
+    '/products/plantation-shutters': 'Plantation Shutters',
+    '/custom-interior-plantation-shutters-fort-wayne-indiana/': 'Plantation Shutters',
+    '/services/': 'Window Treatments',
+    '/beautiful-blinds-shades-service-areas/': 'Window Treatments',
+    '/location/beautiful-blinds-and-shades-service-area': 'Window Treatments',
+}
+
+
+def add_service_schema(route, html):
+    """Add a Service node naming what the page sells and where.
+
+    The live site describes each service, product and town page with Service
+    or OfferCatalog markup (fixed on 2026-10-24); the rebuild's own WebPage and
+    BreadcrumbList markup stays as it is, and this links the two through the
+    business @id. No Product, Offer price or inLanguage, which were the live
+    site's Semrush errors.
+    """
+    kind = next((value for prefix, value in SERVICE_PAGES.items() if route == prefix or (prefix.endswith('/') and route.startswith(prefix))), None)
+    if not kind:
+        return html
+    live = LIVE_METADATA.get(route, {}).get('service', {})
+    h1 = ' '.join(re.sub(r'<[^>]+>', ' ', re.search(r'<h1\b[^>]*>(.*?)</h1>', html, re.S)[1]).split())
+    town = TOWN_BY_ROUTE.get(route)
+    url = LIVE + route
+    node = {'@context': 'https://schema.org', '@type': 'Service', '@id': url + '#service',
+            'name': live.get('name') or (f"Window treatments in {town['name']}, {town['containedInPlace']['name']}" if town else unescape(h1)),
+            'serviceType': live.get('serviceType') or kind,
+            'description': unescape(re.search(r'<meta name="description" content="([^"]*)"', html)[1]),
+            'url': url, 'provider': {'@id': LIVE + '/#business'},
+            'areaServed': town or SERVICE_AREA}
+    if live.get('catalog'):
+        node['hasOfferCatalog'] = {'@type': 'OfferCatalog', 'name': live['catalog']['name'], 'itemListElement': [
+            {'@type': 'Offer', 'itemOffered': {'@type': 'Service', **item}} for item in live['catalog']['items']]}
+    return html.replace('</head>', '<script type="application/ld+json">' + json.dumps(node, ensure_ascii=False) + '</script>\n</head>', 1)
+
+
 def render_sitemap():
     # Each page's own canonical is its sitemap URL; it must match the route Netlify serves it at.
     urls = []
@@ -232,13 +305,15 @@ if __name__ == '__main__':
     from build_subproducts import outputs as subproduct_outputs, localize
     from build_locations import outputs as location_outputs, localize as localize_locations
     updated_home = localize_service_links(localize_locations(localize(homepage_with_guides(HOME))))
+    updated_home = apply_live_metadata('/', updated_home)
     if args.check and updated_home != HOME:
-        raise SystemExit('Homepage guides are stale. Run python3 homepage/build_pages.py')
+        raise SystemExit('Homepage guides or metadata are stale. Run python3 homepage/build_pages.py')
     if not args.check:
         HOME = updated_home
         (DIST / 'index.html').write_text(HOME)
     for output, rendered in [(page_file('/products/' + slug), render_category(slug)) for slug in CATEGORIES] + [(page_file('/services/' + slug), render_category(slug, service=True)) for slug in SERVICES] + [(page_file('/contact'), render_contact()), (page_file(ABOUT['route']), render_about())] + [(page_file('/' + slug), render_legal(slug)) for slug in LEGAL] + list(blog_outputs(HOME)) + list(subproduct_outputs(HOME, shared_paths)) + list(location_outputs(HOME, shared_paths)) + [(DIST / '404.html', render_not_found())]:
         rendered = localize_service_links(localize_locations(localize(rendered)))
+        rendered = add_service_schema(route_of(output), apply_live_metadata(route_of(output), rendered))
         if args.check:
             if not output.exists() or output.read_text() != rendered:
                 raise SystemExit(f'{output} is stale. Run python3 homepage/build_pages.py')

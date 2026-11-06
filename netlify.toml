@@ -2,7 +2,7 @@
 # the tests, so a failing test stops the deploy.
 [build]
   base = "."
-  command = "node --test tests/consultation.test.mjs tests/consultation-http.test.mjs tests/form.test.mjs"
+  command = "node --test tests/consultation.test.mjs tests/consultation-http.test.mjs tests/form.test.mjs tests/search-block.test.mjs"
   publish = "homepage/dist"
 
 [build.environment]
@@ -14,3 +14,6 @@
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
+
+# netlify/edge-functions/search-block.js noindexes every host except
+# www.beautifulblindsandshades.com (netlify.app, deploy previews, branch deploys).

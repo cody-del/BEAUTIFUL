@@ -4,14 +4,14 @@ from urllib.parse import urlsplit
 import json
 import re
 from build_subproducts import PAGES, BASELINE, LIVE, ROUTES
-from routes import page_file, pages
+from routes import live_meta, page_file, pages
 
 assert len(PAGES)==13 and len(ROUTES)==13
 for page in PAGES.values():
     source=next(s for s in BASELINE if s['url']==page['url'])
     raw=page_file(page['path']).read_text()
     title=unescape(re.search(r'<title>(.*?)</title>',raw)[1])
-    assert title==source['title'],(page['key'],'original title changed')
+    assert title==live_meta(page['path'],'title',source['title']),(page['key'],'live title changed')
     assert f'rel="canonical" href="{source["url"]}"' in raw,(page['key'],'canonical mismatch')
     h1=unescape(re.sub('<[^>]+>','',re.search(r'<h1[^>]*>(.*?)</h1>',raw,re.S)[1]))
     assert h1==page['h1'],(page['key'],'unexpected H1')

@@ -22,7 +22,13 @@ The `beautifulblindshadescom` Netlify project deploys from this repository's `ma
 
 Preview URL: https://beautifulblindshadescom.netlify.app/
 
-This is a design review build with search indexing disabled. Complete the SEO launch checklist before production deployment.
+## Search indexing
+
+The committed pages are indexable. `netlify/edge-functions/search-block.js` sends `X-Robots-Tag: noindex, nofollow` and a disallow-all `robots.txt` on every host except `www.beautifulblindsandshades.com`, so the netlify.app address and deploy previews stay out of Google, and attaching the real domain at launch needs no code change. The 404 page keeps its own `noindex`.
+
+## Carried over from the live site (2026-11-06)
+
+The live Webflow site got an SEO pass on 2026-10-24 after these pages were drafted. `python3 homepage/fetch_live_metadata.py` snapshots every live title, meta description and service schema into `homepage/live-metadata.json`, which `build_pages.py` applies to all pages (Hicksville keeps the rebuild's "Ohio" title). Rerun it, then `python3 homepage/build_pages.py`, if the live site changes again before launch. Also carried over: Service schema on service, product and town pages; the live Auburn additions; GTM-KHJ3F2F5 and GA4 on the production host; `llms.txt`.
 
 ## Lead form
 
