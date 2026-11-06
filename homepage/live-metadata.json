@@ -1,78 +1,602 @@
 {
   "/": {
     "title": "Custom Blinds, Shades & Shutters Fort Wayne | Free Quotes",
-    "description": "Expert custom blinds, shades & shutters in Fort Wayne, IN. Free in-home consultation. Energy-efficient window treatments. Call (260) 222-6467 today!"
+    "description": "Expert custom blinds, shades & shutters in Fort Wayne, IN. Free in-home consultation. Energy-efficient window treatments. Call (260) 222-6467 today!",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Window Treatments",
+            "description": "Elevate your home's style and comfort with custom window treatments tailored for beauty, privacy, and energy efficiency.",
+            "url": "https://www.beautifulblindsandshades.com/services/window-treatments"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Enhance your outdoor living spaces with durable, weather-resistant shades that provide comfort, UV protection, and style.",
+            "url": "https://www.beautifulblindsandshades.com/services/outdoor-shades"
+          },
+          {
+            "name": "Blind & Shade Cleaning",
+            "description": "Keep your blinds and shades looking fresh and dust-free with professional cleaning services that extend their lifespan.",
+            "url": "https://www.beautifulblindsandshades.com/services/blind-and-shade-cleaning"
+          },
+          {
+            "name": "Blind & Shade Repair",
+            "description": "Restore functionality and appearance with expert blind and shade repair services designed to save you time and money.",
+            "url": "https://www.beautifulblindsandshades.com/services/blind-shade-repair"
+          },
+          {
+            "name": "Interior Blinds",
+            "description": "Upgrade your home with custom interior blinds designed for privacy, light control, and modern energy efficiency.",
+            "url": "https://www.beautifulblindsandshades.com/products/blinds"
+          },
+          {
+            "name": "Interior Shades",
+            "description": "Enhance your décor with sleek interior shades that combine style, UV protection, and effortless light filtering.",
+            "url": "https://www.beautifulblindsandshades.com/products/shades"
+          },
+          {
+            "name": "Interior Shutters",
+            "description": "Transform your space with timeless plantation shutters offering beauty, durability, and exceptional insulation.",
+            "url": "https://www.beautifulblindsandshades.com/products/plantation-shutters"
+          }
+        ]
+      }
+    }
   },
   "/about-beautiful-blinds-and-shades": {
     "title": "About Beautiful Blinds & Shades | Fort Wayne, IN",
-    "description": "Family-owned window treatment experts serving Fort Wayne & Allen County. Custom blinds, shades & shutters with local installation. Free consultation today!"
+    "description": "Family-owned window treatment experts serving Fort Wayne & Allen County. Custom blinds, shades & shutters with local installation. Free consultation today!",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Horizontal blinds including wood blinds, faux wood blinds, aluminum blinds, and vertical blinds"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Roller shades, cellular shades, roman shades, and sheer shades"
+          },
+          {
+            "name": "Interior Shutters",
+            "description": "Plantation shutters for interior windows"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor patio screens and motorized shades"
+          }
+        ]
+      }
+    }
   },
   "/beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana": {
     "title": "Custom Window Treatments Fort Wayne, Indiana",
-    "description": "Custom blinds, shades & window treatments in Fort Wayne Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467."
+    "description": "Custom blinds, shades & window treatments in Fort Wayne Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467.",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Custom horizontal blinds for homes"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Roller shades, cellular shades, solar shades, and Roman shades"
+          },
+          {
+            "name": "Plantation Shutters",
+            "description": "Custom interior plantation shutters"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor shade solutions"
+          },
+          {
+            "name": "Motorized Window Treatments",
+            "description": "Motorized blinds and shades with smart home integration"
+          }
+        ]
+      }
+    }
   },
   "/beautiful-blinds-shades-service-areas/custom-window-treatments-harlan-indiana": {
     "title": "Custom Window Treatments Harlan, Indiana",
-    "description": "Custom blinds, shades & window treatments in Harlan Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467."
+    "description": "Custom blinds, shades & window treatments in Harlan Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467.",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Custom horizontal blinds for homes"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Roller shades, cellular shades, solar shades, and Roman shades"
+          },
+          {
+            "name": "Plantation Shutters",
+            "description": "Custom interior plantation shutters"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor shade solutions"
+          },
+          {
+            "name": "Motorized Window Treatments",
+            "description": "Motorized blinds and shades with smart home integration"
+          }
+        ]
+      }
+    }
   },
   "/beautiful-blinds-shades-service-areas/custom-window-treatments-in-huntertown-indiana": {
     "title": "Custom Window Treatments In Huntertown, Indiana",
-    "description": "Custom blinds, shades & window treatments in Huntertown Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467."
+    "description": "Custom blinds, shades & window treatments in Huntertown Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467.",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Custom horizontal blinds for homes"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Roller shades, cellular shades, solar shades, and Roman shades"
+          },
+          {
+            "name": "Plantation Shutters",
+            "description": "Custom interior plantation shutters"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor shade solutions"
+          },
+          {
+            "name": "Motorized Window Treatments",
+            "description": "Motorized blinds and shades with smart home integration"
+          }
+        ]
+      }
+    }
   },
   "/beautiful-blinds-shades-service-areas/window-treatment-columbia-city-indiana": {
     "title": "Custom Window Treatments In Columbia City, Indiana",
-    "description": "Custom blinds, shades & window treatments in Columbia City Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467."
+    "description": "Custom blinds, shades & window treatments in Columbia City Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467.",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Custom horizontal blinds for homes"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Roller shades, cellular shades, solar shades, and Roman shades"
+          },
+          {
+            "name": "Plantation Shutters",
+            "description": "Custom interior plantation shutters"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor shade solutions"
+          },
+          {
+            "name": "Motorized Window Treatments",
+            "description": "Motorized blinds and shades with smart home integration"
+          }
+        ]
+      }
+    }
   },
   "/beautiful-blinds-shades-service-areas/window-treatments-angola-indiana": {
     "title": "Custom Window Treatments In Angola, Indiana",
-    "description": "Custom blinds, shades & window treatments in Angola Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467."
+    "description": "Custom blinds, shades & window treatments in Angola Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467.",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Custom horizontal blinds for homes"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Roller shades, cellular shades, solar shades, and Roman shades"
+          },
+          {
+            "name": "Plantation Shutters",
+            "description": "Custom interior plantation shutters"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor shade solutions"
+          },
+          {
+            "name": "Motorized Window Treatments",
+            "description": "Motorized blinds and shades with smart home integration"
+          }
+        ]
+      }
+    }
   },
   "/beautiful-blinds-shades-service-areas/window-treatments-auburn-indiana": {
     "title": "Custom Blinds & Window Treatments in Auburn, Indiana",
-    "description": "Custom blinds, shades & window treatments in Auburn Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467."
+    "description": "Custom blinds, shades & window treatments in Auburn Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467.",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Custom horizontal blinds for homes"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Roller shades, cellular shades, solar shades, and Roman shades"
+          },
+          {
+            "name": "Plantation Shutters",
+            "description": "Custom interior plantation shutters"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor shade solutions"
+          },
+          {
+            "name": "Motorized Window Treatments",
+            "description": "Motorized blinds and shades with smart home integration"
+          }
+        ]
+      }
+    }
   },
   "/beautiful-blinds-shades-service-areas/window-treatments-bluffton-indiana": {
     "title": "Custom Window Treatments In Bluffton, Indiana",
-    "description": "Custom blinds, shades & window treatments in Bluffton Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467."
+    "description": "Custom blinds, shades & window treatments in Bluffton Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467.",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Custom horizontal blinds for homes"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Roller shades, cellular shades, solar shades, and Roman shades"
+          },
+          {
+            "name": "Plantation Shutters",
+            "description": "Custom interior plantation shutters"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor shade solutions"
+          },
+          {
+            "name": "Motorized Window Treatments",
+            "description": "Motorized blinds and shades with smart home integration"
+          }
+        ]
+      }
+    }
   },
   "/beautiful-blinds-shades-service-areas/window-treatments-grabill-indiana": {
     "title": "Custom Window Treatments In Grabill, Indiana",
-    "description": "Custom blinds, shades & window treatments in Grabill Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467."
+    "description": "Custom blinds, shades & window treatments in Grabill Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467.",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Custom horizontal blinds for homes"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Roller shades, cellular shades, solar shades, and Roman shades"
+          },
+          {
+            "name": "Plantation Shutters",
+            "description": "Custom interior plantation shutters"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor shade solutions"
+          },
+          {
+            "name": "Motorized Window Treatments",
+            "description": "Motorized blinds and shades with smart home integration"
+          }
+        ]
+      }
+    }
   },
   "/beautiful-blinds-shades-service-areas/window-treatments-hicksville-indiana": {
-    "description": "Custom blinds, shades & window treatments in Hicksville Ohio. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467."
+    "description": "Custom blinds, shades & window treatments in Hicksville Ohio. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467.",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Custom horizontal blinds for homes"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Roller shades, cellular shades, solar shades, and Roman shades"
+          },
+          {
+            "name": "Plantation Shutters",
+            "description": "Custom interior plantation shutters"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor shade solutions"
+          },
+          {
+            "name": "Motorized Window Treatments",
+            "description": "Motorized blinds and shades with smart home integration"
+          }
+        ]
+      }
+    }
   },
   "/beautiful-blinds-shades-service-areas/window-treatments-hoagland-indiana": {
     "title": "Custom Window Treatments In Hoagland, Indiana",
-    "description": "Custom blinds, shades & window treatments in Hoagland Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467."
+    "description": "Custom blinds, shades & window treatments in Hoagland Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467.",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Custom horizontal blinds for homes"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Roller shades, cellular shades, solar shades, and Roman shades"
+          },
+          {
+            "name": "Plantation Shutters",
+            "description": "Custom interior plantation shutters"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor shade solutions"
+          },
+          {
+            "name": "Motorized Window Treatments",
+            "description": "Motorized blinds and shades with smart home integration"
+          }
+        ]
+      }
+    }
   },
   "/beautiful-blinds-shades-service-areas/window-treatments-in-kendallville-indiana": {
     "title": "Custom Window Treatments In Kendallville, Indiana",
-    "description": "Custom blinds, shades & window treatments in Kendallville Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467."
+    "description": "Custom blinds, shades & window treatments in Kendallville Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467.",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Custom horizontal blinds for homes"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Roller shades, cellular shades, solar shades, and Roman shades"
+          },
+          {
+            "name": "Plantation Shutters",
+            "description": "Custom interior plantation shutters"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor shade solutions"
+          },
+          {
+            "name": "Motorized Window Treatments",
+            "description": "Motorized blinds and shades with smart home integration"
+          }
+        ]
+      }
+    }
   },
   "/beautiful-blinds-shades-service-areas/window-treatments-leo-cedarville-indiana": {
     "title": "Custom Window Treatments In Leo-Cedarville, Indiana",
-    "description": "Custom blinds, shades & window treatments in Leo-Cedarville Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467."
+    "description": "Custom blinds, shades & window treatments in Leo-Cedarville Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467.",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Custom horizontal blinds for homes"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Roller shades, cellular shades, solar shades, and Roman shades"
+          },
+          {
+            "name": "Plantation Shutters",
+            "description": "Custom interior plantation shutters"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor shade solutions"
+          },
+          {
+            "name": "Motorized Window Treatments",
+            "description": "Motorized blinds and shades with smart home integration"
+          }
+        ]
+      }
+    }
   },
   "/beautiful-blinds-shades-service-areas/window-treatments-monroeville-indiana": {
     "title": "Custom Window Treatments In Monroeville, Indiana",
-    "description": "Custom blinds, shades & window treatments in Monroeville Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467."
+    "description": "Custom blinds, shades & window treatments in Monroeville Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467.",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Custom horizontal blinds for homes"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Roller shades, cellular shades, solar shades, and Roman shades"
+          },
+          {
+            "name": "Plantation Shutters",
+            "description": "Custom interior plantation shutters"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor shade solutions"
+          },
+          {
+            "name": "Motorized Window Treatments",
+            "description": "Motorized blinds and shades with smart home integration"
+          }
+        ]
+      }
+    }
   },
   "/beautiful-blinds-shades-service-areas/window-treatments-new-haven-indiana": {
     "title": "Custom Window Treatments In New Haven, Indiana",
-    "description": "Custom blinds, shades & window treatments in New Haven Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467."
+    "description": "Custom blinds, shades & window treatments in New Haven Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467.",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Custom horizontal blinds for homes"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Roller shades, cellular shades, solar shades, and Roman shades"
+          },
+          {
+            "name": "Plantation Shutters",
+            "description": "Custom interior plantation shutters"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor shade solutions"
+          },
+          {
+            "name": "Motorized Window Treatments",
+            "description": "Motorized blinds and shades with smart home integration"
+          }
+        ]
+      }
+    }
   },
   "/beautiful-blinds-shades-service-areas/window-treatments-syracuse-indiana": {
     "title": "Custom Window Treatments In Syracuse, Indiana",
-    "description": "Custom blinds, shades & window treatments in Syracuse Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467."
+    "description": "Custom blinds, shades & window treatments in Syracuse Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467.",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Custom horizontal blinds for homes"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Roller shades, cellular shades, solar shades, and Roman shades"
+          },
+          {
+            "name": "Plantation Shutters",
+            "description": "Custom interior plantation shutters"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor shade solutions"
+          },
+          {
+            "name": "Motorized Window Treatments",
+            "description": "Motorized blinds and shades with smart home integration"
+          }
+        ]
+      }
+    }
   },
   "/beautiful-blinds-shades-service-areas/window-treatments-warsaw-indiana": {
     "title": "Custom Window Treatments in Warsaw, Indiana",
-    "description": "Custom blinds, shades & window treatments in Warsaw Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467."
+    "description": "Custom blinds, shades & window treatments in Warsaw Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467.",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Custom horizontal blinds for homes"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Roller shades, cellular shades, solar shades, and Roman shades"
+          },
+          {
+            "name": "Plantation Shutters",
+            "description": "Custom interior plantation shutters"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor shade solutions"
+          },
+          {
+            "name": "Motorized Window Treatments",
+            "description": "Motorized blinds and shades with smart home integration"
+          }
+        ]
+      }
+    }
   },
   "/beautiful-blinds-shades-service-areas/window-treatments-woodburn-indiana": {
     "title": "Custom Window Treatments In Woodburn, Indiana",
-    "description": "Custom blinds, shades & window treatments in Woodburn Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467."
+    "description": "Custom blinds, shades & window treatments in Woodburn Indiana. Free in-home consultation. Locally owned, serving Northeast Indiana. Call (260) 222-6467.",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Custom horizontal blinds for homes"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Roller shades, cellular shades, solar shades, and Roman shades"
+          },
+          {
+            "name": "Plantation Shutters",
+            "description": "Custom interior plantation shutters"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor shade solutions"
+          },
+          {
+            "name": "Motorized Window Treatments",
+            "description": "Motorized blinds and shades with smart home integration"
+          }
+        ]
+      }
+    }
   },
   "/blog-post/5-ways-custom-blinds-and-shades-can-transform-your-fort-wayne-home": {
     "title": "5 Ways Custom Blinds and Shades Transform Fort Wayne Homes",
@@ -148,43 +672,106 @@
   },
   "/custom-interior-plantation-shutters-fort-wayne-indiana/custom-composite-plantation-shutters-in-fort-wayne-indiana": {
     "title": "Composite Plantation Shutters | Beautiful Blinds Fort Wayne",
-    "description": "Custom Composite Plantation Shutters in Fort Wayne, Indiana. Free in-home consultation and professional installation. Locally owned. Call (260) 222-6467."
+    "description": "Custom Composite Plantation Shutters in Fort Wayne, Indiana. Free in-home consultation and professional installation. Locally owned. Call (260) 222-6467.",
+    "service": {
+      "name": "Composite Plantation Shutters",
+      "serviceType": "Plantation Shutters"
+    }
   },
   "/custom-interior-plantation-shutters-fort-wayne-indiana/custom-wood-plantation-shutters-in-fort-wayne-indiana": {
     "title": "Wood Plantation Shutters | Beautiful Blinds Fort Wayne",
-    "description": "Custom Wood Plantation Shutters in Fort Wayne, Indiana. Free in-home consultation and professional installation. Locally owned. Call (260) 222-6467."
+    "description": "Custom Wood Plantation Shutters in Fort Wayne, Indiana. Free in-home consultation and professional installation. Locally owned. Call (260) 222-6467.",
+    "service": {
+      "name": "Wood Plantation Shutters",
+      "serviceType": "Plantation Shutters"
+    }
   },
   "/custom-shades-fort-wayne-indiana/cellular-shades-fort-wayne-indiana": {
     "title": "Cellular Shades | Beautiful Blinds and Shades Fort Wayne",
-    "description": "Discover our cellular shades and how they can improve insulation while reducing your energy costs today. Free in-home consultation, Fort Wayne & Allen County."
+    "description": "Discover our cellular shades and how they can improve insulation while reducing your energy costs today. Free in-home consultation, Fort Wayne & Allen County.",
+    "service": {
+      "name": "Cellular Shades",
+      "serviceType": "Custom Shades"
+    }
   },
   "/custom-shades-fort-wayne-indiana/custom-roller-shades-fort-wayne-indiana": {
     "title": "Roller Shades | Beautiful Blinds and Shades Fort Wayne",
-    "description": "Discover our versatile roller shades and how they can transform any room with clean, modern style. Free in-home consultation, Fort Wayne & Allen County."
+    "description": "Discover our versatile roller shades and how they can transform any room with clean, modern style. Free in-home consultation, Fort Wayne & Allen County.",
+    "service": {
+      "name": "Roller Shades",
+      "serviceType": "Custom Shades"
+    }
   },
   "/custom-shades-fort-wayne-indiana/layered-shades-fort-wayne-indiana": {
     "title": "Layered Shades | Beautiful Blinds and Shades Fort Wayne",
-    "description": "Discover our layered shades and how they can give you flexible control between privacy and natural light. Free in-home consultation, Fort Wayne & Allen County."
+    "description": "Discover our layered shades and how they can give you flexible control between privacy and natural light. Free in-home consultation, Fort Wayne & Allen County.",
+    "service": {
+      "name": "Layered Shades",
+      "serviceType": "Custom Shades"
+    }
   },
   "/custom-shades-fort-wayne-indiana/natural-shades-fort-wayne-indiana": {
     "title": "Natural Shades | Beautiful Blinds and Shades Fort Wayne",
-    "description": "Discover our natural shades and how they can bring warmth and organic texture into your living space. Free in-home consultation, Fort Wayne & Allen County."
+    "description": "Discover our natural shades and how they can bring warmth and organic texture into your living space. Free in-home consultation, Fort Wayne & Allen County.",
+    "service": {
+      "name": "Natural Shades",
+      "serviceType": "Custom Shades"
+    }
   },
   "/custom-shades-fort-wayne-indiana/pleated-shades-fort-wayne-indiana": {
     "title": "Pleated Shades | Beautiful Blinds and Shades Fort Wayne",
-    "description": "Discover our pleated shades and how they can provide affordable, functional coverage for any window size. Free in-home consultation, Fort Wayne & Allen County."
+    "description": "Discover our pleated shades and how they can provide affordable, functional coverage for any window size. Free in-home consultation, Fort Wayne & Allen County.",
+    "service": {
+      "name": "Pleated Shades",
+      "serviceType": "Custom Shades"
+    }
   },
   "/custom-shades-fort-wayne-indiana/roman-shades-fort-wayne-indiana": {
     "title": "Roman Shades | Beautiful Blinds and Shades Fort Wayne",
-    "description": "Discover our elegant roman shades and how they can add soft, tailored sophistication to your windows. Free in-home consultation, Fort Wayne & Allen County."
+    "description": "Discover our elegant roman shades and how they can add soft, tailored sophistication to your windows. Free in-home consultation, Fort Wayne & Allen County.",
+    "service": {
+      "name": "Roman Shades",
+      "serviceType": "Custom Shades"
+    }
   },
   "/custom-shades-fort-wayne-indiana/solar-shades-fort-wayne-indiana": {
     "title": "Solar Shades | Beautiful Blinds and Shades Fort Wayne",
-    "description": "Discover our solar shades and how they can reduce glare and heat while maintaining your outdoor views. Free in-home consultation, Fort Wayne & Allen County."
+    "description": "Discover our solar shades and how they can reduce glare and heat while maintaining your outdoor views. Free in-home consultation, Fort Wayne & Allen County.",
+    "service": {
+      "name": "Solar Shades",
+      "serviceType": "Custom Shades"
+    }
   },
   "/location/beautiful-blinds-and-shades-service-area": {
     "title": "Service Areas: Fort Wayne & Allen County | Beautiful Blinds",
-    "description": "Beautiful Blinds & Shades serves Fort Wayne, New Haven, Auburn, Huntertown & all Allen County. Custom blinds, shades & shutters. Free in-home consultations!"
+    "description": "Beautiful Blinds & Shades serves Fort Wayne, New Haven, Auburn, Huntertown & all Allen County. Custom blinds, shades & shutters. Free in-home consultations!",
+    "service": {
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Horizontal blinds custom designed for your home"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Roller curtains and custom shades"
+          },
+          {
+            "name": "Interior Shutters",
+            "description": "Custom interior shutters"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor shade solutions"
+          },
+          {
+            "name": "Free In-Home Consultation",
+            "description": "Complimentary in-home design consultation"
+          }
+        ]
+      }
+    }
   },
   "/privacy-policy": {
     "title": "Privacy Policy | Beautiful Blinds & Shades",
@@ -192,31 +779,250 @@
   },
   "/products/blinds": {
     "title": "Custom Blinds in Fort Wayne, IN | Beautiful Blinds & Shades",
-    "description": "Fort Wayne custom blind experts. Wood, faux wood, aluminum & vertical blinds. Precise measurement & pro installation. Free consultation. Call Beautiful Blinds!"
+    "description": "Fort Wayne custom blind experts. Wood, faux wood, aluminum & vertical blinds. Precise measurement & pro installation. Free consultation. Call Beautiful Blinds!",
+    "service": {
+      "catalog": {
+        "name": "Window Blinds",
+        "items": [
+          {
+            "name": "Mini Blinds",
+            "description": "Aluminum mini blinds for Fort Wayne homes"
+          },
+          {
+            "name": "Panel Track Blinds",
+            "description": "Panel track blinds for large windows and sliding doors"
+          },
+          {
+            "name": "Vertical Blinds",
+            "description": "Vertical blinds for windows and patio doors"
+          },
+          {
+            "name": "Venetian Blinds",
+            "description": "Classic venetian blinds for any room"
+          },
+          {
+            "name": "Wood Blinds",
+            "description": "Premium real wood blinds for classic beauty"
+          },
+          {
+            "name": "Faux Wood Blinds",
+            "description": "Faux wood blinds with wood look at affordable pricing"
+          },
+          {
+            "name": "Aluminum Blinds",
+            "description": "Durable aluminum blinds for any budget"
+          },
+          {
+            "name": "Vinyl Blinds",
+            "description": "Affordable vinyl blinds for Fort Wayne homes"
+          },
+          {
+            "name": "Motorized Blinds",
+            "description": "Motorized blinds for convenient operation"
+          }
+        ]
+      }
+    }
   },
   "/products/plantation-shutters": {
     "title": "Plantation Shutters Fort Wayne | Beautiful Blinds & Shades",
-    "description": "Quality plantation shutters in Fort Wayne & Allen County. Custom wood, poly & composite options. Timeless style, lasting value. Free in-home consultation today!"
+    "description": "Quality plantation shutters in Fort Wayne & Allen County. Custom wood, poly & composite options. Timeless style, lasting value. Free in-home consultation today!",
+    "service": {
+      "name": "Plantation Shutters",
+      "serviceType": "Plantation Shutters"
+    }
   },
   "/products/shades": {
     "title": "Custom Shades Fort Wayne, IN | Beautiful Blinds & Shades",
-    "description": "Custom window shades for Fort Wayne homes. Roller shades, cellular shades, roman shades & more. Free consultation. Professional installation. Call today!"
+    "description": "Custom window shades for Fort Wayne homes. Roller shades, cellular shades, roman shades & more. Free consultation. Professional installation. Call today!",
+    "service": {
+      "name": "Custom Window Shades",
+      "serviceType": "Custom Window Shades"
+    }
   },
   "/services/blind-and-shade-cleaning": {
     "title": "Blind Cleaning Fort Wayne | Beautiful Blinds & Shades",
-    "description": "Professional blind and shade cleaning in Fort Wayne. Remove dust, allergens & grime. Ultrasonic cleaning available. We clean all types. Call for a quote today!"
+    "description": "Professional blind and shade cleaning in Fort Wayne. Remove dust, allergens & grime. Ultrasonic cleaning available. We clean all types. Call for a quote today!",
+    "service": {
+      "name": "Blind & Shade Cleaning",
+      "serviceType": "Blind and Shade Cleaning",
+      "catalog": {
+        "name": "Blind and Shade Cleaning Services",
+        "items": [
+          {
+            "name": "Wood Blind Cleaning",
+            "description": "Professional cleaning for wood blinds"
+          },
+          {
+            "name": "Faux Wood Blind Cleaning",
+            "description": "Professional cleaning for faux wood blinds"
+          },
+          {
+            "name": "Vinyl Blind Cleaning",
+            "description": "Professional cleaning for vinyl blinds"
+          },
+          {
+            "name": "Mini Blind Cleaning",
+            "description": "Professional cleaning for mini blinds"
+          },
+          {
+            "name": "Vertical Blind Cleaning",
+            "description": "Professional cleaning for vertical blinds"
+          },
+          {
+            "name": "Aluminum Blind Cleaning",
+            "description": "Professional cleaning for aluminum blinds"
+          },
+          {
+            "name": "Cellular Shade Cleaning",
+            "description": "Professional cleaning for cellular shades"
+          },
+          {
+            "name": "Roller Shade Cleaning",
+            "description": "Professional cleaning for roller shades"
+          },
+          {
+            "name": "Roman Shade Cleaning",
+            "description": "Professional cleaning for roman shades"
+          },
+          {
+            "name": "Solar Shade Cleaning",
+            "description": "Professional cleaning for solar shades"
+          },
+          {
+            "name": "Pleated Shade Cleaning",
+            "description": "Professional cleaning for pleated shades"
+          }
+        ]
+      }
+    }
   },
   "/services/blind-shade-repair": {
     "title": "Blind Repair Fort Wayne | Shade Repair Service | Beautiful Blinds",
-    "description": "Fort Wayne blind repair experts. Fix broken cords, stuck shades, bent slats & motorization. Same-day quotes. We repair all brands. Call Beautiful Blinds today!"
+    "description": "Fort Wayne blind repair experts. Fix broken cords, stuck shades, bent slats & motorization. Same-day quotes. We repair all brands. Call Beautiful Blinds today!",
+    "service": {
+      "name": "Blind & Shade Repair Service",
+      "serviceType": "Blind and Shade Repair",
+      "catalog": {
+        "name": "Blind & Shade Repair Services",
+        "items": [
+          {
+            "name": "Broken Cords & Strings Repair",
+            "description": "Repair of broken lift cords and tilt strings for all types of blinds"
+          },
+          {
+            "name": "Damaged Slats Repair",
+            "description": "Replacement and repair of damaged or broken slats"
+          },
+          {
+            "name": "Stuck or Jammed Blinds Repair",
+            "description": "Fix blinds that won't raise, lower, or tilt properly"
+          },
+          {
+            "name": "Broken Tilt Mechanisms Repair",
+            "description": "Repair of broken tilt mechanisms and wands"
+          },
+          {
+            "name": "Off-Track Vertical Blinds Repair",
+            "description": "Realignment and repair of vertical blinds that have come off track"
+          },
+          {
+            "name": "Roller Shade Repair",
+            "description": "Repair of roller shade mechanisms and spring systems"
+          },
+          {
+            "name": "Cellular Shade Repair",
+            "description": "Restringing and repair of cellular honeycomb shades"
+          },
+          {
+            "name": "Roman Shade Repair",
+            "description": "Repair of Roman shade lift systems and mechanisms"
+          },
+          {
+            "name": "Pleated Shade Repair",
+            "description": "Repair of pleated shade systems and components"
+          },
+          {
+            "name": "Solar Shade & Screen Repair",
+            "description": "Repair of solar shades and screen systems"
+          },
+          {
+            "name": "Graber Blind and Shade Repair",
+            "description": "Specialized repair services for Graber brand blinds and shades"
+          }
+        ]
+      }
+    }
   },
   "/services/outdoor-shades": {
     "title": "Outdoor Shades Fort Wayne | Patio & Deck Shades",
-    "description": "Transform your Fort Wayne patio with custom outdoor shades. Block sun & bugs, add privacy, extend your season. Free consultation. Professional installation."
+    "description": "Transform your Fort Wayne patio with custom outdoor shades. Block sun & bugs, add privacy, extend your season. Free consultation. Professional installation.",
+    "service": {
+      "name": "Custom Outdoor Shades",
+      "serviceType": "Outdoor Shade Installation",
+      "catalog": {
+        "name": "Outdoor Shade Products",
+        "items": [
+          {
+            "name": "Outdoor Roller Shades",
+            "description": "Motorized and manual outdoor roller shades for patios and decks"
+          },
+          {
+            "name": "Outdoor Solar Shades",
+            "description": "UV-blocking solar shades that maintain outdoor views while reducing heat"
+          },
+          {
+            "name": "Patio Blinds",
+            "description": "Custom patio blinds for outdoor living spaces"
+          },
+          {
+            "name": "Motorized Outdoor Shades",
+            "description": "Button-operated motorized outdoor shading solutions"
+          },
+          {
+            "name": "Zip Track Outdoor Shades",
+            "description": "Wind-resistant zip track outdoor shade systems"
+          },
+          {
+            "name": "Clear Vinyl Patio Shades",
+            "description": "Weather-resistant clear vinyl shades for patios"
+          },
+          {
+            "name": "Outdoor Bamboo Shades",
+            "description": "Natural bamboo outdoor shading options"
+          }
+        ]
+      }
+    }
   },
   "/services/window-treatments": {
     "title": "Window Treatments Fort Wayne | Beautiful Blinds & Shades",
-    "description": "Custom blinds, shades & shutters for Fort Wayne homes. Roller shades, plantation shutters, cellular shades & more. Free consultation. Professional installation."
+    "description": "Custom blinds, shades & shutters for Fort Wayne homes. Roller shades, plantation shutters, cellular shades & more. Free consultation. Professional installation.",
+    "service": {
+      "name": "Custom Window Treatments Fort Wayne Indiana",
+      "serviceType": "Window Treatments",
+      "catalog": {
+        "name": "Window Treatment Services",
+        "items": [
+          {
+            "name": "Custom Blinds",
+            "description": "Interior blinds including horizontal blinds and custom blinds for Fort Wayne homes"
+          },
+          {
+            "name": "Custom Shades",
+            "description": "Interior shades including roller shades, solar shades, and honeycomb shades"
+          },
+          {
+            "name": "Interior Shutters",
+            "description": "Plantation shutters and custom interior shutters"
+          },
+          {
+            "name": "Outdoor Shades",
+            "description": "Outdoor window treatments and patio screen shades"
+          }
+        ]
+      }
+    }
   },
   "/terms-of-service": {
     "title": "Terms of Service | Beautiful Blinds & Shades",
