@@ -2,7 +2,7 @@
 from html import unescape
 from urllib.parse import urlsplit
 import re
-from routes import page_file, pages
+from routes import live_meta, page_file, pages
 from build_locations import BASELINE, CITIES, LIVE, ROUTES, HUB
 
 NEW_CITY_TOPICS = {
@@ -23,8 +23,9 @@ def plain(value):
 for key, source in BASELINE.items():
     raw = page_file(source['url'].removeprefix(LIVE)).read_text()
     expected_title = source['title'].replace('Indiana', 'Ohio') if key == 'hicksville' else source['title']
-    assert unescape(re.search(r'<title>(.*?)</title>', raw)[1]) == expected_title
-    assert unescape(re.search(r'<meta name="description" content="([^"]*)"', raw)[1]) == source['description']
+    route = source['url'].removeprefix(LIVE)
+    assert unescape(re.search(r'<title>(.*?)</title>', raw)[1]) == live_meta(route, 'title', expected_title)
+    assert unescape(re.search(r'<meta name="description" content="([^"]*)"', raw)[1]) == live_meta(route, 'description', source['description'])
     assert f'rel="canonical" href="{source["url"]}"' in raw
     headings = re.findall(r'<h1\b[^>]*>(.*?)</h1>', raw, re.S)
     expected = 'Serving Fort Wayne & Northeast Indiana' if key == 'service-area' else expected_title

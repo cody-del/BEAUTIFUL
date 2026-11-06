@@ -5,7 +5,7 @@ from urllib.parse import urljoin, urlsplit, unquote
 import hashlib
 import json
 import re
-from routes import page_file, pages, route_of, serves
+from routes import live_meta, page_file, pages, route_of, serves
 
 ROOT = Path(__file__).resolve().parent
 DIST = ROOT / 'dist'
@@ -40,7 +40,7 @@ for p in POSTS:
     doc=Page(page_file(route).read_text())
     assert norm(''.join(doc.body))==p['source_text'],(route,'article wording changed')
     assert norm(''.join(doc.h1))==p['title'],(route,'H1 changed')
-    assert norm(''.join(doc.title))==p['title'],(route,'title mismatch')
+    assert norm(''.join(doc.title))==live_meta(route,'title',p['title']),(route,'title mismatch')
     canonical=next(a['href'] for t,a in doc.tags if t=='link' and a.get('rel')=='canonical')
     assert canonical==p['url'],(route,'canonical changed')
     print('Exact article text and title:',p['slug'])

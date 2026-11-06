@@ -212,6 +212,25 @@ def render_not_found():
     return '<!doctype html>\n<html lang="en">\n' + head + '\n<body class="category-page not-found-page">\n<a class="skip" href="#main">Skip to content</a>\n' + header + '<main id="main">\n' + content + '\n</main>\n' + footer
 
 
+LIVE_METADATA = json.loads((ROOT / 'live-metadata.json').read_text())
+
+
+def apply_live_metadata(route, html):
+    """Use the live site's current title and description (fetch_live_metadata.py).
+
+    The live site's 2026-10-24 SEO pass postdates this rebuild's page drafts;
+    launching with the older wording would undo it.
+    """
+    meta = LIVE_METADATA.get(route, {})
+    if 'title' in meta:
+        html = re.sub(r'<title>.*?</title>', lambda m: '<title>' + escape(meta['title'], quote=False) + '</title>', html, count=1)
+        html = re.sub(r'<meta property="og:title" content="[^"]*">', lambda m: '<meta property="og:title" content="' + escape(meta['title'], quote=True) + '">', html, count=1)
+    if 'description' in meta:
+        html = re.sub(r'<meta name="description" content="[^"]*">', lambda m: '<meta name="description" content="' + escape(meta['description'], quote=True) + '">', html, count=1)
+        html = re.sub(r'<meta property="og:description" content="[^"]*">', lambda m: '<meta property="og:description" content="' + escape(meta['description'], quote=True) + '">', html, count=1)
+    return html
+
+
 def render_sitemap():
     # Each page's own canonical is its sitemap URL; it must match the route Netlify serves it at.
     urls = []
@@ -232,13 +251,15 @@ if __name__ == '__main__':
     from build_subproducts import outputs as subproduct_outputs, localize
     from build_locations import outputs as location_outputs, localize as localize_locations
     updated_home = localize_service_links(localize_locations(localize(homepage_with_guides(HOME))))
+    updated_home = apply_live_metadata('/', updated_home)
     if args.check and updated_home != HOME:
-        raise SystemExit('Homepage guides are stale. Run python3 homepage/build_pages.py')
+        raise SystemExit('Homepage guides or metadata are stale. Run python3 homepage/build_pages.py')
     if not args.check:
         HOME = updated_home
         (DIST / 'index.html').write_text(HOME)
     for output, rendered in [(page_file('/products/' + slug), render_category(slug)) for slug in CATEGORIES] + [(page_file('/services/' + slug), render_category(slug, service=True)) for slug in SERVICES] + [(page_file('/contact'), render_contact()), (page_file(ABOUT['route']), render_about())] + [(page_file('/' + slug), render_legal(slug)) for slug in LEGAL] + list(blog_outputs(HOME)) + list(subproduct_outputs(HOME, shared_paths)) + list(location_outputs(HOME, shared_paths)) + [(DIST / '404.html', render_not_found())]:
         rendered = localize_service_links(localize_locations(localize(rendered)))
+        rendered = apply_live_metadata(route_of(output), rendered)
         if args.check:
             if not output.exists() or output.read_text() != rendered:
                 raise SystemExit(f'{output} is stale. Run python3 homepage/build_pages.py')

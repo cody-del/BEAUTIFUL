@@ -32,3 +32,15 @@ def serves(path):
     """True when Netlify answers this URL path with a file from dist/."""
     target = DIST / path.strip('/')
     return target.is_file() or page_file(path).is_file()
+
+
+_LIVE_METADATA = None
+
+
+def live_meta(route, field, fallback):
+    """The live site's current title or description for a route (live-metadata.json), else fallback."""
+    global _LIVE_METADATA
+    if _LIVE_METADATA is None:
+        import json
+        _LIVE_METADATA = json.loads((Path(__file__).resolve().parent / 'live-metadata.json').read_text())
+    return _LIVE_METADATA.get(route, {}).get(field, fallback)

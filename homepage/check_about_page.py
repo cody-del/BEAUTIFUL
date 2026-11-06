@@ -2,7 +2,7 @@
 from html import unescape
 import re
 from build_pages import ABOUT, LIVE
-from routes import page_file, pages
+from routes import live_meta, page_file, pages
 
 # David's words from the live page, split only where the original ran sentences together.
 BIO = [
@@ -12,8 +12,8 @@ BIO = [
 ]
 
 raw = page_file(ABOUT['route']).read_text()
-assert unescape(re.search(r'<title>(.*?)</title>', raw)[1]) == ABOUT['title']
-assert unescape(re.search(r'<meta name="description" content="([^"]+)"', raw)[1]) == ABOUT['description']
+assert unescape(re.search(r'<title>(.*?)</title>', raw)[1]) == live_meta(ABOUT['route'], 'title', ABOUT['title'])
+assert unescape(re.search(r'<meta name="description" content="([^"]+)"', raw)[1]) == live_meta(ABOUT['route'], 'description', ABOUT['description'])
 assert f'rel="canonical" href="{LIVE}{ABOUT["route"]}"' in raw
 h1 = re.findall(r'<h1\b[^>]*>(.*?)</h1>', raw, re.S)
 assert len(h1) == 1 and unescape(re.sub('<[^>]+>', '', h1[0])) == ABOUT['h1']

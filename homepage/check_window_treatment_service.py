@@ -3,13 +3,13 @@ from pathlib import Path
 from html import unescape
 import json
 import re
-from routes import page_file, pages
+from routes import live_meta, page_file, pages
 
 ROOT = Path(__file__).resolve().parent
 source = json.loads((ROOT / 'pages/window-treatments-source.json').read_text())
 raw = page_file('/services/window-treatments').read_text()
-assert unescape(re.search(r'<title>(.*?)</title>', raw)[1]) == source['title']
-assert unescape(re.search(r'<meta name="description" content="([^"]+)"', raw)[1]) == source['description']
+assert unescape(re.search(r'<title>(.*?)</title>', raw)[1]) == live_meta('/services/window-treatments', 'title', source['title'])
+assert unescape(re.search(r'<meta name="description" content="([^"]+)"', raw)[1]) == live_meta('/services/window-treatments', 'description', source['description'])
 assert f'rel="canonical" href="{source["url"]}"' in raw
 h1 = re.findall(r'<h1\b[^>]*>(.*?)</h1>', raw, re.S)
 assert len(h1) == 1
