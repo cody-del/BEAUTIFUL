@@ -49,3 +49,9 @@ test('GA4 loads on the production host only', () => {
   assert.match(head, /if \(location\.hostname === 'www\.beautifulblindsandshades\.com'\) \{[^<]*gtag\('config', 'G-TBE6JC5ZYG'\)/);
   assert.doesNotMatch(head, /<script async src="https:\/\/www\.googletagmanager\.com/);
 });
+
+test('GTM loads the live container on the production host only', () => {
+  const head = read('index.html').slice(0, read('index.html').indexOf('</head>'));
+  assert.match(head, /if \(location\.hostname === 'www\.beautifulblindsandshades\.com'\) \{\(function\(w,d,s,l,i\)[^<]*'GTM-KHJ3F2F5'\);\}<\/script>/);
+  for (const page of ['contact.html', 'products/blinds.html', 'blog-post/motorized-blinds-and-shades-in-fort-wayne.html']) assert.ok(read(page).includes("'GTM-KHJ3F2F5'"), page);
+});
