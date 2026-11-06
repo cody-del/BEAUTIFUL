@@ -78,8 +78,8 @@ def render_category(slug, service=False):
     head = re.sub(r'<meta name="description"[^>]+>', '<meta name="description" content="' + escape(page['description'], quote=True) + '">', head)
     head = head.replace('rel="canonical" href="' + LIVE + '/"', 'rel="canonical" href="' + url + '"')
     head = head.replace('href="assets/', 'href="/assets/').replace('/assets/shades-natural-v2.jpg', '/assets/' + page['image'])
-    head = re.sub(r'href="styles.css[^\"]*"', 'href="/styles.css?v=20260928-cleanup"', head)
-    head = re.sub(r'src="script.js[^\"]*"', 'src="/script.js?v=20260926-contact"', head)
+    head = re.sub(r'href="styles.css[^\"]*"', 'href="/styles.css?v=20261106-leads"', head)
+    head = re.sub(r'src="script.js[^\"]*"', 'src="/script.js?v=20261106-leads"', head)
     schema = {
         '@context': 'https://schema.org', '@graph': [
             {'@type': 'WebPage' if service else 'CollectionPage', '@id': url + '#page',
@@ -129,7 +129,10 @@ def render_contact():
     form = form.replace('Leave your details and we\'ll be in touch to find a time that works for you.', 'Choose a treatment or tell us what you need help with.')
     extra = '''<div class="form-field contact-full-field"><label for="treatment">I’m interested in <span>(optional)</span></label><select id="treatment" name="treatment"><option value="">Choose an option</option><option>Blinds</option><option>Shades</option><option>Plantation shutters</option><option>Outdoor shades</option><option>Cleaning or repair</option><option>Help choosing</option></select></div>
             <div class="form-field contact-full-field"><label for="project">About your project <span>(optional)</span></label><textarea id="project" name="project" rows="3" maxlength="2000" placeholder="Your city, the rooms you have in mind, or a question for David"></textarea></div>'''
-    form = form.replace('            <button class="button form-submit"', extra + '\n            <button class="button form-submit"')
+    # The optional fields go above the text-message consent and the button.
+    form = form.replace('            <fieldset class="sms-consent"', extra + '\n            <fieldset class="sms-consent"')
+    # The thank-you card that script.js shows in place of the form once GHL confirms the lead.
+    form += between('<div class="consultation-success"', '</div>') + '</div>'
     header = header.replace('href="/contact"', 'href="#request"')
     footer = footer.replace('href="/contact"', 'href="#request"')
     content = (ROOT / 'pages' / 'contact.html').read_text().replace('{{form}}', form)
@@ -150,8 +153,8 @@ def render_about():
     head = re.sub(r'<meta name="description"[^>]+>', '<meta name="description" content="' + escape(ABOUT['description'], quote=True) + '">', head)
     head = head.replace('rel="canonical" href="' + LIVE + '/"', 'rel="canonical" href="' + url + '"')
     head = head.replace('href="assets/', 'href="/assets/').replace('/assets/shades-natural-v2.jpg', '/assets/video-owner-frame-v2.jpg')
-    head = re.sub(r'href="styles.css[^\"]*"', 'href="/styles.css?v=20260928-cleanup"', head)
-    head = re.sub(r'src="script.js[^\"]*"', 'src="/script.js?v=20260926-contact"', head)
+    head = re.sub(r'href="styles.css[^\"]*"', 'href="/styles.css?v=20261106-leads"', head)
+    head = re.sub(r'src="script.js[^\"]*"', 'src="/script.js?v=20261106-leads"', head)
     schema = {'@context': 'https://schema.org', '@graph': [
         {'@type': 'AboutPage', '@id': url + '#page', 'url': url, 'name': ABOUT['h1'],
          'about': {'@id': LIVE + '/#business'}, 'breadcrumb': {'@id': url + '#breadcrumb'}},
@@ -164,6 +167,32 @@ def render_about():
     footer = shared_paths(HOME[HOME.index('  <footer class="footer">'):])
     content = (ROOT / 'pages' / 'about.html').read_text().replace('{{reviews}}', reviews)
     return '<!doctype html>\n<html lang="en">\n' + head + '\n<body class="category-page product-page about-page">\n  <a class="skip" href="#main">Skip to content</a>\n' + header + '<main id="main">\n' + content + '\n</main>\n' + footer
+
+
+LEGAL = {
+    'privacy-policy': {'title': 'Privacy Policy | Beautiful Blinds & Shades',
+                       'description': 'How Beautiful Blinds & Shades collects, uses and protects the information you share through our website, including text-message consent.'},
+    'terms-of-service': {'title': 'Terms of Service | Beautiful Blinds & Shades',
+                         'description': 'Terms for using the Beautiful Blinds & Shades website, consultation requests and text messages.'},
+}
+
+
+def render_legal(slug):
+    # The wording is the live site's, copied into pages/legal/ by fetch_legal_pages.py.
+    meta = LEGAL[slug]
+    url = LIVE + '/' + slug
+    head = between('<head>', '</head>') + '</head>'
+    head = re.sub(r'<title>.*?</title>', '<title>' + escape(meta['title']) + '</title>', head)
+    head = re.sub(r'<meta name="description"[^>]+>', '<meta name="description" content="' + escape(meta['description'], quote=True) + '">', head)
+    head = head.replace('rel="canonical" href="' + LIVE + '/"', 'rel="canonical" href="' + url + '"')
+    head = re.sub(r'  <link rel="preload"[^>]+>\n', '', head)
+    head = re.sub(r'<script type="application/ld\+json">.*?</script>\n?', '', head, flags=re.S)
+    head = re.sub(r'<link rel="stylesheet" href="/blog.css[^>]*>\s*|<script src="/guides.js[^>]*></script>\s*', '', head)
+    head = head.replace('href="assets/', 'href="/assets/').replace('href="styles.css', 'href="/styles.css').replace('src="script.js', 'src="/script.js')
+    header = shared_paths(between('  <header class="header">', '  <main'))
+    footer = shared_paths(HOME[HOME.index('  <footer class="footer">'):])
+    content = (ROOT / 'pages' / 'legal' / (slug + '.html')).read_text()
+    return '<!doctype html>\n<html lang="en">\n' + head + '\n<body class="legal-page">\n<a class="skip" href="#main">Skip to content</a>\n' + header + '<main id="main">\n<section class="section legal-policy"><div class="container legal-policy-body">\n' + content + '</div></section>\n</main>\n' + footer
 
 
 def render_not_found():
@@ -208,7 +237,7 @@ if __name__ == '__main__':
     if not args.check:
         HOME = updated_home
         (DIST / 'index.html').write_text(HOME)
-    for output, rendered in [(page_file('/products/' + slug), render_category(slug)) for slug in CATEGORIES] + [(page_file('/services/' + slug), render_category(slug, service=True)) for slug in SERVICES] + [(page_file('/contact'), render_contact()), (page_file(ABOUT['route']), render_about())] + list(blog_outputs(HOME)) + list(subproduct_outputs(HOME, shared_paths)) + list(location_outputs(HOME, shared_paths)) + [(DIST / '404.html', render_not_found())]:
+    for output, rendered in [(page_file('/products/' + slug), render_category(slug)) for slug in CATEGORIES] + [(page_file('/services/' + slug), render_category(slug, service=True)) for slug in SERVICES] + [(page_file('/contact'), render_contact()), (page_file(ABOUT['route']), render_about())] + [(page_file('/' + slug), render_legal(slug)) for slug in LEGAL] + list(blog_outputs(HOME)) + list(subproduct_outputs(HOME, shared_paths)) + list(location_outputs(HOME, shared_paths)) + [(DIST / '404.html', render_not_found())]:
         rendered = localize_service_links(localize_locations(localize(rendered)))
         if args.check:
             if not output.exists() or output.read_text() != rendered:

@@ -1,2 +1,16 @@
+# The site is the committed static output in homepage/dist; the build only runs
+# the tests, so a failing test stops the deploy.
 [build]
+  base = "."
+  command = "node --test tests/consultation.test.mjs tests/consultation-http.test.mjs tests/form.test.mjs"
   publish = "homepage/dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# /api/consultation adds consultation requests to Beautiful Blinds & Shades'
+# GoHighLevel, tagged "website lead". It needs the GHL_PRIVATE_TOKEN and
+# GHL_LOCATION_ID environment variables (Netlify, never committed).
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"

@@ -94,11 +94,17 @@ videoButton?.addEventListener('click', () => {
 introductionVideo?.addEventListener('error', () => { videoError.hidden = false; });
 introductionVideo?.addEventListener('playing', () => { videoError.hidden = true; });
 
-// The review build intentionally has no lead-delivery endpoint. Connect a
-// server-side handler for this client's CRM before enabling production delivery.
+// Consultation requests go to /api/consultation (netlify/functions/consultation.mjs),
+// which adds the lead to Beautiful Blinds & Shades' GoHighLevel and tags it
+// "website lead". Success is shown only after GHL confirms the lead.
 const consultationForm = document.querySelector('#consultation-form');
 const consultationFields = [...(consultationForm?.querySelectorAll('input[required]') || [])];
 const formStatus = document.querySelector('#form-status');
+const consultationSuccess = document.querySelector('#consultation-success');
+const CALL_US = 'We couldn’t confirm your request. Please call (260) 222-6467 before submitting again.';
+// netlify/lib/consultation.mjs refuses anything sent sooner than this after the page loads.
+const MIN_FILL_MS = 3000;
+let consultationPending = false;
 
 function validateConsultationField(input) {
   const value = input.value.trim();
@@ -117,6 +123,17 @@ function validateConsultationField(input) {
   return !message;
 }
 
+// One GA4 generate_lead per lead GHL confirmed, sent to GA4 only. gtag exists on
+// the production host alone (see the head of index.html). No name, email or phone
+// goes to Google Analytics. Tracking must never hold up or break the form.
+function reportLead() {
+  try {
+    if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', {send_to: 'G-TBE6JC5ZYG', form_name: 'website_consultation_form', page_path: location.pathname});
+  } catch {
+    // A blocked or broken tag skips the event; the lead is already in GHL.
+  }
+}
+
 consultationFields.forEach((input) => {
   input.addEventListener('blur', () => {
     if (input.value || input.hasAttribute('aria-invalid')) validateConsultationField(input);
@@ -127,17 +144,54 @@ consultationFields.forEach((input) => {
   });
 });
 
-consultationForm?.addEventListener('submit', (event) => {
+consultationForm?.addEventListener('submit', async (event) => {
   event.preventDefault();
+  if (consultationPending) return;
   formStatus.hidden = true;
   const valid = consultationFields.map(validateConsultationField).every(Boolean);
   if (!valid) {
     consultationFields.find((input) => input.getAttribute('aria-invalid') === 'true').focus();
     return;
   }
-  // Never show a success message or discard details without confirmed delivery.
-  formStatus.innerHTML = 'This preview does not send requests yet. Your details have not been sent. To book a consultation, call <a href="tel:+12602226467">(260) 222-6467</a>.';
-  formStatus.hidden = false;
+  const button = consultationForm.querySelector('button[type="submit"]');
+  const label = button.textContent;
+  consultationPending = true;
+  button.disabled = true;
+  button.textContent = 'Sending your request…';
+  consultationForm.setAttribute('aria-busy', 'true');
+  try {
+    // Autofill can be faster than the minimum; wait it out rather than have the lead refused.
+    const wait = MIN_FILL_MS + 100 - performance.now();
+    if (wait > 0) await new Promise((resolve) => setTimeout(resolve, wait));
+    const payload = Object.fromEntries(new FormData(consultationForm));
+    // FormData leaves an unticked box out and sends a ticked one as "on"; send a boolean.
+    payload.smsOptIn = consultationForm.elements.smsOptIn?.checked === true;
+    payload.elapsedMs = Math.round(performance.now());
+    payload.page = location.pathname;
+    const response = await fetch('/api/consultation', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify(payload),
+      // AbortSignal.timeout is missing before Safari 16; send without a timeout there rather than fail.
+      signal: AbortSignal.timeout?.(20000),
+    });
+    const result = await response.json();
+    if (!response.ok || result.success !== true) throw new Error(result.error || CALL_US);
+    reportLead();
+    consultationForm.hidden = true;
+    consultationForm.reset();
+    consultationSuccess.hidden = false;
+    consultationSuccess.focus();
+  } catch (error) {
+    formStatus.textContent = error.name === 'TimeoutError' || error instanceof TypeError || error instanceof SyntaxError ? CALL_US : error.message;
+    formStatus.hidden = false;
+    formStatus.focus?.();
+  } finally {
+    consultationPending = false;
+    button.disabled = false;
+    button.textContent = label;
+    consultationForm.removeAttribute('aria-busy');
+  }
 });
 if (consultationForm) consultationForm.querySelector('button[type="submit"]').disabled = false;
 
