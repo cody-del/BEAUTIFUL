@@ -9,7 +9,7 @@ import argparse
 from html import escape, unescape
 import json
 import re
-from routes import DIST as _DIST, page_file, pages, route_of
+from routes import DIST as _DIST, distinct_title, page_file, pages, route_of
 
 ROOT = Path(__file__).resolve().parent
 DIST = ROOT / 'dist'
@@ -231,6 +231,24 @@ def apply_live_metadata(route, html):
     return html
 
 
+def apply_distinct_title(html):
+    """Keep the H1 and make the <title> differ from it (routes.distinct_title).
+
+    Runs after apply_live_metadata, so a carried-over live title that equals
+    the H1 can't bring the duplicate back.
+    """
+    h1 = re.search(r'<h1\b[^>]*>(.*?)</h1>', html, re.S)
+    current = re.search(r'<title>(.*?)</title>', html, re.S)
+    if not h1 or not current:
+        return html
+    old = unescape(current[1])
+    title = distinct_title(old, unescape(re.sub(r'<[^>]+>', ' ', h1[1])))
+    if title == old:
+        return html
+    html = html.replace(current[0], '<title>' + escape(title, quote=False) + '</title>', 1)
+    return html.replace('<meta property="og:title" content="' + escape(old, quote=True) + '">', '<meta property="og:title" content="' + escape(title, quote=True) + '">', 1)
+
+
 def _places():
     from build_locations import BASELINE, CITY_PAGES
     def city(label):
@@ -305,7 +323,7 @@ if __name__ == '__main__':
     from build_subproducts import outputs as subproduct_outputs, localize
     from build_locations import outputs as location_outputs, localize as localize_locations
     updated_home = localize_service_links(localize_locations(localize(homepage_with_guides(HOME))))
-    updated_home = apply_live_metadata('/', updated_home)
+    updated_home = apply_distinct_title(apply_live_metadata('/', updated_home))
     if args.check and updated_home != HOME:
         raise SystemExit('Homepage guides or metadata are stale. Run python3 homepage/build_pages.py')
     if not args.check:
@@ -313,7 +331,7 @@ if __name__ == '__main__':
         (DIST / 'index.html').write_text(HOME)
     for output, rendered in [(page_file('/products/' + slug), render_category(slug)) for slug in CATEGORIES] + [(page_file('/services/' + slug), render_category(slug, service=True)) for slug in SERVICES] + [(page_file('/contact'), render_contact()), (page_file(ABOUT['route']), render_about())] + [(page_file('/' + slug), render_legal(slug)) for slug in LEGAL] + list(blog_outputs(HOME)) + list(subproduct_outputs(HOME, shared_paths)) + list(location_outputs(HOME, shared_paths)) + [(DIST / '404.html', render_not_found())]:
         rendered = localize_service_links(localize_locations(localize(rendered)))
-        rendered = add_service_schema(route_of(output), apply_live_metadata(route_of(output), rendered))
+        rendered = add_service_schema(route_of(output), apply_distinct_title(apply_live_metadata(route_of(output), rendered)))
         if args.check:
             if not output.exists() or output.read_text() != rendered:
                 raise SystemExit(f'{output} is stale. Run python3 homepage/build_pages.py')

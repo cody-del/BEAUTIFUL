@@ -2,7 +2,7 @@
 from html import unescape
 from urllib.parse import urlsplit
 import re
-from routes import live_meta, page_file, pages
+from routes import distinct_title, live_meta, page_file, pages
 from build_locations import BASELINE, CITIES, LIVE, ROUTES, HUB
 
 NEW_CITY_TOPICS = {
@@ -24,12 +24,16 @@ for key, source in BASELINE.items():
     raw = page_file(source['url'].removeprefix(LIVE)).read_text()
     expected_title = source['title'].replace('Indiana', 'Ohio') if key == 'hicksville' else source['title']
     route = source['url'].removeprefix(LIVE)
-    assert unescape(re.search(r'<title>(.*?)</title>', raw)[1]) == live_meta(route, 'title', expected_title)
+    live_title = live_meta(route, 'title', expected_title)
+    title = unescape(re.search(r'<title>(.*?)</title>', raw)[1])
+    # The live title is kept as the H1; the <title> is made distinct from it.
+    assert title == distinct_title(live_title, live_title if key != 'service-area' else '')
+    assert title.casefold() != live_title.casefold() or key == 'service-area', (key, 'title duplicates the H1')
     assert unescape(re.search(r'<meta name="description" content="([^"]*)"', raw)[1]) == live_meta(route, 'description', source['description'])
     assert f'rel="canonical" href="{source["url"]}"' in raw
     headings = re.findall(r'<h1\b[^>]*>(.*?)</h1>', raw, re.S)
-    # The H1 matches the page title, which is the live site's current one (live-metadata.json).
-    expected = 'Serving Fort Wayne & Northeast Indiana' if key == 'service-area' else live_meta(route, 'title', expected_title)
+    # The H1 is the live site's current title (live-metadata.json); the <title> differs from it.
+    expected = 'Serving Fort Wayne & Northeast Indiana' if key == 'service-area' else live_title
     assert len(headings) == 1 and plain(headings[0]) == expected
     main = raw.split('<main id="main">')[1].split('</main>')[0]
     assert not re.search(r'<video\b|hero-badges|Buy 2 Get 1|—', main, re.I)

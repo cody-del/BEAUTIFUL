@@ -7,6 +7,7 @@ canonicals and the internal links have no trailing slash, so every page is
 written as <route>.html.
 """
 from pathlib import Path
+import re
 
 DIST = Path(__file__).resolve().parent / 'dist'
 LIVE = 'https://www.beautifulblindsandshades.com'
@@ -32,6 +33,33 @@ def serves(path):
     """True when Netlify answers this URL path with a file from dist/."""
     target = DIST / path.strip('/')
     return target.is_file() or page_file(path).is_file()
+
+
+BRAND_SUFFIXES = (' | Beautiful Blinds & Shades', ' | Beautiful Blinds')
+TITLE_MAX = 60
+
+
+def _plain(text):
+    return ' '.join(text.split())
+
+
+def distinct_title(title, h1):
+    """The page's <title>, made distinct from its H1 when the two are the same.
+
+    Semrush flags a title that duplicates the H1 (the live town pages use the
+    H1 as their title, and live-metadata.json carries that over). The H1
+    stays; the title becomes the H1 with ", IN"/", OH" and the site's brand
+    suffix, falling back to the shorter brand and then dropping a leading
+    "Custom" to stay within TITLE_MAX characters.
+    """
+    if _plain(title).casefold() != _plain(h1).casefold():
+        return title
+    short = re.sub(r'(?<=\S) In (?=\S)', ' in ', _plain(h1))
+    short = re.sub(r', Indiana$', ', IN', re.sub(r', Ohio$', ', OH', short))
+    if 'beautiful blinds' in short.casefold():
+        return short + ' | Fort Wayne, IN'
+    candidates = [base + brand for base in dict.fromkeys((short, short.removeprefix('Custom '))) for brand in BRAND_SUFFIXES]
+    return next((c for c in candidates if len(c) <= TITLE_MAX), short + BRAND_SUFFIXES[-1])
 
 
 _LIVE_METADATA = None
