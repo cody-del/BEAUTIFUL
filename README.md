@@ -28,7 +28,7 @@ The committed pages are indexable. `netlify/edge-functions/search-block.js` send
 
 ## Carried over from the live site (2026-11-06)
 
-The live Webflow site got an SEO pass on 2026-10-24 after these pages were drafted. `python3 homepage/fetch_live_metadata.py` snapshots every live title, meta description and service schema into `homepage/live-metadata.json`, which `build_pages.py` applies to all pages (Hicksville keeps the rebuild's "Ohio" title). Rerun it, then `python3 homepage/build_pages.py`, if the live site changes again before launch. Also carried over: Service schema on service, product and town pages; the live Auburn additions; GTM-KHJ3F2F5 and GA4 on the production host; `llms.txt`.
+The live Webflow site got an SEO pass on 2026-10-24 after these pages were drafted. `python3 homepage/fetch_live_metadata.py` snapshots every live title, meta description and service schema into `homepage/live-metadata.json`, which `build_pages.py` applies to all pages (Hicksville keeps the rebuild's "Ohio" title). Where a live title equals the page's H1 (the 17 town pages), the H1 keeps it and `distinct_title()` in `homepage/routes.py` gives the `<title>` the brand suffix instead (Semrush's "title duplicates the H1" warning); `tests/search-block.test.mjs` fails the build if any page's title matches its H1. Rerun it, then `python3 homepage/build_pages.py`, if the live site changes again before launch. Also carried over: Service schema on service, product and town pages; the live Auburn additions; GTM-KHJ3F2F5 and GA4 on the production host; `llms.txt`.
 
 ## Lead form
 
