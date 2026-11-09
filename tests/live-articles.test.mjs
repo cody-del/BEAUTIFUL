@@ -31,3 +31,12 @@ test('the ported text carries no prices, unconfirmed claims or another town', ()
   }
   assert.doesNotMatch(readFileSync(new URL('pages/live-articles/beautiful-blinds-shades-service-areas__window-treatments-hicksville-indiana.html', root), 'utf8'), /Hicksville,? Indiana/);
 });
+
+test('no testimonial-style claims, and no page repeats a heading', () => {
+  for (const file of snapshots) {
+    assert.doesNotMatch(readFileSync(new URL('pages/live-articles/' + file, root), 'utf8'), /customers say|testimonial/i, file);
+    const headings = [...page(file).matchAll(/<h[2-4]\b[^>]*>(.*?)<\/h[2-4]>/gs)].map(m => m[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().toLowerCase());
+    const repeated = headings.filter((h, i) => headings.indexOf(h) !== i);
+    assert.deepEqual(repeated, [], `${file} repeats ${repeated}`);
+  }
+});

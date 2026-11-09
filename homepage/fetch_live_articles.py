@@ -8,10 +8,11 @@ as an "A closer look" section.
 
 What is kept is the live wording, cleaned up:
 - sentences shared word for word with another page (templated boilerplate) are dropped,
-- so are prices, unconfirmed business claims (family-owned, years in business,
+- so are "What <town> Customers Say" sections (no real reviews, only claims), prices, unconfirmed business claims (family-owned, years in business,
   warranties, Buy 2 Get 1) and the factual slips the location checks already ban,
 - town pages drop any paragraph naming a different town (Fort Wayne aside), and Hicksville is Ohio,
-- headings start at H2, links point at this site's own routes, em dashes become commas.
+- headings start at H2 and never repeat one the page already has, links point at this site's
+  own routes, em dashes become commas.
 
 Rerun this, then python3 homepage/build_pages.py, only if the live text changes.
 The build never fetches, so a live-site outage can't break it.
@@ -131,6 +132,16 @@ def built_text(route):
     return TOWN_NAMES.sub('TOWN', re.sub(r'\W+', ' ', text(main).lower()))
 
 
+def built_headings(route):
+    """Headings the rebuild page already shows, so the live article never repeats one."""
+    from routes import page_file
+    page = page_file(route)
+    if not page.exists():
+        return set()
+    html = re.sub(r'<section class="section live-article".*?</section>', '', page.read_text(), flags=re.S)
+    return {re.sub(r'\W+', ' ', text(h).lower()).strip() for h in re.findall(r'<h[1-6]\b[^>]*>(.*?)</h[1-6]>', html, re.S)}
+
+
 def blocks(html):
     return re.findall(r'<(h2|h3|h4|p|ul|ol|blockquote)>(.*?)</\1>', html, re.S)
 
@@ -146,6 +157,7 @@ def clean(route, html, shared):
     town = town_of(route) if route.startswith('/beautiful-blinds-shades-service-areas/') else None
     others = [t for t in TOWNS if t != town]
     already = built_text(route)
+    headings = built_headings(route)
 
     def keep(fragment):
         plain = text(fragment)
@@ -166,12 +178,35 @@ def clean(route, html, shared):
                 out.append((tag, ''.join(f'<li>{i}</li>' for i in items)))
         elif tag.startswith('h'):
             heading = text(inner)
-            if not BANNED.search(heading) and not (town and any(re.search(rf'\b{re.escape(o)}\b', heading) for o in others)):
+            repeated = re.sub(r'\W+', ' ', heading.lower()).strip() in headings
+            if not repeated and not BANNED.search(heading) and not (town and any(re.search(rf'\b{re.escape(o)}\b', heading) for o in others)):
                 out.append((tag, inner))
         elif keep(inner):
             out.append((tag, inner))
-    # Drop headings left without any text under them.
+    # Drop "What <town> Customers Say" sections: no real reviews, only unverifiable claims
+    # about the business. Everything under the heading goes, up to the next heading of its level.
     level = {'h2': 2, 'h3': 3, 'h4': 4}
+    trimmed, skip_to = [], None
+    for tag, inner in out:
+        if skip_to is not None:
+            if tag in level and level[tag] <= skip_to:
+                skip_to = None
+            else:
+                continue
+        if tag in level and re.search(r'customers say|testimonial', text(inner), re.I):
+            skip_to = level[tag]
+            continue
+        trimmed.append((tag, inner))
+    # A heading the article already used once is dropped; its text stays under the earlier one.
+    seen, out = set(), []
+    for tag, inner in trimmed:
+        if tag in level:
+            norm = re.sub(r'\W+', ' ', text(inner).lower()).strip()
+            if norm in seen:
+                continue
+            seen.add(norm)
+        out.append((tag, inner))
+    # Drop headings left without any text under them.
     kept = []
     for i, (tag, inner) in enumerate(out):
         if tag in level:
