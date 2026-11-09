@@ -7,7 +7,7 @@ import {createConsultationHandler} from '../netlify/lib/consultation-http.mjs';
 
 const clientSource = readFileSync(new URL('../homepage/dist/script.js', import.meta.url), 'utf8');
 const LIVE_HOSTS = ['www.beautifulblindsandshades.com', 'beautifulblindsandshades.com'];
-const LIVE_SITE_KEY = '0x4AAAAAAF2px4kB-syt0wNp';
+const LIVE_SITE_KEY = '0x4AAAAAAF2pY6JkEWdgaHa3';
 
 // The secret is passed explicitly, so a build's real TURNSTILE_SECRET_KEY is never read.
 const env = {TURNSTILE_SECRET_KEY: 'test-secret-not-real'};
