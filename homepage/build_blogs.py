@@ -71,7 +71,9 @@ def article_body(post):
         path = value.removeprefix(LIVE)
         if path == '/shades/cellular-shades':
             path = '/custom-shades-fort-wayne-indiana/cellular-shades-fort-wayne-indiana'
-        # Existing contact-ghl remains on the live site until that route is migrated.
+        # The live contact-ghl form page is replaced by /contact (dist/_redirects 301s it too).
+        if path == '/contact-ghl':
+            path = '/contact'
         if path.startswith('/') and not path.startswith('//'):
             if path.split('#')[0].rstrip('/') in BUILT or path == '/':
                 value = path
