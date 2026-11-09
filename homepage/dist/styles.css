@@ -63,6 +63,7 @@
 .form-field input[aria-invalid="true"]{border-color:#aa3025}
 .consultation .field-error{margin:8px 0 0;color:#a12b22;font-size:13px;line-height:1.5}
 .form-submit{width:100%;margin-top:26px;cursor:pointer}
+.lead-form-turnstile{margin-top:22px;max-width:100%}.lead-form-turnstile:empty{display:none}.lead-form-turnstile+.form-submit{margin-top:14px}
 .form-submit:disabled{cursor:not-allowed;opacity:.65}
 .consultation .form-note{margin:16px 0 0;max-width:none;color:var(--muted);font-size:12px;line-height:1.6;text-align:center}
 .consultation .form-status{margin:18px 0 0;padding:14px 16px;border:1px solid #d4e3ee;border-radius:8px;background:#edf5fb;color:#204762;font-size:14px;line-height:1.6}
