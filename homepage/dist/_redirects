@@ -60,3 +60,17 @@
 /shades/roman-shades                                                                                     /custom-shades-fort-wayne-indiana/roman-shades-fort-wayne-indiana  301
 /shades/solar-shades                                                                                     /custom-shades-fort-wayne-indiana/solar-shades-fort-wayne-indiana  301
 /window-treatment-blog                                                                                   /blogs  301
+
+# Old URLs found in Search Console (16 months to 2026-11-06) and the live crawl
+# on 2026-11-09 that had no rule yet. seo/2026-11-09/old-url-inventory.csv lists
+# every old URL with its outcome; tests/redirects.test.mjs checks this file
+# against it. Google requests the %26 and %2C forms, which Netlify does not match
+# to the decoded rules above.
+/beautiful-blindsandshades-service-areas/blinds-and-shades-fort-wayne-indiana                            /beautiful-blinds-shades-service-areas/blinds-and-shades-fort-wayne-indiana  301
+/contact-ghl                                                                                             /contact  301
+/service-area/col                                                                                        /beautiful-blinds-shades-service-areas/window-treatment-columbia-city-indiana  301
+/services/blind-%26-shade-cleaning                                                                       /services/blind-and-shade-cleaning  301
+/services/blind-%26-shade-repair                                                                         /services/blind-shade-repair  301
+/services/professional-blind-and-shade-cleaning-services-to-keep-your-window-treatments-looking-fresh%2C-dust-free%2C-and-allergen-free.  /services/blind-and-shade-cleaning  301
+/shades/sheer-shades                                                                                     /products/shades  301
+/terms-and-conditions                                                                                    /terms-of-service  301
