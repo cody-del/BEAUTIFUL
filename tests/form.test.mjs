@@ -55,3 +55,15 @@ test('GTM loads the live container on the production host only', () => {
   assert.match(head, /if \(location\.hostname === 'www\.beautifulblindsandshades\.com'\) \{\(function\(w,d,s,l,i\)[^<]*'GTM-KHJ3F2F5'\);\}<\/script>/);
   for (const page of ['contact.html', 'products/blinds.html', 'blog-post/motorized-blinds-and-shades-in-fort-wayne.html']) assert.ok(read(page).includes("'GTM-KHJ3F2F5'"), page);
 });
+
+test('ClickCease loads on the production host only, with its no-JavaScript pixel on every page', () => {
+  const home = read('index.html');
+  const head = home.slice(0, home.indexOf('</head>'));
+  assert.match(head, /if \(location\.hostname === 'www\.beautifulblindsandshades\.com'\) \{var cc = document\.createElement\('script'\);[^<]*cc\.className = 'ct_clicktrue';[^<]*'https:\/\/ob\.belvionetta\.com\/i\/0e13a86f5e1ddc25e31480c0ba4dc8d3\.js'/);
+  assert.doesNotMatch(head, /<script[^>]+src="https:\/\/ob\.belvionetta\.com/);
+  for (const page of ['index.html', 'contact.html', 'products/blinds.html', 'services/blind-shade-repair.html', 'blog-post/motorized-blinds-and-shades-in-fort-wayne.html', 'privacy-policy.html']) {
+    const html = read(page);
+    assert.ok(html.includes("cc.className = 'ct_clicktrue'"), `${page}: script`);
+    assert.ok(html.includes('<noscript><iframe src="https://ob.belvionetta.com/ns/0e13a86f5e1ddc25e31480c0ba4dc8d3.html?ch="'), `${page}: noscript`);
+  }
+});
