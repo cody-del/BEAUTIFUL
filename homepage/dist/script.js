@@ -100,7 +100,7 @@ introductionVideo?.addEventListener('playing', () => { videoError.hidden = true;
 // previews and localhost, get Cloudflare's always-pass test key. The server only checks once
 // TURNSTILE_SECRET_KEY is set in Netlify.
 const TURNSTILE_LIVE_HOSTS = ['www.beautifulblindsandshades.com', 'beautifulblindsandshades.com'];
-const TURNSTILE_SITE_KEY = TURNSTILE_LIVE_HOSTS.includes(location.hostname) ? '0x4AAAAAAF6P0O2EGLa-iliA' : '1x00000000000000000000AA';
+const TURNSTILE_SITE_KEY = TURNSTILE_LIVE_HOSTS.includes(location.hostname) ? '0x4AAAAAAF2pY6JkEWdgaHa3' : '1x00000000000000000000AA';
 let turnstileLoaded;
 function humanCheck(form) {
   let widget;
