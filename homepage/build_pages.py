@@ -303,6 +303,27 @@ def add_service_schema(route, html):
     return html.replace('</head>', '<script type="application/ld+json">' + json.dumps(node, ensure_ascii=False) + '</script>\n</head>', 1)
 
 
+LIVE_ARTICLES = ROOT / 'pages' / 'live-articles'
+
+
+def add_live_article(route, html):
+    """Add the live site's long-form text for this page (fetch_live_articles.py) as one section.
+
+    It goes before the page's FAQ (or its closing call to action), so the
+    rebuild's own sections stay first and the page keeps the depth the live
+    page ranks on today.
+    """
+    source = LIVE_ARTICLES / (route.strip('/').replace('/', '__') + '.html')
+    if not source.exists():
+        return html
+    section = ('<section class="section live-article" aria-label="A closer look"><div class="container live-article-body">'
+               '<p class="eyebrow">A closer look</p>\n' + source.read_text() + '</div></section>\n')
+    for marker in ('<section class="section faq', '<section class="section detail-related', '<section class="section category-final'):
+        if marker in html:
+            return html.replace(marker, section + marker, 1)
+    raise SystemExit(f'{route}: no place for the live article')
+
+
 def render_sitemap():
     # Each page's own canonical is its sitemap URL; it must match the route Netlify serves it at.
     urls = []
@@ -331,7 +352,7 @@ if __name__ == '__main__':
         (DIST / 'index.html').write_text(HOME)
     for output, rendered in [(page_file('/products/' + slug), render_category(slug)) for slug in CATEGORIES] + [(page_file('/services/' + slug), render_category(slug, service=True)) for slug in SERVICES] + [(page_file('/contact'), render_contact()), (page_file(ABOUT['route']), render_about())] + [(page_file('/' + slug), render_legal(slug)) for slug in LEGAL] + list(blog_outputs(HOME)) + list(subproduct_outputs(HOME, shared_paths)) + list(location_outputs(HOME, shared_paths)) + [(DIST / '404.html', render_not_found())]:
         rendered = localize_service_links(localize_locations(localize(rendered)))
-        rendered = add_service_schema(route_of(output), apply_distinct_title(apply_live_metadata(route_of(output), rendered)))
+        rendered = add_live_article(route_of(output), add_service_schema(route_of(output), apply_distinct_title(apply_live_metadata(route_of(output), rendered))))
         if args.check:
             if not output.exists() or output.read_text() != rendered:
                 raise SystemExit(f'{output} is stale. Run python3 homepage/build_pages.py')
