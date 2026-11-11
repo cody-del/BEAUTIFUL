@@ -76,6 +76,7 @@ old_path,sources,gsc_clicks_16mo,gsc_impressions_16mo,outcome,new_path,evidence
 /products,2026-09-25-plan gsc,7,1042,404,,Old products hub (brand and generic Fort Wayne queries); the new site has no products hub and the homepage is not an equivalent.
 /products/blinds,2026-09-25-plan gsc live-crawl live-sitemap,1,10884,200,,Same URL on the new site.
 /products/plantation-shutters,2026-09-25-plan gsc live-crawl live-sitemap,9,11880,200,,Same URL on the new site.
+/products/shade,gsc,0,0,301,/products/shades,Search Console 404 crawled 2026-11-03 (added 2026-11-12); singular form of the Shades page URL.
 /products/shades,2026-09-25-plan gsc live-crawl live-sitemap,1,2112,200,,Same URL on the new site.
 /service-area,2026-09-25-plan gsc,0,2,301,/location/beautiful-blinds-and-shades-service-area,Existing rule from the 2026-09-25 plan (validated 2026-10-01).
 /service-area/angola-indiana,2026-09-25-plan gsc,14,214,301,/beautiful-blinds-shades-service-areas/window-treatments-angola-indiana,Existing rule from the 2026-09-25 plan (validated 2026-10-01).
