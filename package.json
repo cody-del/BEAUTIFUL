@@ -1,0 +1,12 @@
+{
+  "name": "beautiful-blinds-and-shades",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node --test tests/consultation.test.mjs tests/consultation-http.test.mjs tests/turnstile.test.mjs tests/form.test.mjs tests/search-block.test.mjs tests/redirects.test.mjs tests/live-articles.test.mjs tests/minify.test.mjs",
+    "build": "npm test && node scripts/minify-site.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

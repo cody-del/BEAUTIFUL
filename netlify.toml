@@ -1,9 +1,11 @@
-# The site is the committed static output in homepage/dist; the build only runs
-# the tests, so a failing test stops the deploy.
+# The site is the committed static output in homepage/dist. `npm run build` runs
+# the tests (a failing test stops the deploy), then copies homepage/dist to _site
+# with every .css and .js file minified (scripts/minify-site.mjs). Netlify
+# publishes _site; file names and ?v= URLs are unchanged.
 [build]
   base = "."
-  command = "node --test tests/consultation.test.mjs tests/consultation-http.test.mjs tests/turnstile.test.mjs tests/form.test.mjs tests/search-block.test.mjs tests/redirects.test.mjs tests/live-articles.test.mjs"
-  publish = "homepage/dist"
+  command = "npm run build"
+  publish = "_site"
 
 [build.environment]
   NODE_VERSION = "22"

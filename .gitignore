@@ -9,3 +9,7 @@ homepage/research/
 
 # Local Netlify folder
 .netlify
+
+# Netlify publishes _site/ (homepage/dist/ with CSS and JS minified; npm run build)
+_site/
+node_modules/
