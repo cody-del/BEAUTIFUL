@@ -60,7 +60,7 @@ SERVICES = {
         'description': 'Custom outdoor shades for Fort Wayne patios, porches, and decks. Compare solar fabrics, manual and motorized options. Free in-home consultation.',
         'name': 'Outdoor Shades', 'topic': 'Outdoor shade installation', 'image': 'outdoor-natural-v2.jpg'},
     'blind-shade-repair': {
-        'title': 'Blind Repair Fort Wayne | Shade Repair Service | Beautiful Blinds',
+        'title': 'Blind & Shade Repair Fort Wayne | Beautiful Blinds',
         'description': 'Blind and shade repair in Fort Wayne. Ask about broken cords, stuck shades, tilt controls, and motorized treatments. Call to discuss your repair.',
         'name': 'Blind & Shade Repair', 'topic': 'Blind and shade repair', 'image': 'blinds-venetian-original.jpg'},
     'blind-and-shade-cleaning': {

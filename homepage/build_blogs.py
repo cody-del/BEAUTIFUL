@@ -91,10 +91,15 @@ def article_body(post):
         return tag
     body = re.sub(r'<img\b[^>]*>', img, body)
     headings = []
+    # Some imported posts start their sections at H3 (two at H3 then H4), which
+    # skips a level under the page's H1. Lift the whole article so its top
+    # level is H2, keeping the relative structure.
+    shift = min((int(l) for l in re.findall(r'<h([2-6])\b', body)), default=2) - 2
     def heading(match):
         level, attrs, words = match.groups()
+        level = int(level) - shift
         anchor = 'guide-section-' + str(len(headings) + 1)
-        headings.append((int(level), anchor, strip_text(words)))
+        headings.append((level, anchor, strip_text(words)))
         attrs = re.sub(r'\s+id="[^"]*"', '', attrs)
         return f'<h{level}{attrs} id="{anchor}">{words}</h{level}>'
     body = re.sub(r'<h([2-6])([^>]*)>(.*?)</h\1>', heading, body, flags=re.S)
